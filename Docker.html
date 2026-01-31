@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+  /* 1. The Header Bar itself - "Frosted Cyber Glass" */
+  #header {
+    background: rgba(10, 15, 28, 0.85) !important; /* Deep space blue, semi-transparent */
+    backdrop-filter: blur(15px); /* Blurs content behind the header */
+    border-bottom: 2px solid #00f2ff !important; /* Electric Cyan bottom edge */
+    box-shadow: 0 0 20px rgba(0, 242, 255, 0.2); /* Subtle outer glow */
+    transition: all 0.4s ease;
+  }
+
+  /* 2. Main Navigation Links */
+  .navmenu ul li a {
+    color: #ffffff !important;
+    font-family: 'Courier New', monospace; /* Tech/Terminal feel */
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-size: 0.85rem;
+    transition: 0.3s;
+  }
+
+  /* 3. The "Cyber Glow" Hover Effect */
+  .navmenu ul li a:hover, 
+  .navmenu ul li a.active {
+    color: #00f2ff !important; /* Glow Cyan */
+    text-shadow: 0 0 10px #00f2ff, 0 0 20px rgba(0, 242, 255, 0.5);
+    background: transparent !important;
+  }
+
+  /* 4. Dropdown Menus - "Floating Data Cubes" */
+  .navmenu .dropdown ul {
+    background: rgba(10, 15, 28, 0.95) !important;
+    border: 1px solid #ff6600 !important; /* Orange accent for contrast */
+    border-radius: 0; /* Sharp edges look more technical */
+    box-shadow: 0 0 15px rgba(255, 102, 0, 0.3);
+  }
+
+  .navmenu .dropdown ul li a {
+    color: #00f2ff !important;
+  }
+
+  .navmenu .dropdown ul li a:hover {
+    background: rgba(0, 242, 255, 0.1) !important;
+    color: #ffcc00 !important; /* Gold text on hover in dropdown */
+  }
+
+  /* 5. The "Get Started" Button - Power Cell Style */
+  .btn-getstarted {
+    background: transparent !important;
+    border: 1px solid #ff6600 !important;
+    color: #ff6600 !important;
+    box-shadow: inset 0 0 10px rgba(255, 102, 0, 0.2), 0 0 10px rgba(255, 102, 0, 0.2);
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+
+  .btn-getstarted:hover {
+    background: #ff6600 !important;
+    color: #000 !important;
+    box-shadow: 0 0 25px #ff6600;
+  }
+</style>
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Projects - Syphe IT Services</title>
+  <meta name="description" content="Projects and case studies from Syphe IT Services.">
+  <meta name="keywords" content="n8n, kubernetes, fortinet, website design, fortigate logs, automation">
+
+  <!-- Favicons -->
+  <link href="assets/img/syphe-it.png" rel="icon">
+  <link href="assets/img/syphe-it.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Jost:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+</head>
+
+<body class="projects-page">
+
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center">
+
+      <a href="index.html" class="logo d-flex align-items-center me-auto">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        
+        <h1 class="sitename">Syphe IT<br> Services</h1>
+
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          
+          <li><a href="index.html">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="deepdive.html">Technical Deep Dive</a></li>
+          <li><a href="#team">Projects</a></li>
+          <li><a href="#pricing">My Notes</a></li>
+          <li><a href="blog.html">Clients</a></li>
+          <li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li><a href="#">Dropdown 1</a></li>
+              <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                <ul>
+                  <li><a href="#">Deep Dropdown 1</a></li>
+                  <li><a href="#">Deep Dropdown 2</a></li>
+                  <li><a href="#">Deep Dropdown 3</a></li>
+                  <li><a href="#">Deep Dropdown 4</a></li>
+                  <li><a href="#">Deep Dropdown 5</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Dropdown 2</a></li>
+              <li><a href="#">Dropdown 3</a></li>
+              <li><a href="#">Dropdown 4</a></li>
+            </ul>
+          </li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+      <a class="btn-getstarted" href="#about">Syphe IT</a>
+
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!-- Page Title -->
+    <div class="page-title" data-aos="fade" style="
+    background: linear-gradient(135deg, rgba(10, 15, 28, 0.85) 0%, rgba(20, 35, 65, 0.75) 100%) !important;
+    backdrop-filter: blur(15px) saturate(150%);
+    -webkit-backdrop-filter: blur(15px) saturate(150%);
+    border-bottom: 2px solid #00f2ff !important;
+    border-left: 5px solid #00f2ff !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    padding: 30px 0;
+    margin-bottom: 20px;
+    position: relative;
+    overflow: hidden;
+">
+  <div style="position: absolute; top: 0; right: 0; width: 20px; height: 20px; border-top: 2px solid #00f2ff; border-right: 2px solid #00f2ff; opacity: 0.3;"></div>
+  <div style="position: absolute; bottom: 0; right: 0; width: 10px; height: 10px; background: #00f2ff; opacity: 0.2;"></div>
+  
+  <div class="container">
+    <nav class="breadcrumbs mb-2">
+      <ol style="list-style: none; display: flex; padding: 0; margin: 0; font-family: 'Courier New', monospace; font-size: 0.85rem; letter-spacing: 1px;">
+        <li><a href="index.html" style="color: #00f2ff; text-decoration: none;">HOME</a></li>
+        <li style="color: white; opacity: 0.5; margin: 0 10px;">/</li>
+        <li class="current" style="color: white;">PROJECTS</li>
+        <li style="color: white; opacity: 0.5; margin: 0 10px;">/</li>
+        <li class="current" style="color: #ffcc00;">DOCKER</li>
+      </ol>
+    </nav>
+    
+    <h1 style="color: #ffffff; font-weight: 800; text-transform: uppercase; letter-spacing: -1px; margin-bottom: 5px;">
+      <i class="bi bi-box-seam me-2" style="color: #00f2ff;"></i>DOCKER
+    </h1>
+    
+    <p class="lead mb-0" style="color: rgba(255, 255, 255, 0.8); border-left: 2px solid #ff6600; padding-left: 15px; font-size: 1.1rem;">
+      Build, Pull, and Push <span style="color: #ff6600; font-family: 'Courier New', monospace;"></span>
+    </p>
+  </div>
+</div>
+
+    <!-- Projects List -->
+    <section id="lifecycle" class="container py-5" data-aos="fade-up">
+  <div class="text-center mb-5">
+    <h2 class="display-6 fw-bold">The Container Journey</h2>
+    <p style="color: #ffffff; font-weight: 700; font-size: 1.1rem; letter-spacing: 0.5px; text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);">
+  From <span style="color: #00f2ff;">Docker</span> website image on Local laptop to 
+  Master Node Source Code to a Running website Pod in 
+  <span style="color: #ff6600; text-shadow: 0 0 8px rgba(255, 102, 0, 0.6);">OCI</span>
+</p>
+  </div>
+
+  <div class="row align-items-center mb-5">
+    <div class="row align-items-center mb-5">
+    <div class="col-lg-6" data-aos="fade-right">
+      <h3 class="d-flex align-items-center"><span class="step-badge me-2">01</span> Docker Build: The Blueprint</h3>
+      <p>When you run <code>docker build</code>, you are following a "recipe" called a <strong>Dockerfile</strong>. Docker reads this file from bottom to top, creating <strong>read-only layers</strong>.</p>
+      <ul>
+        <li><strong>Base Image:</strong> Usually a lightweight OS like <code>alpine</code> or <code>debian-slim</code>.</li>
+        <li><strong>The Tag:</strong> You must tag the image with the registry URL (e.g., <code>ord.ocir.io/...</code>) so Docker knows where its "home" is.</li>
+        <li><strong>DockerFile:</strong>
+          <div class="bg-light p-2 rounded border border-start-0 border-end-0 border-top-0 border-bottom-2 mb-2">
+            <p class="mb-0"><code>FROM nginx:stable-alpine</code></p>
+            <p class="mb-0"><code>COPY . /usr/share/nginx/html</code></p>
+            <p class="mb-0"><code>EXPOSE 80</code></p>
+          </div>
+        </li>
+      </ul>
+      <pre class="bg-dark text-white p-3 rounded"># Example Build Command
+docker build -t ord.ocir.io/tenancy/syphe-web:v1 .</pre>
+    </div>
+
+    <div class="col-lg-6 text-center" data-aos="fade-left">
+      <div class="p-4 bg-white rounded shadow-sm border">
+        <img src="assets/img/cta/docker.png" alt="Docker Build Layers Diagram" class="img-fluid rounded">
+        <p class="text-muted mt-2 small italic">The Docker Build Process: Packaging Source Code into Layers</p>
+      </div>
+    </div>
+  </div>    <div class="col-lg-6">
+      
+    </div>
+  </div>
+
+  <div class="row align-items-center mb-5 flex-lg-row-reverse">
+    <div class="col-lg-6">
+      <h3 class="d-flex align-items-center"><span class="step-badge me-2">02</span> The Registry: Push & Pull</h3>
+      <p>Docker images are stored in a **Registry** (like OCIR). Think of this as GitHub, but for compiled containers instead of code.</p>
+      <ul>
+        <li><strong>Pushing:</strong> Uploads your local layers to the cloud. Only *new* layers are uploaded, saving bandwidth.</li>
+        <li><strong>Pulling:</strong> Downloading the image. You usually do this manually only for testing; Kubernetes handles this automatically during deployment.</li>
+      </ul>
+      <pre>docker push ord.ocir.io/tenancy/syphe-web:v1</pre>
+    </div>
+  </div>
+
+  <div class="row mb-5">
+    <div class="col-12">
+      <h3 class="d-flex align-items-center"><span class="step-badge me-2">03</span> How K8s Gets the Image</h3>
+      <p>This is the "handshake" between the Master and the Worker. Here is exactly what happens when you run <code>kubectl apply</code>:</p>
+
+      <div class="row mt-4">
+        <div class="col-md-4">
+          <div class="card h-100 border-0 shadow-sm bg-light">
+            <div class="card-body">
+              <h6>1. The Instruction</h6>
+              <p class="small">The <strong>iMac (Master)</strong> sends the Deployment YAML to the <strong>OCI Worker</strong>. It says: "Run <code>syphe-web:v1</code>."</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100 border-0 shadow-sm bg-light">
+            <div class="card-body">
+              <h6>2. The Authentication</h6>
+              <p class="small">The Worker looks for an <strong>ImagePullSecret</strong>. This contains your Oracle Auth Token. Without it, the Worker is denied entry to OCIR.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100 border-0 shadow-sm bg-light">
+            <div class="card-body">
+              <h6>3. The Execution</h6>
+              <p class="small">The Worker's <strong>Container Runtime</strong> (CRI-O or Containerd) downloads the layers from OCIR and starts the Pod.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="alert alert-info border-0 shadow-sm p-4">
+    <h4 class="alert-heading"><i class="bi bi-info-circle-fill me-2"></i>Critical: The ImagePullPolicy</h4>
+    <p>If you keep the same tag (like <code>:latest</code>) and update your code, Kubernetes might think it already has the image and won't download the new version. To fix this, always include this in your YAML:</p>
+    <pre class="mb-3 bg-dark text-white">spec:
+  containers:
+  - name: syphe-app
+    image: ord.ocir.io/tenancy/syphe-web:latest
+    imagePullPolicy: Always # This forces the Worker to check the Registry every time</pre>
+
+    <hr>
+
+    <div class="mt-4">
+      <h5 class="fw-bold">Does K8s actually build, pull, and push?</h5>
+      <p>The short answer is <strong>no</strong>. Kubernetes does not build or push images.</p>
+      
+      <p>Think of it this way: <strong>Docker is the "Manufacturer"</strong> (Build & Ship), while <strong>Kubernetes is the "Warehouse Manager"</strong> (Pull & Organize).</p>
+
+      <div class="row mt-4">
+        <div class="col-md-6">
+          <h6>1. The Build and Push Phase (Docker's Job)</h6>
+          <p class="small">Kubernetes has no native way to look at your source code and turn it into a container.</p>
+          <ul class="small">
+            <li><strong>Building:</strong> You use Docker on your local iMac or laptop to run <code>docker build</code>. This creates the "Shipping Container."</li>
+            <li><strong>Pushing:</strong> You use Docker to run <code>docker push</code>. This sends that container to a Registry.</li>
+            <li><strong>K8s Role:</strong> None. Kubernetes doesn't even know your code exists until the image is already sitting in a registry.</li>
+          </ul>
+        </div>
+        <div class="col-md-6">
+          <h6>2. The Pull and Run Phase (Kubernetes' Job)</h6>
+          <p class="small">This is where Kubernetes takes over, but it doesn't use "Docker Desktop." It uses something called a <strong>Container Runtime</strong> (like <code>containerd</code>).</p>
+          <ul class="small">
+            <li><strong>Pulling:</strong> When you tell K8s to deploy your app, the Kubelet (the agent on your OCI worker node) says: "I need to run syphe-web:v1. I see it's not here, so I will download it from the registry."</li>
+            <li><strong>Running:</strong> Once pulled, K8s starts the container. It doesn't "push" it anywhere; it just keeps it running and restarts it if it crashes.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="bg-white p-3 rounded border mt-3">
+        <h6>Why the confusion? (The "Docker-shim" history)</h6>
+        <p class="small mb-0">In the old days, Kubernetes actually used the Docker software itself to pull and run containers. However, modern Kubernetes has moved away from this. It now uses a "lighter" version of the same technology called <strong>containerd</strong>.</p>
+      </div>
+
+      <div class="mt-4">
+        <h6>The separation is now very clear:</h6>
+        <ol class="small">
+          <li><strong>You</strong> use Docker to <strong>Create</strong> the image.</li>
+          <li><strong>The Registry</strong> (like Docker Hub or OCIR) <strong>Stores</strong> the image.</li>
+          <li><strong>Kubernetes</strong> uses its runtime to <strong>Pull and Run</strong> the image.</li>
+        </ol>
+      </div>
+
+      <div class="table-responsive mt-4">
+        <table class="table table-sm table-bordered bg-white mb-0">
+          <thead class="table-light">
+            <tr>
+              <th>Action</th>
+              <th>Done by Docker?</th>
+              <th>Done by Kubernetes?</th>
+            </tr>
+          </thead>
+          <tbody class="small">
+            <tr>
+              <td>Build Image</td>
+              <td>Yes (on your laptop/iMac)</td>
+              <td>No</td>
+            </tr>
+            <tr>
+              <td>Push Image</td>
+              <td>Yes (to the cloud)</td>
+              <td>No</td>
+            </tr>
+            <tr>
+              <td>Pull Image</td>
+              <td>Yes (if manual)</td>
+              <td>Yes (automated by the Worker Node)</td>
+            </tr>
+            <tr>
+              <td>Run Container</td>
+              <td>Yes (locally)</td>
+              <td>Yes (in the cluster)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+  </main>
+
+  <footer id="footer" class="footer">
+
+    <div class="footer-newsletter">
+      <div class="container">
+        <div class="row justify-content-center text-center">
+          <div class="col-lg-6">
+            <h4>Join Our Newsletter</h4>
+            <p>Subscribe to our newsletter and receive the latest news about our products and services!</p>
+            <form action="forms/newsletter.php" method="post" class="php-email-form">
+              <div class="newsletter-form"><input type="email" name="email"><input type="submit" value="Subscribe"></div>
+              <div class="loading">Loading</div>
+              <div class="error-message"></div>
+              <div class="sent-message">Your subscription request has been sent. Thank you!</div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container footer-top">
+      <div class="row gy-4">
+        <div class="col-lg-4 col-md-6 footer-about">
+          <a href="index.html" class="d-flex align-items-center">
+            <span class="sitename">Syphe IT</span>
+          </a>
+          <div class="footer-contact pt-3">
+            <p>Minneapolis</p>
+            <p>Minneapolis 55430</p>
+            <p class="mt-3"><strong>Phone:</strong> <span>+1 5589 55488 55</span></p>
+            <p><strong>Email:</strong> <span>sypheit@gmail.com</span></p>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4>Useful Links</h4>
+          <ul>
+            <li><i class="bi bi-chevron-right"></i> <a href="index.html">Home</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#">About us</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#">Services</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#">Terms of service</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4>Our Services</h4>
+          <ul>
+            <li><i class="bi bi-chevron-right"></i> <a href="#">Azure Cloud Support</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#">DevOps K8s</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#">Fortinet Network Security</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#">Managed Services</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-8" data-aos="fade-up" data-aos-delay="200">
+     <div class="container copyright text-center mt-4">
+      <p>© <span>Copyright</span> <strong class="px-1 sitename">Syphe IT</strong> <span>All Rights Reserved</span></p>
+      
+    </div>
+
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+  <a href="./index.html" target="_self" class="btn btn-primary back-home btn-sm position-fixed bottom-0 start-0 m-3" aria-label="Return to home" style="z-index:9999;" onmousedown="window.location.href='./index.html'" onclick="window.location.href='./index.html'; return false;">Home</a>
+
+</body>
+
+</html>

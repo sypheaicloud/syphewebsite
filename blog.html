@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+  /* 1. The Header Bar itself - "Frosted Cyber Glass" */
+  #header {
+    background: rgba(10, 15, 28, 0.85) !important; /* Deep space blue, semi-transparent */
+    backdrop-filter: blur(15px); /* Blurs content behind the header */
+    border-bottom: 2px solid #00f2ff !important; /* Electric Cyan bottom edge */
+    box-shadow: 0 0 20px rgba(0, 242, 255, 0.2); /* Subtle outer glow */
+    transition: all 0.4s ease;
+  }
+
+  /* 2. Main Navigation Links */
+  .navmenu ul li a {
+    color: #ffffff !important;
+    font-family: 'Courier New', monospace; /* Tech/Terminal feel */
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-size: 0.85rem;
+    transition: 0.3s;
+  }
+
+  /* 3. The "Cyber Glow" Hover Effect */
+  .navmenu ul li a:hover, 
+  .navmenu ul li a.active {
+    color: #00f2ff !important; /* Glow Cyan */
+    text-shadow: 0 0 10px #00f2ff, 0 0 20px rgba(0, 242, 255, 0.5);
+    background: transparent !important;
+  }
+
+  /* 4. Dropdown Menus - "Floating Data Cubes" */
+  .navmenu .dropdown ul {
+    background: rgba(10, 15, 28, 0.95) !important;
+    border: 1px solid #ff6600 !important; /* Orange accent for contrast */
+    border-radius: 0; /* Sharp edges look more technical */
+    box-shadow: 0 0 15px rgba(255, 102, 0, 0.3);
+  }
+
+  .navmenu .dropdown ul li a {
+    color: #00f2ff !important;
+  }
+
+  .navmenu .dropdown ul li a:hover {
+    background: rgba(0, 242, 255, 0.1) !important;
+    color: #ffcc00 !important; /* Gold text on hover in dropdown */
+  }
+
+  /* 5. The "Get Started" Button - Power Cell Style */
+  .btn-getstarted {
+    background: transparent !important;
+    border: 1px solid #ff6600 !important;
+    color: #ff6600 !important;
+    box-shadow: inset 0 0 10px rgba(255, 102, 0, 0.2), 0 0 10px rgba(255, 102, 0, 0.2);
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+
+  .btn-getstarted:hover {
+    background: #ff6600 !important;
+    color: #000 !important;
+    box-shadow: 0 0 25px #ff6600;
+  }
+</style>
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Blog - Syphe IT Bootstrap Template</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Jost:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Syphe IT
+  * Template URL: https://bootstrapmade.com/Syphe-IT-free-bootstrap-html-template-corporate/
+  * Updated: Feb 22 2025 with Bootstrap v5.3.3
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body class="blog-page">
+
+  <header id="header" class="header d-flex align-items-center sticky-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center">
+
+      <a href="index.html" class="logo d-flex align-items-center me-auto">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <!-- <img src="assets/img/logo.webp" alt=""> -->
+        <h1 class="sitename">Syphe IT <br> Services</h1>
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          
+          <li><a href="index.html">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="deepdive.html">Technical Deep Dive</a></li>
+          <li><a href="#team">Projects</a></li>
+          <li><a href="#pricing">My Notes</a></li>
+          <li><a href="blog.html">Clients</a></li>
+          <li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li><a href="#">Dropdown 1</a></li>
+              <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                <ul>
+                  <li><a href="#">Deep Dropdown 1</a></li>
+                  <li><a href="#">Deep Dropdown 2</a></li>
+                  <li><a href="#">Deep Dropdown 3</a></li>
+                  <li><a href="#">Deep Dropdown 4</a></li>
+                  <li><a href="#">Deep Dropdown 5</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Dropdown 2</a></li>
+              <li><a href="#">Dropdown 3</a></li>
+              <li><a href="#">Dropdown 4</a></li>
+            </ul>
+          </li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+      <a class="btn-getstarted" href="#about">Get Started</a>
+
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!-- Page Title -->
+    <div class="page-title" data-aos="fade">
+      <div class="container">
+        <nav class="breadcrumbs">
+          <ol>
+            <li><a href="index.html">Home</a></li>
+            <li class="current">Blog</li>
+          </ol>
+        </nav>
+        <h1>Blog</h1>
+      </div>
+    </div><!-- End Page Title -->
+
+    <div class="container">
+      <div class="row">
+
+        <div class="col-lg-8">
+
+          <!-- Blog Posts Section -->
+          <section id="blog-posts" class="blog-posts section">
+
+            <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+              <div class="row gy-4">
+
+                <div class="col-lg-6">
+                  <article>
+
+                    <div class="post-img">
+                      <img src="assets/img/blog/blog-post-1.webp" alt="" class="img-fluid">
+                    </div>
+
+                    <h2 class="title">
+                      <a href="blog-details.html" style="text-decoration: none; display: block; color: #ffffff; font-family: 'Segoe UI', Roboto, sans-serif;">
+    <h4 style="font-size: 1.4rem; font-weight: 700; margin-bottom: 12px; color: #ffffff; letter-spacing: -0.01em;">
+        Kubernetes Dashboard
+    </h4>
+    <p style="font-size: 1.1rem; line-height: 1.6; font-weight: 400; color: #f8f9fa; margin-bottom: 12px;">
+        Dashboard is a web-based Kubernetes user interface. You can use Dashboard to deploy containerized applications to a Kubernetes cluster, troubleshoot your containerized application, and manage the cluster resources. You can use Dashboard to get an overview of applications running on your cluster, as well as for creating or modifying individual Kubernetes resources (such as Deployments, Jobs, DaemonSets, etc). For example, you can scale a Deployment, initiate a rolling update, restart a pod or deploy new applications using a deploy wizard.
+    </p>
+    <p style="font-size: 1.1rem; line-height: 1.6; font-weight: 400; color: #f8f9fa; margin: 0;">
+        Dashboard also provides information on the state of Kubernetes resources in your cluster and on any errors that may have occurred.
+    </p>
+</a>
+                    </h2>
+
+                    
+
+                    <div class="content">
+                      
+
+                      <div class="read-more">
+                        <a href="blog-details.html">Read More</a>
+                      </div>
+                    </div>
+
+                  </article>
+                </div><!-- End post list item -->
+
+                <div class="col-lg-6">
+
+                  <article>
+
+                    <div class="post-img">
+                      <img src="assets/img/blog/blog-post-2.webp" alt="" class="img-fluid">
+                    </div>
+
+                    <h2 class="title">
+                      <a href="blog-details.html"> Nginx</a>
+                    </h2>
+
+                    
+
+                    <div class="content">
+                      <p>
+                        NGINX (pronounced "Engine-X") is a high-performance, open-source software that handles the heavy lifting of modern web traffic. Originally created in 2004 to solve the "C10k problem" (handling 10,000 concurrent connections at once), it has become the standard for high-speed infrastructure.Nginx is often called a "Swiss Army Knife" for DevOps because it performs four main roles:
+
+Web Server: It delivers static content (HTML, CSS, images) much faster and with less memory than older servers like Apache.
+
+Reverse Proxy: It sits in front of your application (like a Node.js or Python app) to manage requests, providing an extra layer of security and abstraction.
+
+Load Balancer: It distributes incoming traffic across multiple backend servers to ensure no single server gets overwhelmed.
+
+API Gateway: It manages and routes API requests, handling authentication and rate limiting.</p>
+                      <div class="read-more">
+                        <a href="blog-details.html">Read More</a>
+                      </div>
+                    </div>
+
+                  </article>
+
+                </div><!-- End post list item -->
+
+                <div class="col-lg-6">
+
+                  <article>
+
+                    <div class="post-img">
+                      <img src="assets/img/blog/blog-post-3.webp" alt="" class="img-fluid">
+                    </div>
+
+                    <h2 class="title">
+                      <a href="blog-details.html"> n8n - Codenation.</a>
+                    </h2>
+
+                    
+
+                    <div class="content">
+                      <p>
+                        n8n (nodemation) is a powerful, low-code workflow automation tool that allows you to connect different apps, databases, and APIs to automate repetitive tasks. It is often described as a more flexible, "fair-code" alternative to Zapier or Make.com.Node-Based Interface: You build workflows visually by connecting "nodes." Each node represents an action (e.g., "Get an Email," "Filter Data," or "Send a Slack Message").
+
+Self-Hostable: Unlike its competitors, you can host n8n on your own servers (using Docker or a VPS). This is a huge advantage for data privacy and security-conscious companies.
+
+Extensible: If a specific integration doesn't exist, you can write custom JavaScript inside a "Function" node to handle complex logic.
+
+Built-in AI Integration: n8n has strong support for LangChain, making it incredibly easy to build AI agents that connect to your own data and tools.</p>
+                      <div class="read-more">
+                        <a href="blog-details.html">Read More</a>
+                      </div>
+                    </div>
+
+                  </article>
+
+                </div><!-- End post list item -->
+
+                <div class="col-lg-6">
+
+                  <article>
+
+                    <div class="post-img">
+                      <img src="assets/img/blog/azureai-color.webp" alt="" class="img-fluid">
+                    </div>
+
+                    <h2 class="title">
+                      <a href="blog-details.html">Azure AI Foundry.</a>
+                    </h2>
+
+                    
+
+                    <div class="content">
+                      <p>
+                        Azure AI Foundry (formerly known as Azure AI Studio) is Microsoft’s unified "factory" for building, deploying, and managing enterprise-grade AI applications and agents.
+
+It is designed to be the central hub where developers and data scientists move from a simple prompt to a full-scale production system. Azure AI Foundry brings together several powerful tools into one interface:
+
+Model Catalog: A massive library of over 11,000 models. It includes the full OpenAI suite (GPT-4o, etc.), but also open-source models like Meta’s Llama, Mistral, and Microsoft’s own Phi series.
+
+AI Agent Service: A framework for building "Agentic" AI—bots that don't just talk, but actually do things (like looking up data in a database or executing a CLI command).
+
+Foundry IQ (RAG): Built-in tools for Retrieval-Augmented Generation. This allows you to "ground" the AI in your own company data (PDFs, manuals, logs) so it doesn't hallucinate.
+
+AI Search: Deep integration with Azure AI Search to index and retrieve technical information quickly. <br></p>
+                      <div class="read-more">
+                        <a href="blog-details.html">Read More</a>
+                      </div>
+                    </div>
+
+                  </article>
+
+                </div><!-- End post list item -->
+
+              </div><!-- End blog posts list -->
+
+            </div>
+
+          </section><!-- /Blog Posts Section -->
+
+          <!-- Pagination 2 Section -->
+          <section id="pagination-2" class="pagination-2 section">
+
+            <div class="container">
+              <div class="d-flex justify-content-center">
+                <ul>
+                  <li><a href="#"><i class="bi bi-chevron-left"></i></a></li>
+                  <li><a href="#">1</a></li>
+                  <li><a href="#" class="active">2</a></li>
+                  <li><a href="#">3</a></li>
+                  <li><a href="#">4</a></li>
+                  <li>...</li>
+                  <li><a href="#">10</a></li>
+                  <li><a href="#"><i class="bi bi-chevron-right"></i></a></li>
+                </ul>
+              </div>
+            </div>
+
+          </section><!-- /Pagination 2 Section -->
+
+        </div>
+
+        <div class="col-lg-4 sidebar">
+
+          <div class="widgets-container" data-aos="fade-up" data-aos-delay="200">
+
+            <!-- Search Widget -->
+            <div class="search-widget widget-item">
+
+              <h3 class="widget-title">Search</h3>
+              <form action="">
+                <input type="text">
+                <button type="submit" title="Search"><i class="bi bi-search"></i></button>
+              </form>
+
+            </div><!--/Search Widget -->
+
+            <!-- Recent Posts Widget -->
+            <div class="recent-posts-widget widget-item">
+
+              <h3 class="widget-title">Recent Posts</h3>
+
+              <div class="post-item">
+                <img src="assets/img/blog/blog-post-square-1.webp" alt="" class="flex-shrink-0">
+                <div>
+                  <h4><a href="blog-details.html">Only Office</a></h4>
+                  <time datetime="2020-01-01">Jan 1, 2026</time>
+                </div>
+              </div><!-- End recent post item-->
+
+              <div class="post-item">
+                <img src="assets/img/blog/blog-post-square-2.webp" alt="" class="flex-shrink-0">
+                <div>
+                  <h4><a href="blog-details.html">NextCloud</a></h4>
+                  <time datetime="2020-01-01">Jan 1, 2026</time>
+                </div>
+              </div><!-- End recent post item-->
+
+              <div class="post-item">
+                <img src="assets/img/blog/blog-post-square-3.webp" alt="" class="flex-shrink-0">
+                <div>
+                  <h4><a href="blog-details.html">AiOps</a></h4>
+                  <time datetime="2020-01-01">Axure</time>
+                </div>
+              </div><!-- End recent post item-->
+
+              <div class="post-item">
+                <img src="assets/img/blog/blog-post-square-4.webp" alt="" class="flex-shrink-0">
+                <div>
+                  <h4><a href="blog-details.html">Fortinet</a></h4>
+                  <time datetime="2020-01-01">Jan 1, 2026</time>
+                </div>
+              </div><!-- End recent post item-->
+
+              <div class="post-item">
+                <img src="assets/img/blog/blog-post-square-5.webp" alt="" class="flex-shrink-0">
+                <div>
+                  <h4><a href="blog-details.html">Oracle Cloud</a></h4>
+                  <time datetime="2020-01-01">J</time>
+                </div>
+              </div><!-- End recent post item-->
+
+            </div><!--/Recent Posts Widget -->
+
+            <!-- Categories Widget -->
+            <div class="categories-widget widget-item">
+
+              <h3 class="widget-title">Categories</h3>
+              <ul class="mt-3">
+                <li><a href="#">Aws <span>(25)</span></a></li>
+                <li><a href="#">Google Cloud <span>(12)</span></a></li>
+                <li><a href="#">Oracle Cloud <span>(5)</span></a></li>
+                <li><a href="#">DevOps <span>(22)</span></a></li>
+                <li><a href="#">AI <span>(8)</span></a></li>
+                <li><a href="#">Automation <span>(14)</span></a></li>
+              </ul>
+
+            </div><!--/Categories Widget -->
+
+            <!-- Tags Widget -->
+            <div class="tags-widget widget-item">
+
+              <h3 class="widget-title">Tags</h3>
+              <ul>
+                <li><a href="#">Azure Apps</a></li>
+                <li><a href="#">IT</a></li>
+                <li><a href="#">AI</a></li>
+                <li><a href="#">Mac</a></li>
+                <li><a href="#">Design</a></li>
+                <li><a href="#">Office</a></li>
+                <li><a href="#">DevOps</a></li>
+                <li><a href="#">Studio</a></li>
+                <li><a href="#">Smart</a></li>
+                <li><a href="#">Tips</a></li>
+                <li><a href="#">AiOps</a></li>
+              </ul>
+
+            </div><!--/Tags Widget -->
+
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+  </main>
+
+  <footer id="footer" class="footer">
+
+    <div class="footer-newsletter">
+      <div class="container">
+        <div class="row justify-content-center text-center">
+          <div class="col-lg-6">
+            <h4>Join Our Newsletter</h4>
+            <p>Subscribe to our newsletter and receive the latest news about our products and services!</p>
+            <form action="forms/newsletter.php" method="post" class="php-email-form">
+              <div class="newsletter-form"><input type="email" name="email"><input type="submit" value="Subscribe"></div>
+              <div class="loading">Loading</div>
+              <div class="error-message"></div>
+              <div class="sent-message">Your subscription request has been sent. Thank you!</div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container footer-top">
+      <div class="row gy-4">
+        <div class="col-lg-4 col-md-6 footer-about">
+          <a href="index.html" class="d-flex align-items-center">
+            <span class="sitename">Syphe IT</span>
+          </a>
+          <div class="footer-contact pt-3">
+            <p>Minneapolis</p>
+            <p>Minneapolis</p>
+            <p class="mt-3"><strong>Phone:</strong> <span>+1 5589 55488 55</span></p>
+            <p><strong>Email:</strong> <span>info@example.com</span></p>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4>Useful Links</h4>
+          <ul>
+            <li><i class="bi bi-chevron-right"></i> <a href="index.html">Home</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#">About us</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#">Services</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#">Terms of service</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4>Our Services</h4>
+          <ul>
+            <li><i class="bi bi-chevron-right"></i> <a href="#">Web Design</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#">Kubernetes</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#">n8n/Aazure AI Founddry</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-4 col-md-12">
+          <h4>Follow Us</h4>
+          <p>Syphe IT Services</p>
+          <div class="social-links d-flex">
+            <a href=""><i class="bi bi-twitter-x"></i></a>
+            <a href=""><i class="bi bi-facebook"></i></a>
+            <a href=""><i class="bi bi-instagram"></i></a>
+            <a href=""><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="container copyright text-center mt-4">
+      <p>© <span>Copyright</span> <strong class="px-1 sitename">Syphe IT</strong> <span>All Rights Reserved</span></p>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you've purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
+       
+      </div>
+    </div>
+
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+  <a href="./index.html" target="_self" class="btn btn-primary back-home btn-sm position-fixed bottom-0 start-0 m-3" aria-label="Return to home" style="z-index:9999;" onmousedown="window.location.href='./index.html'" onclick="window.location.href='./index.html'; return false;">Home</a>
+
+</body>
+
+</html>

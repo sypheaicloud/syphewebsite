@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+  <style>
+  /* 1. The Header Bar itself - "Frosted Cyber Glass" */
+  #header {
+    background: rgba(10, 15, 28, 0.85) !important; /* Deep space blue, semi-transparent */
+    backdrop-filter: blur(15px); /* Blurs content behind the header */
+    border-bottom: 2px solid #00f2ff !important; /* Electric Cyan bottom edge */
+    box-shadow: 0 0 20px rgba(0, 242, 255, 0.2); /* Subtle outer glow */
+    transition: all 0.4s ease;
+  }
+
+  /* 2. Main Navigation Links */
+  .navmenu ul li a {
+    color: #ffffff !important;
+    font-family: 'Courier New', monospace; /* Tech/Terminal feel */
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-size: 0.85rem;
+    transition: 0.3s;
+  }
+
+  /* 3. The "Cyber Glow" Hover Effect */
+  .navmenu ul li a:hover, 
+  .navmenu ul li a.active {
+    color: #00f2ff !important; /* Glow Cyan */
+    text-shadow: 0 0 10px #00f2ff, 0 0 20px rgba(0, 242, 255, 0.5);
+    background: transparent !important;
+  }
+
+  /* 4. Dropdown Menus - "Floating Data Cubes" */
+  .navmenu .dropdown ul {
+    background: rgba(10, 15, 28, 0.95) !important;
+    border: 1px solid #ff6600 !important; /* Orange accent for contrast */
+    border-radius: 0; /* Sharp edges look more technical */
+    box-shadow: 0 0 15px rgba(255, 102, 0, 0.3);
+  }
+
+  .navmenu .dropdown ul li a {
+    color: #00f2ff !important;
+  }
+
+  .navmenu .dropdown ul li a:hover {
+    background: rgba(0, 242, 255, 0.1) !important;
+    color: #ffcc00 !important; /* Gold text on hover in dropdown */
+  }
+
+  /* 5. The "Get Started" Button - Power Cell Style */
+  .btn-getstarted {
+    background: transparent !important;
+    border: 1px solid #ff6600 !important;
+    color: #ff6600 !important;
+    box-shadow: inset 0 0 10px rgba(255, 102, 0, 0.2), 0 0 10px rgba(255, 102, 0, 0.2);
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+
+  .btn-getstarted:hover {
+    background: #ff6600 !important;
+    color: #000 !important;
+    box-shadow: 0 0 25px #ff6600;
+  }
+</style>
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Projects - Syphe IT Services</title>
+  <meta name="description" content="Projects and case studies from Syphe IT Services.">
+  <meta name="keywords" content="n8n, kubernetes, fortinet, website design, fortigate logs, automation">
+
+  <!-- Favicons -->
+  <link href="assets/img/syphe-it.png" rel="icon">
+  <link href="assets/img/syphe-it.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Jost:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+</head>
+
+<body class="projects-page">
+
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center">
+
+      <a href="index.html" class="logo d-flex align-items-center me-auto">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        
+        <h1 class="sitename">Syphe IT Services</h1>
+
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          
+          <li><a href="index.html">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="deepdive.html">Technical Deep Dive</a></li>
+          <li><a href="#team">Projects</a></li>
+          <li><a href="#pricing">My Notes</a></li>
+          <li><a href="blog.html">Clients</a></li>
+          <li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li><a href="#">Dropdown 1</a></li>
+              <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                <ul>
+                  <li><a href="#">Deep Dropdown 1</a></li>
+                  <li><a href="#">Deep Dropdown 2</a></li>
+                  <li><a href="#">Deep Dropdown 3</a></li>
+                  <li><a href="#">Deep Dropdown 4</a></li>
+                  <li><a href="#">Deep Dropdown 5</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Dropdown 2</a></li>
+              <li><a href="#">Dropdown 3</a></li>
+              <li><a href="#">Dropdown 4</a></li>
+            </ul>
+          </li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+      <a class="btn-getstarted" href="#about"></a>
+
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!-- Page Title -->
+    <div class="page-title" data-aos="fade" style="
+    background: linear-gradient(135deg, rgba(10, 15, 28, 0.8) 0%, rgba(20, 35, 65, 0.7) 100%) !important;
+    backdrop-filter: blur(15px) saturate(150%);
+    -webkit-backdrop-filter: blur(15px) saturate(150%);
+    border-bottom: 1px solid rgba(0, 242, 255, 0.3) !important;
+    border-left: 5px solid #00f2ff !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    padding: 20px 0;
+    margin-bottom: 20px;
+    position: relative;
+">
+  <div style="position: absolute; top: 0; right: 0; width: 20px; height: 20px; border-top: 2px solid #00f2ff; border-right: 2px solid #00f2ff; opacity: 0.4;"></div>
+  
+  <div class="container">
+    <nav class="breadcrumbs">
+      <ol style="list-style: none; display: flex; padding: 0; margin-bottom: 10px;">
+        <li><a href="index.html" style="color: #00f2ff; text-decoration: none; font-family: 'Courier New', monospace; font-size: 0.9rem;">HOME</a></li>
+        <li style="color: white; opacity: 0.5; margin: 0 10px;">/</li>
+        <li class="current" style="color: white; font-family: 'Courier New', monospace; font-size: 0.9rem; letter-spacing: 1px;">PROJECTS</li>
+      </ol>
+    </nav>
+    
+    <h1 style="color: #070601; font-weight: 800; text-transform: uppercase; text-shadow: 0 0 15px rgba(255, 204, 0, 0.4); margin-bottom: 5px;">
+      Azure Project
+    </h1>
+    
+    <p class="lead" style="color: rgba(255, 255, 255, 0.8); font-style: italic; border-left: 2px solid #ff6600; padding-left: 15px;">
+      Azure Cloud networking
+    </p>
+  </div>
+</div>
+
+    <!-- Projects List -->
+    <section id="projects" class="projects section">
+  <div class="container">
+    <div class="section-title" data-aos="fade-up">
+      <h2>Azure Infrastructure Deployment Guide</h2>
+      <p>A step-by-step technical breakdown of provisioning a secure hybrid cloud environment from scratch.</p>
+    </div>
+
+    <div class="row gy-4">
+
+      <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+        <div class="icon-box p-4 border rounded h-100">
+          <h4><i class="bi bi-layers-half me-2"></i>1. Subscriptions & Resource Groups</h4>
+          <p>The foundation starts by attaching a <strong>Resource Group (RG)</strong> to an active <strong>Azure Subscription</strong>. This allows for unified billing and logical grouping. Use <code>az group create --name MyRG --location eastus</code> to initialize the container for all assets.</p>
+        </div>
+      </div>
+
+      <div class="col-lg-6" data-aos="fade-up" data-aos-delay="150">
+        <div class="icon-box p-4 border rounded h-100">
+          <h4><i class="bi bi-diagram-3-fill me-2"></i>2. VNet & Subnet Segmentation</h4>
+          <p>Create a <strong>Virtual Network (VNet)</strong> and carve out specific address spaces. We provision a <strong>Public Subnet</strong> (for gateways/load balancers) and a <strong>Private Subnet</strong> (for databases/app servers) to ensure architectural isolation.</p>
+        </div>
+      </div>
+
+      <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+        <div class="icon-box p-4 border rounded h-100">
+          <h4><i class="bi bi-shield-lock-fill me-2"></i>3. NSGs & Route Tables</h4>
+          <p>Implement <strong>Network Security Groups (NSG)</strong> to act as a distributed firewall. We attach unique NSGs to each subnet to control inbound/outbound traffic and configure <strong>User Defined Routes (UDR)</strong> in Route Tables to force traffic through specific appliances.</p>
+        </div>
+      </div>
+
+      <div class="col-lg-6" data-aos="fade-up" data-aos-delay="250">
+        <div class="icon-box p-4 border rounded h-100">
+          <h4><i class="bi bi-pc-display me-2"></i>4. VM Provisioning (Linux/Win)</h4>
+          <p>Deploying Virtual Machines into their respective subnets. Public VMs receive a <strong>Public IP</strong>, while Private VMs are restricted to internal IPs only, minimizing the attack surface while maintaining scalability.</p>
+        </div>
+      </div>
+
+      <div class="col-12" data-aos="fade-up" data-aos-delay="300">
+        <div class="icon-box p-4 border rounded">
+          <h4><i class="bi bi-terminal-fill me-2"></i>5. Local Access: Bastion & VPN Solutions</h4>
+          <p>To access Private VMs from a local laptop, we implement <strong>Azure Bastion</strong> for browser-based RDP/SSH or a <strong>Point-to-Site (P2S) VPN</strong>. This secures the management plane without exposing port 3389 or 22 to the public internet.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>```
+
+  </main>
+
+  <footer id="footer" class="footer">
+
+    <div class="footer-newsletter">
+      <div class="container">
+        <div class="row justify-content-center text-center">
+          <div class="col-lg-6">
+            <h4>Join Our Newsletter</h4>
+            <p>Subscribe to our newsletter and receive the latest news about our products and services!</p>
+            <form action="forms/newsletter.php" method="post" class="php-email-form">
+              <div class="newsletter-form"><input type="email" name="email"><input type="submit" value="Subscribe"></div>
+              <div class="loading">Loading</div>
+              <div class="error-message"></div>
+              <div class="sent-message">Your subscription request has been sent. Thank you!</div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container footer-top">
+      <div class="row gy-4">
+        <div class="col-lg-4 col-md-6 footer-about">
+          <a href="index.html" class="d-flex align-items-center">
+            <span class="sitename">Syphe IT</span>
+          </a>
+          <div class="footer-contact pt-3">
+            <p>Minneapolis</p>
+            <p>Minneapolis 55430</p>
+            <p class="mt-3"><strong>Phone:</strong> <span>+1 5589 55488 55</span></p>
+            <p><strong>Email:</strong> <span>sypheit@gmail.com</span></p>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4>Useful Links</h4>
+          <ul>
+            <li><i class="bi bi-chevron-right"></i> <a href="index.html">Home</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#">About us</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#">Services</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#">Terms of service</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4>Our Services</h4>
+          <ul>
+            <li><i class="bi bi-chevron-right"></i> <a href="#">Azure Cloud Support</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#">DevOps K8s</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#">Fortinet Network Security</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#">Managed Services</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-8" data-aos="fade-up" data-aos-delay="200">
+     <div class="container copyright text-center mt-4">
+      <p>© <span>Copyright</span> <strong class="px-1 sitename">Syphe IT</strong> <span>All Rights Reserved</span></p>
+      <div class="credits">
+        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+      </div>
+    </div>
+
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+  <a href="./index.html" target="_self" class="btn btn-primary back-home btn-sm position-fixed bottom-0 start-0 m-3" aria-label="Return to home" style="z-index:9999;" onmousedown="window.location.href='./index.html'" onclick="window.location.href='./index.html'; return false;">Home</a>
+
+</body>
+
+</html>

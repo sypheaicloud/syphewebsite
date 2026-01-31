@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+  /* 1. The Header Bar itself - "Frosted Cyber Glass" */
+  #header {
+    background: rgba(10, 15, 28, 0.85) !important; /* Deep space blue, semi-transparent */
+    backdrop-filter: blur(15px); /* Blurs content behind the header */
+    border-bottom: 2px solid #00f2ff !important; /* Electric Cyan bottom edge */
+    box-shadow: 0 0 20px rgba(0, 242, 255, 0.2); /* Subtle outer glow */
+    transition: all 0.4s ease;
+  }
+
+  /* 2. Main Navigation Links */
+  .navmenu ul li a {
+    color: #ffffff !important;
+    font-family: 'Courier New', monospace; /* Tech/Terminal feel */
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-size: 0.85rem;
+    transition: 0.3s;
+  }
+
+  /* 3. The "Cyber Glow" Hover Effect */
+  .navmenu ul li a:hover, 
+  .navmenu ul li a.active {
+    color: #00f2ff !important; /* Glow Cyan */
+    text-shadow: 0 0 10px #00f2ff, 0 0 20px rgba(0, 242, 255, 0.5);
+    background: transparent !important;
+  }
+
+  /* 4. Dropdown Menus - "Floating Data Cubes" */
+  .navmenu .dropdown ul {
+    background: rgba(10, 15, 28, 0.95) !important;
+    border: 1px solid #ff6600 !important; /* Orange accent for contrast */
+    border-radius: 0; /* Sharp edges look more technical */
+    box-shadow: 0 0 15px rgba(255, 102, 0, 0.3);
+  }
+
+  .navmenu .dropdown ul li a {
+    color: #00f2ff !important;
+  }
+
+  .navmenu .dropdown ul li a:hover {
+    background: rgba(0, 242, 255, 0.1) !important;
+    color: #ffcc00 !important; /* Gold text on hover in dropdown */
+  }
+
+  /* 5. The "Get Started" Button - Power Cell Style */
+  .btn-getstarted {
+    background: transparent !important;
+    border: 1px solid #ff6600 !important;
+    color: #ff6600 !important;
+    box-shadow: inset 0 0 10px rgba(255, 102, 0, 0.2), 0 0 10px rgba(255, 102, 0, 0.2);
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+
+  .btn-getstarted:hover {
+    background: #ff6600 !important;
+    color: #000 !important;
+    box-shadow: 0 0 25px #ff6600;
+  }
+</style>
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Service Details - Syphe IT Bootstrap Template</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Jost:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Syphe IT
+  * Template URL: https://bootstrapmade.com/Syphe-IT-free-bootstrap-html-template-corporate/
+  * Updated: Feb 22 2025 with Bootstrap v5.3.3
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body class="service-details-page">
+
+  <header id="header" class="header d-flex align-items-center sticky-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center">
+
+      <a href="index.html" class="logo d-flex align-items-center me-auto">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <!-- <img src="assets/img/logo.webp" alt=""> -->
+        <h1 class="sitename">Syphe IT</h1>
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          
+          <li><a href="index.html">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="deepdive.html">Technical Deep Dive</a></li>
+          <li><a href="#team">Projects</a></li>
+          <li><a href="#pricing">My Notes</a></li>
+          <li><a href="blog.html">Clients</a></li>
+          <li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li><a href="#">Dropdown 1</a></li>
+              <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                <ul>
+                  <li><a href="#">Deep Dropdown 1</a></li>
+                  <li><a href="#">Deep Dropdown 2</a></li>
+                  <li><a href="#">Deep Dropdown 3</a></li>
+                  <li><a href="#">Deep Dropdown 4</a></li>
+                  <li><a href="#">Deep Dropdown 5</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Dropdown 2</a></li>
+              <li><a href="#">Dropdown 3</a></li>
+              <li><a href="#">Dropdown 4</a></li>
+            </ul>
+          </li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+      <a class="btn-getstarted" href="#about">Get Started</a>
+
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!-- Page Title -->
+    <div class="page-title" data-aos="fade">
+      <div class="container">
+        <nav class="breadcrumbs">
+          <ol>
+            <li><a href="index.html">Home</a></li>
+            <li class="current">Service Details</li>
+          </ol>
+        </nav>
+        <h1>Service Details</h1>
+      </div>
+    </div><!-- End Page Title -->
+
+    <!-- Service Details Section -->
+    <section id="service-details" class="service-details section">
+
+      <div class="container">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="services-list">
+              <a href="#" class="active">Web Design</a>
+              <a href="#">Devops -k8s/Docker/Aks</a>
+              <a href="#">Fortinet Network Security</a>
+              <a href="#">Azure Cloud</a>
+              <a href="#">AI/N8n</a>
+            </div>
+
+            <h4>Full-Stack Infrastructure & Automation Services</h4>
+            <p>I bridge the gap between traditional network engineering and modern cloud-native orchestration. My goal is to build resilient, secure, and automated systems that allow your business to scale without technical debt.</p>
+          </div>
+<div class="col-lg-8" data-aos="fade-up" data-aos-delay="200">
+  <img src="assets/img/services/services-4.webp" alt="Cloud Infrastructure and Automation" class="img-fluid services-img mb-4">
+
+  <div class="service-content mb-5">
+    <h3 class="fw-bold">1. Hybrid Cloud & Kubernetes Orchestration</h3>
+    <p class="fst-italic text-primary">Move beyond simple VMs. I design and manage containerized environments that live where you need them—on-prem or in the cloud.</p>
+    <ul class="list-unstyled">
+      <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i> <strong>K8s Cluster Design:</strong> Production-grade deployment of upstream Kubernetes or managed services (EKS/AKS/GKE).</li>
+      <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i> <strong>Legacy to Container Migration:</strong> Transitioning traditional "monolithic" applications into microservices.</li>
+      <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i> <strong>Hybrid Integration:</strong> Ensuring your on-prem database talks seamlessly to your cloud-based K8s pods.</li>
+    </ul>
+  </div>
+
+  <div class="service-content mb-5">
+    <h3 class="fw-bold">2. Next-Gen Security (Fortigate Specialist)</h3>
+    <p class="fst-italic text-primary">Infrastructure is only as good as its perimeter. I specialize in Fortinet-driven security architectures.</p>
+    <ul class="list-unstyled">
+      <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i> <strong>SD-WAN Implementation:</strong> Optimizing branch connectivity and reducing MPLS costs using FortiGate's advanced routing.</li>
+      <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i> <strong>Secure Remote Access:</strong> Setting up ZTNA (Zero Trust Network Access) and high-performance VPNs.</li>
+      <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i> <strong>Micro-segmentation:</strong> Protecting your internal network from lateral movement using VDOMs and internal firewalls.</li>
+    </ul>
+  </div>
+
+  <div class="service-content mb-5">
+    <h3 class="fw-bold">3. Workflow Automation with n8n</h3>
+    <p class="fst-italic text-primary">Stop doing manual IT tasks. I build "Low-Code" brains that connect your infrastructure tools together.</p>
+    <ul class="list-unstyled">
+      <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i> <strong>Event-Driven Response:</strong> Automatically trigger Fortigate policy changes or K8s scaling based on external alerts.</li>
+      <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i> <strong>Custom Integrations:</strong> Connecting your monitoring tools (Zabbix/Prometheus) to messaging apps (Slack/Teams) via n8n.</li>
+      <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i> <strong>Self-Healing Infrastructure:</strong> Designing workflows that detect a failure and execute a recovery script automatically.</li>
+    </ul>
+  </div>
+
+  <div class="service-content mb-5">
+    <h3 class="fw-bold">4. Modernized Network Engineering</h3>
+    <p class="fst-italic text-primary">Solid "Traditional" networking is the foundation of the cloud. I handle the heavy lifting of core infrastructure.</p>
+    <ul class="list-unstyled">
+      <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i> <strong>Core Routing & Switching:</strong> Expert configuration of BGP, OSPF, and VLAN architectures.</li>
+      <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i> <strong>Wireless Infrastructure:</strong> Enterprise-grade WiFi deployments with seamless roaming.</li>
+      <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i> <strong>Infrastructure as Code (IaC):</strong> Managing your traditional network hardware using Terraform or Ansible for consistency and speed.</li>
+    </ul>
+  </div>
+
+  <div class="service-content mb-5">
+    <h3 class="fw-bold">5. Security & Automation Audit</h3>
+    <p class="fst-italic text-primary">Not sure where the bottleneck is? I provide a deep-dive analysis of your current stack.</p>
+    <ul class="list-unstyled">
+      <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i> <strong>Vulnerability Assessment:</strong> Checking your Fortigate and K8s configurations against industry benchmarks.</li>
+      <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i> <strong>Automation ROI:</strong> Identifying manual processes in your IT team that can be replaced by n8n workflows.</li>
+      <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i> <strong>Performance Tuning:</strong> Eliminating latency between your hybrid cloud nodes.</li>
+    </ul>
+  </div>
+</div>
+                  </div>
+
+      </div>
+
+    </section><!-- /Service Details Section -->
+
+  </main>
+
+  <footer id="footer" class="footer">
+
+    <div class="footer-newsletter">
+      <div class="container">
+        <div class="row justify-content-center text-center">
+          <div class="col-lg-6">
+            <h4>Join Our Newsletter</h4>
+            <p>Subscribe to our newsletter and receive the latest news about our products and services!</p>
+            <form action="forms/newsletter.php" method="post" class="php-email-form">
+              <div class="newsletter-form"><input type="email" name="email"><input type="submit" value="Subscribe"></div>
+              <div class="loading">Loading</div>
+              <div class="error-message"></div>
+              <div class="sent-message">Your subscription request has been sent. Thank you!</div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container footer-top">
+      <div class="row gy-4">
+        <div class="col-lg-4 col-md-6 footer-about">
+          <a href="index.html" class="d-flex align-items-center">
+            <span class="sitename">Syphe IT</span>
+          </a>
+          <div class="footer-contact pt-3">
+            <p>Minneapolis</p>
+            <p>Minneapolis 55430</p>
+            <p class="mt-3"><strong>Phone:</strong> <span>+1 5589 55488 55</span></p>
+            <p><strong>Email:</strong> <span>sypheit@gmail.com</span></p>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4>Useful Links</h4>
+          <ul>
+            <li><i class="bi bi-chevron-right"></i> <a href="index.html">Home</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#">About us</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#">Services</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#">Terms of service</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4>Our Services</h4>
+          <ul>
+            <li><i class="bi bi-chevron-right"></i> <a href="#">Azure Cloud Support</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#">DevOps K8s</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#">Fortinet Network Security</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#">Managed Services</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-8" data-aos="fade-up" data-aos-delay="200">
+     <div class="container copyright text-center mt-4">
+      <p>© <span>Copyright</span> <strong class="px-1 sitename">Syphe IT</strong> <span>All Rights Reserved</span></p>
+      
+    </div>
+
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+  <a href="./index.html" target="_self" class="btn btn-primary back-home btn-sm position-fixed bottom-0 start-0 m-3" aria-label="Return to home" style="z-index:9999;" onmousedown="window.location.href='./index.html'" onclick="window.location.href='./index.html'; return false;">Home</a>
+
+</body>
+
+</html>

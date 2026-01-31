@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+  /* 1. The Header Bar itself - "Frosted Cyber Glass" */
+  #header {
+    background: rgba(10, 15, 28, 0.85) !important; /* Deep space blue, semi-transparent */
+    backdrop-filter: blur(15px); /* Blurs content behind the header */
+    border-bottom: 2px solid #00f2ff !important; /* Electric Cyan bottom edge */
+    box-shadow: 0 0 20px rgba(0, 242, 255, 0.2); /* Subtle outer glow */
+    transition: all 0.4s ease;
+  }
+
+  /* 2. Main Navigation Links */
+  .navmenu ul li a {
+    color: #ffffff !important;
+    font-family: 'Courier New', monospace; /* Tech/Terminal feel */
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-size: 0.85rem;
+    transition: 0.3s;
+  }
+
+  /* 3. The "Cyber Glow" Hover Effect */
+  .navmenu ul li a:hover, 
+  .navmenu ul li a.active {
+    color: #00f2ff !important; /* Glow Cyan */
+    text-shadow: 0 0 10px #00f2ff, 0 0 20px rgba(0, 242, 255, 0.5);
+    background: transparent !important;
+  }
+
+  /* 4. Dropdown Menus - "Floating Data Cubes" */
+  .navmenu .dropdown ul {
+    background: rgba(10, 15, 28, 0.95) !important;
+    border: 1px solid #ff6600 !important; /* Orange accent for contrast */
+    border-radius: 0; /* Sharp edges look more technical */
+    box-shadow: 0 0 15px rgba(255, 102, 0, 0.3);
+  }
+
+  .navmenu .dropdown ul li a {
+    color: #00f2ff !important;
+  }
+
+  .navmenu .dropdown ul li a:hover {
+    background: rgba(0, 242, 255, 0.1) !important;
+    color: #ffcc00 !important; /* Gold text on hover in dropdown */
+  }
+
+  /* 5. The "Get Started" Button - Power Cell Style */
+  .btn-getstarted {
+    background: transparent !important;
+    border: 1px solid #ff6600 !important;
+    color: #ff6600 !important;
+    box-shadow: inset 0 0 10px rgba(255, 102, 0, 0.2), 0 0 10px rgba(255, 102, 0, 0.2);
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+
+  .btn-getstarted:hover {
+    background: #ff6600 !important;
+    color: #000 !important;
+    box-shadow: 0 0 25px #ff6600;
+  }
+</style>
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Docker - Syphe IT Services</title>
+  <meta name="description" content="Comprehensive guide to Docker containerization.">
+  <meta name="keywords" content="docker, containers, containerization, DevOps, microservices">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Jost:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+</head>
+
+<body class="starter-page-page">
+
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center">
+
+      <a href="index.html" class="logo d-flex align-items-center me-auto">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        
+        <h1 class="sitename">Syphe IT <br> Services</h1>
+
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          
+          <li><a href="index.html">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="deepdive.html">Technical Deep Dive</a></li>
+          <li><a href="#team">Projects</a></li>
+          <li><a href="#pricing">My Notes</a></li>
+          <li><a href="blog.html">Clients</a></li>
+          <li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li><a href="#">Dropdown 1</a></li>
+              <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                <ul>
+                  <li><a href="#">Deep Dropdown 1</a></li>
+                  <li><a href="#">Deep Dropdown 2</a></li>
+                  <li><a href="#">Deep Dropdown 3</a></li>
+                  <li><a href="#">Deep Dropdown 4</a></li>
+                  <li><a href="#">Deep Dropdown 5</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Dropdown 2</a></li>
+              <li><a href="#">Dropdown 3</a></li>
+              <li><a href="#">Dropdown 4</a></li>
+            </ul>
+          </li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+      <a class="btn-getstarted" href="#about">Get Started</a>
+
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!-- Page Title -->
+    <div class="page-title py-5" data-aos="fade" style="background: #f8f9fa; border-bottom: 1px solid #eee;">
+      <div style="background: linear-gradient(135deg, #0a0f1c 0%, #1a2333 100%); padding: 40px 20px; border-left: 5px solid #ff6600; border-bottom: 1px solid rgba(0, 242, 255, 0.2); margin-bottom: 30px;">
+  
+  <div style="background: linear-gradient(135deg, #0a0f1c 0%, #1a2333 100%); padding: 40px 20px; border-left: 5px solid #ff6600; border-bottom: 1px solid rgba(0, 242, 255, 0.2); margin-bottom: 30px;">
+  
+  <div class="container">
+    <nav class="breadcrumbs">
+      <ol style="list-style: none; display: flex; padding: 0; margin-bottom: 10px;">
+        <li><a href="index.html" style="color: #00f2ff; text-decoration: none; font-family: 'Courier New', monospace; font-size: 0.9rem;">HOME</a></li>
+        <li style="color: white; opacity: 0.5; margin: 0 10px;">/</li>
+        <li class="current" style="color: white; font-family: 'Courier New', monospace; font-size: 0.9rem; letter-spacing: 1px;">PROJECTS</li>
+      </ol>
+    </nav>
+    
+    <h1 style="color: #ffffff; font-weight: 800; text-transform: uppercase; text-shadow: 0 0 15px rgba(255, 204, 0, 0.6); margin-bottom: 5px; font-size: 2.5rem;">
+      DevOps - Kubernetes
+    </h1>
+    
+    <p class="lead" style="color: rgba(255, 255, 255, 0.8); font-style: italic; border-left: 2px solid #ff6600; padding-left: 15px; margin-top: 15px;">
+      Syphe IT DevOps Manual
+    </p>
+  </div>
+
+</div>
+
+    <!-- Projects List -->
+    <section id="lifecycle" class="container py-5" data-aos="fade-up">
+  <div class="text-center mb-5">
+    <h2 class="display-6 fw-bold">DevOps Architecture & Operations Manual</h2>
+    <p class="text-muted">Syphe IT Hybrid Cluster Management & Deployment Standards</p>
+  </div>
+
+  <div class="row align-items-center mb-5">
+    <div class="col-lg-6" data-aos="fade-right">
+      <h3 class="d-flex align-items-center"><span class="step-badge me-2">01</span> Infrastructure Overview</h3>
+      <p>The architecture is a <strong>Hybrid-Cloud Kubernetes Cluster</strong> utilizing a split-plane design to balance local control with cloud scalability.</p>
+      <ul class="list-unstyled">
+        <li class="mb-2"><i class="bi bi-pc-display me-2 text-primary"></i><strong>Control Plane (Master Node):</strong> On-premises iMac running Ubuntu 24.04 LTS.</li>
+        <li class="mb-2"><i class="bi bi-cloud-fill me-2 text-primary"></i><strong>Data Plane (Worker Node):</strong> Oracle Cloud Infrastructure (OCI) Compute Instance (Ubuntu 24.04).</li>
+        <li class="mb-2"><i class="bi bi-shield-lock-fill me-2 text-primary"></i><strong>Network Bridge:</strong> FortiWifi 60E Site-to-Site SSL VPN providing a transparent Layer 3 link between the local subnet and OCI VCN.</li>
+      </ul>
+    </div>
+    <div class="col-lg-6 text-center" data-aos="fade-left">
+      <div class="p-4 bg-white rounded shadow-sm border">
+        
+        <p class="text-muted mt-2 small italic">Hybrid Infrastructure Topology</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="row mb-5">
+    <div class="col-12">
+      <h3 class="d-flex align-items-center mb-4"><span class="step-badge me-2">02</span> Containerized Workloads (The Service Stack)</h3>
+      <p>The cluster hosts three mission-critical services, all scheduled to run on the OCI Worker Node for maximum public availability.</p>
+      <div class="table-responsive">
+        <table class="table table-bordered align-middle">
+          <thead class="table-dark">
+            <tr>
+              <th>Service</th>
+              <th>Container Image</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Syphe Website</strong></td>
+              <td><code>ord.ocir.io/.../syphewebsite:latest</code></td>
+              <td>Custom Nginx-based frontend for corporate presence.</td>
+            </tr>
+            <tr>
+              <td><strong>Nextcloud</strong></td>
+              <td><code>nextcloud:latest</code></td>
+              <td>Private cloud storage and collaboration suite.</td>
+            </tr>
+            <tr>
+              <td><strong>OnlyOffice</strong></td>
+              <td><code>onlyoffice/documentserver:latest</code></td>
+              <td>Real-time document editing integrated with Nextcloud.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="row align-items-center mb-5 flex-lg-row-reverse">
+    <div class="col-lg-6" data-aos="fade-left">
+      <h3 class="d-flex align-items-center"><span class="step-badge me-2">03</span> DevOps Workflow: The CI/CD Pipeline</h3>
+      <p>The deployment lifecycle follows a <strong>"Build-Push-Pull"</strong> methodology to ensure code integrity and minimal downtime.</p>
+      
+      <div class="accordion" id="workflowAccordion">
+        <div class="accordion-item">
+          <h2 class="accordion-header"><button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#phase1">Phase I: Local Development & Sync</button></h2>
+          <div id="phase1" class="accordion-collapse collapse show"><div class="accordion-body small">Code is updated on the Development Laptop. Files are synchronized to the iMac Build Station via rsync or scp. Target Directory: <code>/home/k8s_master/syphewebsitefiles/Syphe/</code></div></div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#phase2">Phase II: Containerization (The Build)</button></h2>
+          <div id="phase2" class="accordion-collapse collapse"><div class="accordion-body small">Docker on the Master Node packages the source code into a standardized image. Tagged with <code>:latest</code> or semantic versions. <br><code>docker build -t ord.ocir.io/[tenancy]/syphewebsite:latest .</code></div></div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#phase3">Phase III: Registry Management (The Push)</button></h2>
+          <div id="phase3" class="accordion-collapse collapse"><div class="accordion-body small">The Master Node authenticates with OCIR. The image is pushed to the cloud-native registry, acting as the "Single Source of Truth."</div></div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#phase4">Phase IV: Orchestration (The Pull & Rollout)</button></h2>
+          <div id="phase4" class="accordion-collapse collapse"><div class="accordion-body small">Kubernetes Master updates the Deployment manifest. Kubelet on the OCI Worker receives the instruction. Containerd pulls the layers. Zero-Downtime Rollout performed.</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-6 text-center" data-aos="fade-right">
+      <div class="p-4 bg-white rounded shadow-sm border">
+        
+        <p class="text-muted mt-2 small italic">Automated CI/CD Lifecycle</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="card border-0 shadow-sm bg-light mb-5">
+    <div class="card-body p-4">
+      <h3 class="fw-bold mb-4"><span class="step-badge me-2">04</span> Operational Maintenance & Security</h3>
+      <div class="row">
+        <div class="col-md-6 mb-4">
+          <h5 class="text-primary fw-bold">Security Standards</h5>
+          <ul class="small">
+            <li><strong>Perimeter:</strong> FortiWifi 60E provides Deep Packet Inspection (DPI) for all VPN traffic.</li>
+            <li><strong>Secrets:</strong> Sensitive data stored as Kubernetes Secrets (Base64 encoded), never hard-coded in YAML.</li>
+            <li><strong>Networking:</strong> Calico CNI manages internal Pod-to-Pod communication.</li>
+          </ul>
+        </div>
+        <div class="col-md-6">
+          <h5 class="text-primary fw-bold">Health & Monitoring</h5>
+          <ul class="small">
+            <li><strong>Kubelet Integrity:</strong> iMac Master continuously monitors the OCI Worker via VPN.</li>
+            <li><strong>Self-Healing:</strong> Kubernetes automatically restarts crashed pods (e.g., OnlyOffice) within seconds.</li>
+            <li><strong>Image Integrity:</strong> <code>imagePullPolicy: Always</code> ensures no stale code is run.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="alert alert-danger border-0 shadow-sm p-4">
+    <h3 class="h5 fw-bold"><i class="bi bi-exclamation-triangle-fill me-2"></i>5. Disaster Recovery Summary</h3>
+    <div class="row mt-3">
+      <div class="col-md-4"><strong>Master Failure:</strong> YAML manifests backed up in <code>/home/k8s_master/backups/</code>.</div>
+      <div class="col-md-4"><strong>Worker Failure:</strong> Provision new OCI instance and <code>kubeadm join</code> via VPN.</div>
+      <div class="col-md-4"><strong>Registry Failure:</strong> Local Docker image copies cached on iMac as secondary backup.</div>
+    </div>
+  </div>
+</section>
+  </main>
+
+  <footer id="footer" class="footer">
+
+    <div class="footer-newsletter">
+      <div class="container">
+        <div class="row justify-content-center text-center">
+          <div class="col-lg-6">
+            <h4>Join Our Newsletter</h4>
+            <p>Subscribe to our newsletter and receive the latest news about our products and services!</p>
+            <form action="forms/newsletter.php" method="post" class="php-email-form">
+              <div class="newsletter-form"><input type="email" name="email"><input type="submit" value="Subscribe"></div>
+              <div class="loading">Loading</div>
+              <div class="error-message"></div>
+              <div class="sent-message">Your subscription request has been sent. Thank you!</div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container footer-top">
+      <div class="row gy-4">
+        <div class="col-lg-4 col-md-6 footer-about">
+          <a href="index.html" class="d-flex align-items-center">
+            <span class="sitename">Syphe IT</span>
+          </a>
+          <div class="footer-contact pt-3">
+            <p>Minneapolis</p>
+            <p>Minneapolis 55430</p>
+            <p class="mt-3"><strong>Phone:</strong> <span>+1 5589 55488 55</span></p>
+            <p><strong>Email:</strong> <span>sypheit@gmail.com</span></p>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4>Useful Links</h4>
+          <ul>
+            <li><i class="bi bi-chevron-right"></i> <a href="index.html">Home</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#">About us</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#">Services</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#">Terms of service</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4>Our Services</h4>
+          <ul>
+            <li><i class="bi bi-chevron-right"></i> <a href="#">Azure Cloud Support</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#">DevOps K8s</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#">Fortinet Network Security</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#">Managed Services</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-8" data-aos="fade-up" data-aos-delay="200">
+     <div class="container copyright text-center mt-4">
+      <p>© <span>Copyright</span> <strong class="px-1 sitename">Syphe IT</strong> <span>All Rights Reserved</span></p>
+      
+    </div>
+
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+  <a href="./index.html" target="_self" class="btn btn-primary back-home btn-sm position-fixed bottom-0 start-0 m-3" aria-label="Return to home" style="z-index:9999;" onmousedown="window.location.href='./index.html'" onclick="window.location.href='./index.html'; return false;">Home</a>
+
+</body>
+
+</html>

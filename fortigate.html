@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+  /* 1. The Header Bar itself - "Frosted Cyber Glass" */
+  #header {
+    background: rgba(10, 15, 28, 0.85) !important; /* Deep space blue, semi-transparent */
+    backdrop-filter: blur(15px); /* Blurs content behind the header */
+    border-bottom: 2px solid #00f2ff !important; /* Electric Cyan bottom edge */
+    box-shadow: 0 0 20px rgba(0, 242, 255, 0.2); /* Subtle outer glow */
+    transition: all 0.4s ease;
+  }
+
+  /* 2. Main Navigation Links */
+  .navmenu ul li a {
+    color: #ffffff !important;
+    font-family: 'Courier New', monospace; /* Tech/Terminal feel */
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-size: 0.85rem;
+    transition: 0.3s;
+  }
+
+  /* 3. The "Cyber Glow" Hover Effect */
+  .navmenu ul li a:hover, 
+  .navmenu ul li a.active {
+    color: #00f2ff !important; /* Glow Cyan */
+    text-shadow: 0 0 10px #00f2ff, 0 0 20px rgba(0, 242, 255, 0.5);
+    background: transparent !important;
+  }
+
+  /* 4. Dropdown Menus - "Floating Data Cubes" */
+  .navmenu .dropdown ul {
+    background: rgba(10, 15, 28, 0.95) !important;
+    border: 1px solid #ff6600 !important; /* Orange accent for contrast */
+    border-radius: 0; /* Sharp edges look more technical */
+    box-shadow: 0 0 15px rgba(255, 102, 0, 0.3);
+  }
+
+  .navmenu .dropdown ul li a {
+    color: #00f2ff !important;
+  }
+
+  .navmenu .dropdown ul li a:hover {
+    background: rgba(0, 242, 255, 0.1) !important;
+    color: #ffcc00 !important; /* Gold text on hover in dropdown */
+  }
+
+  /* 5. The "Get Started" Button - Power Cell Style */
+  .btn-getstarted {
+    background: transparent !important;
+    border: 1px solid #ff6600 !important;
+    color: #ff6600 !important;
+    box-shadow: inset 0 0 10px rgba(255, 102, 0, 0.2), 0 0 10px rgba(255, 102, 0, 0.2);
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+
+  .btn-getstarted:hover {
+    background: #ff6600 !important;
+    color: #000 !important;
+    box-shadow: 0 0 25px #ff6600;
+  }
+</style>
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Home Lab - Projects</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Jost:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: SypheIT
+  * Template URL: https://bootstrapmade.com/Syphe-IT-free-bootstrap-html-template-corporate/
+  * Updated: Feb 22 2025 with Bootstrap v5.3.3
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+  
+</head>
+
+<body class="starter-page-page">
+
+  <header id="header" class="header d-flex align-items-center sticky-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center">
+
+      <a href="index.html" class="logo d-flex align-items-center me-auto">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <!-- <img src="assets/img/logo.webp" alt=""> -->
+        <h1 class="sitename">SYPHE IT</h1>
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          
+          <li><a href="index.html">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="deepdive.html">Technical Deep Dive</a></li>
+          <li><a href="#team">Projects</a></li>
+          <li><a href="#pricing">My Notes</a></li>
+          <li><a href="blog.html">Clients</a></li>
+          <li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li><a href="#">Dropdown 1</a></li>
+              <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                <ul>
+                  <li><a href="#">Deep Dropdown 1</a></li>
+                  <li><a href="#">Deep Dropdown 2</a></li>
+                  <li><a href="#">Deep Dropdown 3</a></li>
+                  <li><a href="#">Deep Dropdown 4</a></li>
+                  <li><a href="#">Deep Dropdown 5</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Dropdown 2</a></li>
+              <li><a href="#">Dropdown 3</a></li>
+              <li><a href="#">Dropdown 4</a></li>
+            </ul>
+          </li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+      <a class="btn-getstarted" href="#about">Get Started</a>
+
+    </div>
+  </header>
+
+  <main class="main">
+
+  <div class="page-title" data-aos="fade" style="
+    background: linear-gradient(135deg, rgba(10, 15, 28, 0.9) 0%, rgba(20, 35, 65, 0.8) 100%) !important;
+    backdrop-filter: blur(15px) saturate(150%);
+    -webkit-backdrop-filter: blur(15px) saturate(150%);
+    border-bottom: 2px solid #ff6600 !important;
+    border-left: 5px solid #ff6600 !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    padding: 60px 0 !important; 
+    margin-bottom: 20px;
+    position: relative;
+    overflow: hidden;
+">
+  <div style="position: absolute; top: 0; right: 0; width: 25px; height: 25px; border-top: 2px solid #ff6600; border-right: 2px solid #ff6600; opacity: 0.3;"></div>
+  <div class="content-shifter" style="margin-left: 10% !important; margin-right: 10% !important; max-width: 80% !important;">
+    
+    <nav class="breadcrumbs mb-3">
+      <ol style="list-style: none; display: flex; padding: 0; margin: 0; font-family: 'Courier New', monospace; font-size: 0.85rem; letter-spacing: 1px; flex-wrap: wrap;">
+        <li><a href="index.html" style="color: #00f2ff; text-decoration: none;">HOME</a></li>
+        <li style="color: white; opacity: 0.5; margin: 0 15px;">/</li>
+        <li class="current" style="color: white;">FIREWALL_CONFIG</li>
+        <li style="color: white; opacity: 0.5; margin: 0 15px;">/</li>
+        <li class="current" style="color: #ff6600;">FORTIGATE</li>
+      </ol>
+    </nav>
+    
+    <h1 style="color: #ffffff; font-weight: 800; font-size: 2.2rem; line-height: 1.2; text-shadow: 0 0 15px rgba(255, 102, 0, 0.2); margin: 0;">
+      <span style="color: #ff6600;">🛡️</span> FortiWifi 60E Security, Remote Access, and Threat Prevention
+    </h1>
+    
+    <div style="display: inline-block; margin-top: 20px; padding: 8px 20px; background: rgba(255, 102, 0, 0.1); border: 1px solid rgba(255, 102, 0, 0.3); border-radius: 4px;">
+      <p class="mb-0" style="color: #00f2ff; font-family: 'Courier New', monospace; font-size: 0.9rem; font-weight: bold; letter-spacing: 1px;">
+        STATUS: SECURE_ENCRYPTED_TUNNEL_ACTIVE
+      </p>
+    </div>
+
+</div>
+   </div>
+
+  <section id="starter-section" class="starter-section section py-5">
+    <div class="container" data-aos="fade-up">
+      
+      <div class="card border-0 shadow-lg mb-5" style="background: linear-gradient(135deg, #1a2a44 0%, #37517e 100%); border-radius: 15px;">
+        <div class="card-body p-4 p-lg-5">
+          <div class="row align-items-center">
+            <div class="col-md-auto">
+               <div class="bg-primary rounded-circle d-flex align-items-center justify-content-center mb-3 mb-md-0" style="width: 60px; height: 60px; border: 3px solid rgba(255,255,255,0.2);">
+                 <i class="bi bi-shield-lock text-white fs-3"></i>
+               </div>
+            </div>
+            <div class="col-md">
+              <h5 class="fw-bold text-uppercase mb-2" style="color: #47b2e4; letter-spacing: 1px;">Key Technologies Demonstrated</h5>
+              <div class="text-white fs-5">
+                <p class="mb-1"><strong>Hardware:</strong> FortiWifi 60E Firewall/Wireless Access Point</p>
+                <p class="mb-1"><strong>Security:</strong> SSL VPN (Remote Access), Local User Authentication, Intrusion Prevention System (IPS)</p>
+                <p class="mb-1"><strong>Networking:</strong> Static Addressing, Policy-based Network Address Translation (NAT)</p>
+                <p class="mb-0"><strong>Policy:</strong> Firewall Objects, Virtual IPs (VIPs), Security Profile Application</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mb-5 px-lg-2">
+    <h2 class="fw-bold text-white h3 mb-3" style="text-shadow: 0 0 10px rgba(255,255,255,0.2);">Project Overview</h2>
+    
+    <p class="text-white fs-5" style="line-height: 1.8; opacity: 0.95;">
+        This repository documents the complete configuration and policy deployment for a FortiWifi 60E firewall used in a home lab environment. The project establishes secure remote access (SSL VPN) and implements critical UTM controls, specifically Intrusion Prevention (IPS), on all entry points to the internal network.
+    </p>
+</div>
+
+      <div class="card border-0 shadow-sm mb-5 overflow-hidden">
+        <div class="card-header py-3" style="background: #37517e;">
+          <h2 class="h4 mb-0 text-white fw-bold text-uppercase">⚙️ Initial Device Setup</h2>
+        </div>
+        <div class="card-body p-0">
+          <div class="table-responsive">
+            <table class="table table-hover mb-0 fs-5">
+              <thead class="table-light">
+                <tr>
+                  <th>Configuration Step</th>
+                  <th>Description</th>
+                  <th>Security / Networking Skill</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Internal LAN IP Assignment</td>
+                  <td>Configured the internal interface (e.g., port1) with a static IP and DHCP server to establish the internal network (e.g., 192.168.1.1/24).</td>
+                  <td>Demonstrated foundational networking setup.</td>
+                </tr>
+                <tr>
+                  <td>Admin Account Setup</td>
+                  <td>Created a dedicated, non-default administrative user with strong authentication and least privilege access.</td>
+                  <td>Implemented strong access control and security hardening.</td>
+                </tr>
+                <tr>
+                  <td>Firmware Update</td>
+                  <td>Ensured the FortiWifi was running the latest recommended FortiOS version.</td>
+                  <td>Adherence to vendor-recommended security maintenance.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="row mb-5">
+        <div class="col-12">
+          <div class="p-4 p-lg-5 rounded border-start border-5 border-info bg-white shadow-sm">
+            <h3 class="fw-bold text-dark mb-4">🔒 Secure Remote Access (SSL VPN)</h3>
+            <div class="fs-5 text-dark" style="line-height: 1.7;">
+              <p>SSL VPN was implemented to provide external users with secure, encrypted access to the internal network resources.</p>
+              
+              <h5 class="fw-bold mt-4">3.1 SSL VPN User Management</h5>
+              <p><strong>Method:</strong> Created individual user accounts within the local user database.</p>
+              <p><strong>Access Control:</strong> User accounts were grouped and then tied to the VPN policy to control resource access based on role.</p>
+
+              <h5 class="fw-bold mt-4">3.2 SSL VPN Tunnel Configuration</h5>
+              <ul class="list-unstyled">
+                <li class="mb-2"><strong>Tunnel Setup:</strong> Configured the SSL VPN web portal and established tunnel mode operation for full client-to-LAN connectivity.</li>
+                <li class="mb-2"><strong>Address Range:</strong> Defined the specific IP address pool (e.g., 10.212.134.x) that VPN clients receive upon connection.</li>
+                <li><strong>Authentication Policy:</strong> Created the policy allowing traffic from the VPN interface (ssl.root) to the internal LAN interface, permitting full access only after successful user authentication.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card border-0 shadow-sm mb-5">
+        <div class="card-header py-3" style="background: #37517e;">
+          <h2 class="h4 mb-0 text-white fw-bold text-uppercase">🌐 Service Exposure and Inbound Configuration</h2>
+        </div>
+        <div class="card-body p-4 p-lg-5 fs-5 text-dark">
+          <h4 class="fw-bold text-primary mb-3">4.1 Inbound RDP Connections</h4>
+          <p>RDP access was secured using Virtual IPs (VIPs) and specific policies to allow external connections to internal RDP servers.</p>
+          <p><strong>VIP Configuration:</strong> Mapped a non-standard external port on the FortiWifi's WAN interface to the internal server's private IP and RDP port (3389).</p>
+          <p class="mb-4"><strong>Security Layer:</strong> This access is strictly controlled by a dedicated firewall policy where the Intrusion Prevention Profile is enforced.</p>
+
+          <h4 class="fw-bold text-primary mb-3">4.2 External File Sharing (SMB/Samba)</h4>
+          <p>A secure method was established to allow specific external users to access an internal File Share server (SMB/Samba).</p>
+          <p><strong>Policy Type:</strong> A dedicated VIP was used to NAT the external connection to the internal file server's IP and port (445).</p>
+          <p><strong>Security Layer:</strong> Access was restricted to the VPN Address Range, and all traffic is subject to the IPS policy.</p>
+        </div>
+      </div>
+
+      <div class="card border-0 shadow-lg bg-dark text-white mb-5" style="border-radius: 15px;">
+        <div class="card-body p-4 p-lg-5">
+          <h2 class="h3 fw-bold mb-4" style="color: #47b2e4;">🛡️ Advanced Threat Prevention (Intrusion Prevention System)</h2>
+          <p class="fs-5 mb-4">A customized IPS profile was created and applied to all policies that accept traffic from external or less-trusted sources (WAN-to-LAN and SSL-VPN-to-LAN).</p>
+          
+          <h4 class="fw-bold text-info mb-3">IPS Implementation Details:</h4>
+          <div class="row fs-5">
+            <div class="col-lg-6">
+              <ul class="list-unstyled">
+                <li class="mb-3 d-flex"><i class="bi bi-shield-check text-info me-3 mt-1"></i> <span><strong>Profile Creation:</strong> A custom profile (Inbound_Aggressive_IPS) was created to ensure maximum protection with minimal false positives.</span></li>
+                <li class="mb-3 d-flex"><i class="bi bi-shield-check text-info me-3 mt-1"></i> <span><strong>Signature Filtering:</strong> Enabled all Critical and High severity signatures, with the default action set to Block or Reset.</span></li>
+              </ul>
+            </div>
+            <div class="col-lg-6">
+              <ul class="list-unstyled">
+                <li class="mb-3 d-flex"><i class="bi bi-shield-check text-info me-3 mt-1"></i> <span><strong>Protocol Enforcement:</strong> Enabled deep packet inspection for inbound protocols including RDP and SMB to detect application-layer exploits specific to those services.</span></li>
+                <li class="mb-3 d-flex"><i class="bi bi-shield-check text-info me-3 mt-1"></i> <span><strong>Policy Application:</strong> The Inbound_Aggressive_IPS profile was applied to all policies allowing traffic into the internal LAN (VPN access, RDP VIP, File Share VIP).</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row mb-5">
+        <div class="col-12">
+          <div class="p-4 bg-white shadow-sm border rounded">
+            <h3 class="fw-bold text-dark mb-4">🧱 Firewall Policy and Object Summary</h3>
+            <p class="fs-5">All access requires explicit firewall policies and objects, reinforcing the principle of Default Deny.</p>
+            <h5 class="fw-bold mt-3">Key Policy Objects Created:</h5>
+            <ul class="fs-5 text-dark mt-2">
+              <li><strong>Addresses:</strong> Defined specific internal IP addresses/ranges (LAN_Internal_Servers, FileShare_Host).</li>
+              <li><strong>Services:</strong> Defined the specific ports required for each application (SVC_TCP_RDP_3389, SVC_TCP_SMB_445).</li>
+              <li><strong>VIPs:</strong> Created mappings for external access (VIP_External_RDP, VIP_External_FileShare).</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center p-5 bg-light rounded shadow-sm border mb-5">
+        <h3 class="fw-bold text-dark mb-4">💡 Project Summary & Skills Demonstrated</h3>
+        <div class="row text-start fs-5">
+          <div class="col-md-4 mb-3">
+            <div class="h-100 p-3 bg-white border-top border-4 border-primary">
+              <strong>Network Segmentation & Hardening:</strong> Successfully isolated internal services while providing controlled external access.
+            </div>
+          </div>
+          <div class="col-md-4 mb-3">
+            <div class="h-100 p-3 bg-white border-top border-4 border-primary">
+              <strong>Threat Mitigation:</strong> Proactively implemented IPS to protect exposed services from known exploits and vulnerabilities.
+            </div>
+          </div>
+          <div class="col-md-4 mb-3">
+            <div class="h-100 p-3 bg-white border-top border-4 border-primary">
+              <strong>Access Control:</strong> Enforced strong authentication and authorization through local user accounts and policy design.
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+</main>
+  <footer id="footer" class="footer">
+
+    <div class="footer-newsletter">
+      <div class="container">
+        <div class="row justify-content-center text-center">
+          <div class="col-lg-6">
+            <h4>Join Our Newsletter</h4>
+            <p>Subscribe to our newsletter and receive the latest news about our products and services!</p>
+            <form action="forms/newsletter.php" method="post" class="php-email-form">
+              <div class="newsletter-form"><input type="email" name="email"><input type="submit" value="Subscribe"></div>
+              <div class="loading">Loading</div>
+              <div class="error-message"></div>
+              <div class="sent-message">Your subscription request has been sent. Thank you!</div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container footer-top">
+      <div class="row gy-4">
+        <div class="col-lg-4 col-md-6 footer-about">
+          <a href="index.html" class="d-flex align-items-center">
+            <span class="sitename">SypheIT</span>
+          </a>
+          <div class="footer-contact pt-3">
+            <p>Minneapolis</p>
+            <p>Moinneapolis, MN 55430</p>
+            <p class="mt-3"><strong>Phone:</strong> <span>+1 5589 55488 55</span></p>
+            <p><strong>Email:</strong> <span>sypheit@gmail.com</span></p>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4>Useful Links</h4>
+          <ul>
+            <li><i class="bi bi-chevron-right"></i> <a href="index.html">Home</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#">About us</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#">Services</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#">Terms of service</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4>Our Services</h4>
+          <ul>
+            <li><i class="bi bi-chevron-right"></i> <a href="#">Web Design</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#">AI</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#">DevOps</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#">Marketing</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-4 col-md-12">
+          <h4>Follow Us</h4>
+          <p>Syphe IT</p>
+          <div class="social-links d-flex">
+            <a href=""><i class="bi bi-twitter-x"></i></a>
+            <a href=""><i class="bi bi-facebook"></i></a>
+            <a href=""><i class="bi bi-instagram"></i></a>
+            <a href=""><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="container copyright text-center mt-4">
+      <p>© <span>Copyright</span> <strong class="px-1 sitename">SypheIT</strong> <span>All Rights Reserved</span></p>
+      
+    </div>
+
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+  <a href="./index.html" target="_self" class="btn btn-primary back-home btn-sm position-fixed bottom-0 start-0 m-3" aria-label="Return to home" style="z-index:9999;" onmousedown="window.location.href='./index.html'" onclick="window.location.href='./index.html'; return false;">Home</a>
+
+</body>
+
+</html>

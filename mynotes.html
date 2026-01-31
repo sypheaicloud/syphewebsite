@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>My Notes - Syphe IT Services</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Jost:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Syphe IT
+  * Template URL: https://bootstrapmade.com/Syphe-IT-free-bootstrap-html-template-corporate/
+  * Updated: Feb 22 2025 with Bootstrap v5.3.3
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+  <style>
+  /* 1. Makes the header taller */
+  .header {
+    --header-height: 100px; 
+    height: var(--header-height);
+  }
+
+  /* 2. Adjusts the spacing of the menu items */
+  .navmenu a, 
+  .navmenu a:focus {
+    padding: 35px 15px !important; 
+    font-size: 16px; 
+  }
+
+  /* 3. NEW FLASHY LOGO STYLING */
+  .header .logo h1 {
+    font-family: 'Jost', sans-serif;
+    font-size: 32px !important;
+    font-weight: 800 !important;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin: 0;
+    
+    /* Metallic / Cyan Gradient Effect */
+    background: linear-gradient(135deg, #ffffff 30%, #00d4ff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    
+    /* Neon Glow */
+    filter: drop-shadow(0 0 8px rgba(0, 212, 255, 0.4));
+    transition: all 0.3s ease;
+  }
+
+  /* Hover effect for extra "Flash" */
+  .header .logo:hover h1 {
+    filter: drop-shadow(0 0 15px rgba(0, 212, 255, 0.8));
+    transform: scale(1.03);
+  }
+</style>
+</head>
+
+<body class="starter-page-page">
+
+ <header id="header" class="header d-flex align-items-center fixed-top" style="background-color: #061a3a;">
+  <div class="container-fluid container-xl position-relative d-flex align-items-center">
+
+    <a href="index.html" class="logo d-flex align-items-center me-auto" style="text-decoration: none;">
+      <h1 class="sitename" style="color: #ffffff; margin: 0;">Syphe IT <br> Services</h1>
+    </a>
+
+    <nav id="navmenu" class="navmenu">
+      <ul>
+        <li><a href="index.html" style="color: #ffffff;">Home</a></li>
+        <li><a href="#about" style="color: #ffffff;">About</a></li>
+        <li><a href="#services" style="color: #ffffff;">Services</a></li>
+        <li><a href="deepdive.html" style="color: #ffffff;">Technical Deep Dive</a></li>
+        <li><a href="#team" style="color: #ffffff;">Projects</a></li>
+        <li class="active"><a href="mynotes.html" style="color: #ffffff;">My Notes</a></li>
+        <li><a href="blog.html" style="color: #ffffff;">Clients</a></li>
+        
+        <li class="dropdown">
+          <a href="#" style="color: #ffffff;"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+          <ul>
+            <li><a href="#">Dropdown 1</a></li>
+            <li class="dropdown">
+              <a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+              <ul>
+                <li><a href="#">Deep Dropdown 1</a></li>
+                <li><a href="#">Deep Dropdown 2</a></li>
+                <li><a href="#">Deep Dropdown 3</a></li>
+                <li><a href="#">Deep Dropdown 4</a></li>
+                <li><a href="#">Deep Dropdown 5</a></li>
+              </ul>
+            </li>
+            <li><a href="#">Dropdown 2</a></li>
+            <li><a href="#">Dropdown 3</a></li>
+            <li><a href="#">Dropdown 4</a></li>
+          </ul>
+        </li>
+        <li><a href="#contact" style="color: #ffffff;">Contact</a></li>
+      </ul>
+      <i class="mobile-nav-toggle d-xl-none bi bi-list" style="color: #ffffff;"></i>
+    </nav>
+
+    <a class="btn-getstarted" href="#about"></a>
+
+  </div>
+</header>
+
+  <main class="main">
+
+    <!-- Page Title -->
+    <div class="page-title" data-aos="fade">
+      <div class="container">
+        <nav class="breadcrumbs">
+          
+        </nav>
+                  <h1>My Notes</h1>
+      </div>
+    </div><!-- End Page Title -->
+
+    <div class="mynotes-content container">
+      
+      <h2>Passionate Developer, Enterprise Hybrid Engineer</h2>
+    <h4>Azure Cloud Deployment Self Managed Step by Step</h4>
+    
+
+    <h3>Summary Checklist</h3>
+    <ul>
+        <li><i class="bi bi-check-circle"></i> VNet & Subnets created.</li>
+        <li><i class="bi bi-check-circle"></i> Domain Controller VM deployed and promoted.</li>
+        <li><i class="bi bi-check-circle"></i> VNet DNS pointed to the DC's private IP.</li>
+        <li><i class="bi bi-check-circle"></i> Users/Groups created in Active Directory.</li>
+        <li><i class="bi bi-check-circle"></i> File Share (VM or Azure Files) configured.</li>
+        <li><i class="bi bi-check-circle"></i> Client VMs joined to the domain.</li>
+    </ul>
+    <p>Would you like me to provide the specific PowerShell commands to automate the creation of the Virtual Network and Subnets?</p>
+
+    <h2>High-Level Architecture</h2>
+    <h3>1. Networking Foundation (The "Building")</h3>
+    <ul>
+        <li><strong>Create a Virtual Network (VNet):</strong> In the Azure Portal, create a VNet (e.g., Lab-VNet) with an address space like 10.0.0.0/16</li>
+        <li><strong>Create Subnets:</strong>
+            <ul>
+                <li>Identity-Subnet (e.g., 172.0.1.0/24): For your Domain Controllers.</li>
+                <li>Workload-Subnet (e.g., 172.0.2.0/24): For your file servers and client VMs.</li>
+            </ul>
+        </li>
+        <li><strong>Static Private IPs:</strong> Ensure your Domain Controller VM will have a static private IP address (configured in the Azure NIC settings, not just inside Windows).</li>
+        <li><strong>Network Security Groups (NSG):</strong> Azure automatically blocks most traffic. Ensure your NSG allows RDP (3389) for management and internal ports for AD (DNS, Kerberos, SMB).</li>
+    </ul>
+
+    <h3>2. The Domain Controller (The "Brain")</h3>
+    <ul>
+        <li><strong>Deploy a VM:</strong> Create a Windows Server VM (e.g., Windows Server 2022) in the IdentitySubnet.</li>
+        <li><strong>Install Roles:</strong> Log in via RDP and use Server Manager to add the Active Directory Domain Services (AD DS) and DNS Server roles.</li>
+        <li><strong>Promote to DC:</strong> Click the flag icon in Server Manager and select "Promote this server to a domain controller."
+            <ul>
+                <li>Select "Add a new forest."</li>
+                <li>Enter your Root Domain Name (e.g., corp.local or internal.yourdomain.com).</li>
+            </ul>
+        </li>
+        <li><strong>Crucial Step - VNet DNS:</strong> Once the DC is up, go back to the Azure Portal > VNet > DNS Servers and change it from "Default" to "Custom." Enter the Private IP of your new Domain Controller. This allows other VMs to "see" the domain.</li>
+    </ul>
+
+    <h3>Critical Considerations for Domain Controllers</h3>
+    <p>Because this subnet is for identity services, keep these three rules in mind:</p>
+    <ul>
+        <li><strong>Static IP Addresses:</strong> Once you deploy your Domain Controller VMs, go to the Network Interface settings for each VM and change the private IP assignment from Dynamic to Static.</li>
+        <li><strong>DNS Redirection:</strong> After your Domain Controllers are promoted, you must go to your Virtual Network > DNS Servers settings and change them from "Azure-provided" to "Custom," entering the private IPs of your new DCs.</li>
+        <li><strong>Subnet Sizing:</strong> A /24 range (256 IPs) is excellent for identity because it allows for multiple DCs, file servers, or certificate services while leaving room for Azure's 5 reserved IP addresses.</li>
+    </ul>
+
+    <h3>3. Identity Management (Users & Groups)</h3>
+    <ul>
+        <li><strong>Tools:</strong> Open Active Directory Users and Computers (ADUC) on your DC.</li>
+        <li><strong>Structure:</strong> Create Organizational Units (OUs) for Users, Computers, and Groups.</li>
+        <li><strong>GPO:</strong> Open Group Policy Management to set rules (like mapping drives automatically or enforcing wallpaper).</li>
+    </ul>
+
+    <h3>4. File Storage (The "Cabinet")</h3>
+    <p>You have two main options for cloud-based file shares in a traditional domain:</p>
+    <div id="azure-note-bg" class="tight-box shadow-lg my-4">
+    <div class="table-responsive">
+        <table class="table table-borderless align-middle mb-0" style="background: transparent !important;">
+            <thead>
+                <tr style="border-bottom: 2px solid #ff6600; background: transparent !important;">
+                    <th class="py-3 text-uppercase" style="color: #00f2ff; letter-spacing: 1px; background: transparent !important;">Option</th>
+                    <th class="py-3 text-uppercase" style="color: #00f2ff; letter-spacing: 1px; background: transparent !important;">Best For</th>
+                    <th class="py-3 text-uppercase" style="color: #00f2ff; letter-spacing: 1px; background: transparent !important;">Setup</th>
+                </tr>
+            </thead>
+            <tbody class="text-white" style="background: transparent !important;">
+                <tr style="border-bottom: 1px solid rgba(255,255,255,0.1); background: transparent !important;">
+                    <td class="py-3 fw-bold" style="color: #ffcc00; background: transparent !important;">Windows File Server VM</td>
+                    <td class="py-3 opacity-75" style="background: transparent !important;">Full feature parity with on-prem (NTFS, Quotas).</td>
+                    <td class="py-3" style="background: transparent !important;">Deploy a Windows VM, join it to the domain, and share folders.</td>
+                </tr>
+                <tr style="background: transparent !important;">
+                    <td class="py-3 fw-bold" style="color: #ffcc00; background: transparent !important;">Azure Files (SMB)</td>
+                    <td class="py-3 opacity-75" style="background: transparent !important;">Lower cost, no VM to manage.</td>
+                    <td class="py-3" style="background: transparent !important;">Create an Azure Storage Account, join it to your AD domain, and use AD identities to set permissions.</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+    <h3>5. Joining Workstations</h3>
+    <ul>
+        <li><strong>Deploy Workload VMs:</strong> Create Windows 10/11 or Server VMs in the WorkloadSubnet.</li>
+        <li><strong>Join Domain:</strong> Go to System Settings > About > Rename this PC (advanced) and join the domain using the FQDN (e.g., corp.local).</li>
+        <li><strong>Login:</strong> Restart and log in with a user account you created in Step 3.</li>
+    </ul>
+    </div>
+
+    <div class="mynotes-content container">
+        <h2>Kubernetes Infrastructure on Ubuntu 24.04.3 LTS</h2>
+
+        <h3>Technology Stack</h3>
+        <p>Kubernetes (K8s), Oracle Cloud Infrastructure Free Tier, Fortinet Security, Docker, Ubuntu Linux</p>
+
+        <h3>Infrastructure Specifications</h3>
+        <h4>Hardware & OS</h4>
+        <ul>
+            <li><strong>Master Node:</strong> Local environment running Ubuntu 24.04.3 LTS.</li>
+            <li><strong>Worker Node:</strong> OCI Compute Instance (VM.Standard.E4.Flex) running Ubuntu 24.04.3 LTS.</li>
+        </ul>
+        <h4>Security Gateway</h4>
+        <p>FortiWifi 60E Firewall.</p>
+
+        <h3>Hybrid Networking</h3>
+        <ul>
+            <li><strong>VPN Tunnel:</strong> Established a Site-to-Site VPN tunnel via the FortiWifi 60E to bridge the internal local network with the OCI Virtual Cloud Network (VCN).</li>
+            <li><strong>Cloud Routing:</strong> Configured OCI Security Lists and Route Tables to allow private communication between nodes while exposing the application via a Public IP.</li>
+        </ul>
+
+        <h3>Kubernetes Setup</h3>
+        <h4>Implementation Phases</h4>
+        <h5>Cluster Initialization</h5>
+        <ul>
+            <li><i class="bi bi-check-circle-fill text-success"></i> Deployed kubeadm, kubelet, and kubectl on all nodes.</li>
+            <li><i class="bi bi-check-circle-fill text-success"></i> Initialized the Master Node and established the Control Plane.</li>
+            <li><i class="bi bi-check-circle-fill text-success"></i> Joined the OCI Worker Node to the local Master via the secure VPN link.</li>
+            <li><i class="bi bi-check-circle-fill text-success"></i> Deployed Calico CNI to manage the overlay network across the hybrid environment.</li>
+        </ul>
+        <h3>Further Details</h3>
+        <p>Architected and deployed a high-availability productivity suite (Nextcloud & OnlyOffice) on a hybrid Kubernetes cluster spanning on-premises and Oracle Cloud Infrastructure (OCI).</p>
+
+        <p>Engineered cross-provider networking by configuring OCI Security Lists, VCN routing, and Linux iptables to facilitate seamless communication between master and worker nodes across different subnets.</p>
+        <p><strong>Networking:</strong> BGP Peering (Port 179) via Calico.</p>
+        <p><strong>Application:</strong> Nextcloud + MariaDB.</p>
+        <p>Fixed DNS and Network issues across the hybrid bridge.</p>
+    </div>
+
+    <div class="mynotes-content container">
+    
+
+    <h3>Hybrid Cloud Connectivity, Network Security, and Kubernetes Infrastructure - Complex Matter</h3>
+    
+    <p><strong>Persistent Node Connectivity:</strong> Eliminated kubectl exec and log-streaming timeouts by implementing Static IP Reservations within the SSL-VPN tunnel, ensuring consistent communication between the master node and remote Kubelets.</p>
+
+    <p><strong>Network Optimization:</strong> Configured custom SSL-VPN portals and authentication rules to prioritize high-availability traffic for specific cloud worker nodes, maintaining a 100% stable INTERNAL-IP mapping across reboots. deployed a granular SSL-VPN solution by to reserve a IP for OCI Ubuntu Node that holds all the pods.</p>
+
+    <p><strong>Static IP Mapping:</strong> Engineered a dedicated IP address pool and host-object reservation system (10.212.134.x) to enforce IP-based security policies for cross-cloud Kubernetes traffic.</p>
+
+    
+
+    <p><strong>Engineered Network Persistence:</strong> Solved critical cluster stability issues by implementing Static IP Reservations within the VPN framework. Configured custom SSL-VPN Portals and Address Objects to ensure remote nodes maintained a constant INTERNAL-IP, eliminating communication timeouts for kubectl exec and log-streaming.</p>
+
+    <p><strong>Engineered Network Persistence:</strong> Solved critical cluster stability issues by implementing Static IP Reservations within the VPN framework. Configured custom SSL-VPN Portals and Address Objects to ensure remote nodes maintained a constant INTERNAL-IP, eliminating communication timeouts for kubectl exec and log-streaming.</p>
+
+    
+
+    <h3>Detailed Technical Proficiency</h3>
+    <ul>
+        <li><strong>Networking:</strong> FortiOS Administration, SSL-VPN Tunneling, Static Routing, IP Reservation, NAT/No-NAT Policies.</li>
+        <li><strong>Cloud:</strong> Oracle Cloud Infrastructure (OCI), Virtual Cloud Networks (VCN).</li>
+        <li><strong>Kubernetes:</strong> Multi-Node Cluster Management, Kubelet Configuration, Hybrid-Cloud Control Planes, CSR (Certificate Signing Request) Management.</li>
+    </ul>
+
+    <h3>Core Professional Competencies</h3>
+    <ul>
+        <li><strong>"I know Firewalls":</strong> You understand Fortinet, which is one of the top 3 firewall brands in the world.</li>
+        <li><strong>"I understand the 'Underlay'":</strong> You know that Kubernetes relies on a stable network layer, and you know how to fix it when it breaks.</li>
+        <li><strong>"I am Resourceful":</strong> You successfully connected two completely different environments (Home/Office to OCI) which requires high-level troubleshooting skills.</li>
+    </ul>
+</div>
+
+            <div class="col-lg-12 text-center">
+            <h4>Join Our Newsletter</h4>
+            </div>
+    
+
+  </main>
+
+  <footer id="footer" class="footer">
+
+    <div class="footer-newsletter">
+      <div class="container">
+        <div class="row justify-content-center text-center">
+          <div class="col-lg-6">
+            
+            
+            <p>Subscribe to our newsletter and receive the latest news about our products and services!</p>
+            <form action="forms/newsletter.php" method="post" class="php-email-form">
+              <div class="newsletter-form"><input type="email" name="email"><input type="submit" value="Subscribe"></div>
+              <div class="loading">Loading</div>
+              <div class="error-message"></div>
+              <div class="sent-message">Your subscription request has been sent. Thank you!</div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container footer-top">
+      <div class="row gy-4">
+        <div class="col-lg-4 col-md-6 footer-about">
+          <a href="index.html" class="d-flex align-items-center">
+            <span class="sitename">Syphe IT</span>
+          </a>
+          
+        </div>
+
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4>Useful Links</h4>
+          <ul>
+            <li><i class="bi bi-chevron-right"></i> <a href="index.html">Home</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#">About us</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#">Services</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#">Terms of service</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4>Our Services</h4>
+          <ul>
+            <li><i class="bi bi-chevron-right"></i> <a href="#">Web Design</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#">Web Development</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#">Product Management</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#">Marketing</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-4 col-md-12">
+          <h4>Follow Us</h4>
+          <p>Syphe IT Services</p>
+          <div class="social-links d-flex">
+            <a href=""><i class="bi bi-twitter-x"></i></a>
+            <a href=""><i class="bi bi-facebook"></i></a>
+            <a href=""><i class="bi bi-instagram"></i></a>
+            <a href=""><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="container copyright text-center mt-4">
+      <p>© <span>Copyright</span> <strong class="px-1 sitename">Syphe IT</strong> <span>All Rights Reserved</span></p>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you've purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
+        Designed by Syphe IT
+      </div>
+    </div>
+
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+  <a href="./index.html" target="_self" class="btn btn-primary back-home btn-sm position-fixed bottom-0 start-0 m-3" aria-label="Return to home" style="z-index:9999;" onmousedown="window.location.href='./index.html'" onclick="window.location.href='./index.html'; return false;">Home</a>
+
+</body>
+
+</html>
