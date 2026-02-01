@@ -1202,9 +1202,8 @@ Stop fighting legacy limitations. Whether you need a Cisco CCNP veteran to stabi
           </div>
 
           <div class="col-lg-7">
-            <form action="https://n8n.sypheit.cloud/webhook/contact-form" method="POST" data-aos="fade-up" data-aos-delay="200">
+            <form id="contact-form" action="https://formspree.io/f/xkozgzjl" method="POST" data-aos="fade-up" data-aos-delay="200">
   <div class="row gy-4">
-
     <div class="col-md-6">
       <label for="name-field" class="pb-2">Your Name</label>
       <input type="text" name="name" id="name-field" class="form-control" required="">
@@ -1226,11 +1225,48 @@ Stop fighting legacy limitations. Whether you need a Cisco CCNP veteran to stabi
     </div>
 
     <div class="col-md-12 text-center">
-      <button type="submit" class="btn btn-primary" style="background: var(--accent-color); border: 0; padding: 10px 30px; color: #fff; transition: 0.4s; border-radius: 4px;">Send Message</button>
+      <button type="submit" id="submit-button" class="btn btn-primary" style="background: var(--accent-color); border: 0; padding: 10px 30px; color: #fff; transition: 0.4s; border-radius: 4px;">Send Message</button>
     </div>
-
   </div>
 </form>
+
+<div id="form-status" style="display:none; text-align:center; margin-top: 20px; padding: 20px; background: #e7f5ff; border-radius: 4px; color: #004085;">
+  <strong>Thank you!</strong> We will respond within 24 hours.
+</div>
+
+<script>
+  const form = document.getElementById("contact-form");
+  const status = document.getElementById("form-status");
+
+  form.addEventListener("submit", async (event) => {
+    event.preventDefault(); // Stop the page from redirecting
+    const data = new FormData(event.target);
+    
+    // Disable button while sending
+    const button = document.getElementById("submit-button");
+    button.disabled = true;
+    button.innerText = "Sending...";
+
+    fetch(event.target.action, {
+      method: 'POST',
+      body: data,
+      headers: { 'Accept': 'application/json' }
+    }).then(response => {
+      if (response.ok) {
+        form.style.display = "none"; // Hide the form
+        status.style.display = "block"; // Show your thank you message
+      } else {
+        alert("Oops! There was a problem submitting your form");
+        button.disabled = false;
+        button.innerText = "Send Message";
+      }
+    }).catch(error => {
+      alert("Oops! Network error. Please try again later.");
+      button.disabled = false;
+      button.innerText = "Send Message";
+    });
+  });
+</script>
           </div><!-- End Contact Form -->
 
         </div>
