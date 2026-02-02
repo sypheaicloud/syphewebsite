@@ -1059,13 +1059,15 @@ Stop fighting legacy limitations. Whether you need a Cisco CCNP veteran to stabi
     <!-- Subscribe Section -->
     <section id="subscribe" class="subscribe section">
   <div class="container">
-    <form id="subscribe-form"> <div class="input-group">
-        <input type="email" id="subscribe-email" class="form-control" required> <button type="submit" id="button-subscribe" class="btn btn-primary">Subscribe</button> </div>
-      
-      <div id="sub-loading" style="display:none;">Loading...</div>
-      <div id="sub-success" style="display:none; color: green;">Subscribed!</div>
-      <div id="sub-error" style="display:none; color: red;">Error!</div>
-    </form>
+    <form id="subscribe-form">
+  <div class="input-group">
+    <input type="email" id="subscribe-email" class="form-control" placeholder="Enter email" required>
+    <button type="submit" id="button-subscribe" class="btn btn-primary">Subscribe</button>
+  </div>
+  <div id="sub-loading" style="display:none; margin-top:10px;">Loading...</div>
+  <div id="sub-success" style="display:none; color: green; margin-top:10px;">Subscribed!</div>
+  <div id="sub-error" style="display:none; color: red; margin-top:10px;">Error!</div>
+</form>
   </div>
 </section>
     <!-- Recent Blog Postst Section -->
@@ -1267,80 +1269,29 @@ Stop fighting legacy limitations. Whether you need a Cisco CCNP veteran to stabi
   </main>
 
   <footer id="footer" class="footer">
-
-    <div class="footer-newsletter">
-      <div class="container">
-        <div class="row justify-content-center text-center">
-          <div class="col-lg-6">
-            <h4>Join Our Newsletter</h4>
-            <p>Subscribe to our newsletter and receive the latest news about our products and services!</p>
-          <form id="subscribe-form" action="/api/subscribe" method="post" class="cta-form" data-aos="fade-up" data-aos-delay="300"></form>
-              <div class="newsletter-form"><input type="email" name="email"><input type="submit" value="Subscribe"></div>
-              <div class="loading">Loading</div>
-              <div class="error-message"></div>
-              <div class="sent-message">Your subscription request has been sent. Thank you!</div>
-            </form>
-          </div>
+  <div class="footer-newsletter">
+    <div class="container">
+      <div class="row justify-content-center text-center">
+        <div class="col-lg-6">
+          <h4>Join Our Newsletter</h4>
+          <p>Subscribe to our newsletter and receive the latest tech insights!</p>
+          <form id="footer-subscribe-form" class="cta-form">
+            <div class="newsletter-form">
+              <input type="email" id="footer-email" required placeholder="Email Address">
+              <input type="submit" id="footer-btn" value="Subscribe">
+            </div>
+            <div id="footer-loading" style="display:none; margin-top:10px;">Loading...</div>
+            <div id="footer-success" style="display:none; color: green; margin-top:10px;">Thank you for joining!</div>
+            <div id="footer-error" style="display:none; color: red; margin-top:10px;">Error. Try again.</div>
+          </form>
         </div>
       </div>
     </div>
-
-    <div class="container footer-top">
-      <div class="row gy-4">
-        <div class="col-lg-4 col-md-6 footer-about">
-          <a href="index.html" class="d-flex align-items-center">
-            <span class="sitename">Syphe IT</span>
-          </a>
-          <div class="footer-contact pt-3">
-            <p>Minneapolis </p>
-            <p>Minnesota</p>
-            <p class="mt-3"><strong>Phone:</strong> <span>+1 5589 55488 55</span></p>
-            <p><strong>Email:</strong> <span>sypheit@gmail.com</span></p>
-          </div>
-        </div>
-
-        <div class="col-lg-2 col-md-3 footer-links">
-          <h4>Useful Links</h4>
-          <ul>
-            <li><i class="bi bi-chevron-right"></i> <a href="index.html">Home</a></li>
-            <li><i class="bi bi-chevron-right"></i> <a href="#">About us</a></li>
-            <li><i class="bi bi-chevron-right"></i> <a href="#">Services</a></li>
-            <li><i class="bi bi-chevron-right"></i> <a href="#">Terms of service</a></li>
-          </ul>
-        </div>
-
-        <div class="col-lg-2 col-md-3 footer-links">
-          <h4>Our Services</h4>
-          <ul>
-            <li><i class="bi bi-chevron-right"></i> <a href="#">Web Design</a></li>
-            <li><i class="bi bi-chevron-right"></i> <a href="#">Web Development</a></li>
-            <li><i class="bi bi-chevron-right"></i> <a href="#">Product Management</a></li>
-            <li><i class="bi bi-chevron-right"></i> <a href="#">Marketing</a></li>
-          </ul>
-        </div>
-
-        <div class="col-lg-4 col-md-12">
-          <h4>Follow Us</h4>
-          <p></p>
-          <div class="social-links d-flex">
-            <a href=""><i class="bi bi-twitter-x"></i></a>
-            <a href=""><i class="bi bi-facebook"></i></a>
-            <a href=""><i class="bi bi-instagram"></i></a>
-            <a href=""><i class="bi bi-linkedin"></i></a>
-          </div>
-        </div>
-
-      </div>
-    </div>
-
-    <div class="container copyright text-center mt-4">
-      <p>© <span>Copyright</span> <strong class="px-1 sitename">SypheIT</strong> <span>All Rights Reserved</span></p>
-      <div class="credits">
-        
-      </div>
-    </div>
-
-  </footer>
+  </div>
+  <div class="container copyright text-center mt-4">
+    <p>© <span>Copyright</span> <strong class="px-1 sitename">SypheIT</strong> <span>All Rights Reserved</span></p>
+  </div>
+</footer>
 
   <!-- Scroll Top -->
   <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
@@ -1350,121 +1301,60 @@ Stop fighting legacy limitations. Whether you need a Cisco CCNP veteran to stabi
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  
   <script src="assets/vendor/aos/aos.js"></script>
   <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-
-  <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
 
-<section id="contact" class="contact section">
-  <div class="container" data-aos="fade-up" data-aos-delay="100">
-    <div class="row gy-4">
-      <div class="col-lg-12">
-        <form id="contact-form" action="/api/contact" method="post" class="cta-form">
-          <div class="row gy-4">
-            <div class="col-md-6">
-              <input type="text" name="name" id="name-field" class="form-control" placeholder="Your Name" required="">
-            </div>
-            <div class="col-md-6">
-              <input type="email" class="form-control" name="email" id="email-field" placeholder="Your Email" required="">
-            </div>
-            <div class="col-md-12">
-              <input type="text" class="form-control" name="subject" id="subject-field" placeholder="Subject" required="">
-            </div>
-            <div class="col-md-12">
-              <textarea class="form-control" name="message" id="message-field" rows="6" placeholder="Message" required=""></textarea>
-            </div>
-            <div class="col-md-12 text-center">
-              <button type="submit" id="submit-button" class="btn btn-primary">Send Message</button>
-            </div>
-          </div>
-        </form>
-        <div id="contact-status" style="display:none; margin-top: 15px; text-align: center; color: green; font-weight: bold;">Message sent successfully!</div>
-      </div>
-    </div>
-  </div>
-</section>
+  <script>
+    async function initSubscribe(formId, emailId, btnId, loadingId, successId, errorId) {
+      const form = document.getElementById(formId);
+      if (!form) return;
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const email = document.getElementById(emailId).value;
+        const btn = document.getElementById(btnId);
+        const loading = document.getElementById(loadingId);
+        const success = document.getElementById(successId);
+        const error = document.getElementById(errorId);
+        btn.disabled = true;
+        if(loading) loading.style.display = 'block';
+        if(success) success.style.display = 'none';
+        if(error) error.style.display = 'none';
+        try {
+          const res = await fetch('/api/subscribe', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ email: email })
+          });
+          if (res.ok) {
+            if(success) success.style.display = 'block';
+            form.reset();
+          } else { if(error) error.style.display = 'block'; }
+        } catch (err) { if(error) error.style.display = 'block'; }
+        finally { btn.disabled = false; if(loading) loading.style.display = 'none'; }
+      });
+    }
 
-<script>
-  // --- CONTACT FORM LOGIC ---
-  const contactForm = document.getElementById('contact-form');
-  const contactBtn = document.getElementById('submit-button');
-  const contactStatus = document.getElementById('contact-status');
+    initSubscribe('subscribe-form', 'subscribe-email', 'button-subscribe', 'sub-loading', 'sub-success', 'sub-error');
+    initSubscribe('footer-subscribe-form', 'footer-email', 'footer-btn', 'footer-loading', 'footer-success', 'footer-error');
 
-  if (contactForm) {
-    contactForm.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      contactBtn.disabled = true;
-      contactBtn.innerText = "Sending...";
-
-      try {
-        const response = await fetch(contactForm.action, {
-          method: 'POST',
-          body: new FormData(contactForm),
-          headers: { 'Accept': 'application/json' }
-        });
-
-        if (response.ok) {
-          contactStatus.style.display = 'block';
-          contactForm.reset();
-        } else {
-          alert("Error sending message.");
-        }
-      } catch (err) {
-        alert("Network error.");
-      } finally {
-        contactBtn.disabled = false;
-        contactBtn.innerText = "Send Message";
-      }
-    });
-  }
-
-  // --- SUBSCRIBE FORM LOGIC ---
-  const subForm = document.getElementById('subscribe-form');
-  const subEmail = document.getElementById('subscribe-email');
-  const subBtn = document.getElementById('button-subscribe');
-
-  // Check if elements exist before adding listener to avoid console errors
-  if (subForm && subEmail) {
-    subForm.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      
-      const subLoading = document.getElementById('sub-loading');
-      const subSuccess = document.getElementById('sub-success');
-      const subError = document.getElementById('sub-error');
-
-      subBtn.disabled = true;
-      if(subLoading) subLoading.style.display = 'block';
-      if(subSuccess) subSuccess.style.display = 'none';
-      if(subError) subError.style.display = 'none';
-
-      try {
-        const response = await fetch('/api/subscribe', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ email: subEmail.value }),
-        });
-
-        if (response.ok) {
-          if(subSuccess) subSuccess.style.display = 'block';
-          subForm.reset();
-        } else {
-          if(subError) subError.style.display = 'block';
-        }
-      } catch (error) {
-        if(subError) subError.style.display = 'block';
-      } finally {
-        subBtn.disabled = false;
-        if(subLoading) subLoading.style.display = 'none';
-      }
-    });
-  }
-</script>
+    const contactForm = document.getElementById('contact-form');
+    if (contactForm) {
+      contactForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const btn = document.getElementById('submit-button');
+        const status = document.getElementById('contact-status') || document.getElementById('form-status');
+        btn.disabled = true;
+        btn.innerText = "Sending...";
+        try {
+          const res = await fetch(contactForm.action, { method: 'POST', body: new FormData(contactForm) });
+          if (res.ok) { if(status) status.style.display = 'block'; contactForm.reset(); }
+          else { alert("Error sending message."); }
+        } catch (err) { alert("Network error."); }
+        finally { btn.disabled = false; btn.innerText = "Send Message"; }
+      });
+    }
+  </script>
 </body>
-
 </html>
