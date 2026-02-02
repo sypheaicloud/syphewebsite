@@ -266,7 +266,7 @@
   <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200" style="color: #ffffff; line-height: 1.7;">
     <div class="ps-lg-4" style="border-left: 1px solid rgba(0, 242, 255, 0.2);">
       <p class="mb-3" style="opacity: 0.95;">
-        Designing resilient hybrid clusters (On-prem + OCI), container orchestration with K8s, and automated AI workflow integration via <strong style="color: #ffae00;">n8n</strong>.
+        Designing resilient hybrid clusters (On-prem + OCI), container orchestration with K8s, and automated sAI workflow integration via <strong style="color: #ffae00;">n8n</strong>.
       </p>
       <p class="mb-3" style="opacity: 0.95;">
         Full-stack physical infrastructure: <strong style="color: #ffae00;">Cisco/HP Layer 3 switching</strong>, VLAN segmentation, Subnetting, and DHCP management.
@@ -1058,35 +1058,16 @@ Stop fighting legacy limitations. Whether you need a Cisco CCNP veteran to stabi
 
     <!-- Subscribe Section -->
     <section id="subscribe" class="subscribe section">
-  <div class="container" data-aos="fade-up" data-aos-delay="100">
-    <div class="row gy-4 justify-content-between align-items-center">
-      <div class="col-lg-6">
-        <div class="cta-content" data-aos="fade-up" data-aos-delay="200">
-          <h2>Subscribe to our newsletter</h2>
-          <p>Please Subscribe</p>
-          
-          <form id="subscribe-form" action="/api/subscribe" method="post" class="cta-form">
-            <div class="input-group mb-3">
-              <input type="email" id="subscribe-email" name="email" class="form-control" placeholder="Email address..." required>
-              <button class="btn btn-primary" type="submit" id="button-subscribe">Subscribe</button>
-            </div>
-            
-            <div id="sub-loading" style="display:none; color: #007bff;">Loading...</div>
-            <div id="sub-error" style="display:none; color: red;">Something went wrong.</div>
-            <div id="sub-success" style="display:none; color: green;">Your subscription request has been sent. Thank you!</div>
-          </form>
-
-        </div>
-      </div>
-      <div class="col-lg-4">
-        <div class="cta-image" data-aos="zoom-out" data-aos-delay="200">
-          <img src="assets/img/cta/cta-1.webp" alt="" class="img-fluid">
-        </div>
-      </div>
-    </div>
+  <div class="container">
+    <form id="subscribe-form"> <div class="input-group">
+        <input type="email" id="subscribe-email" class="form-control" required> <button type="submit" id="button-subscribe" class="btn btn-primary">Subscribe</button> </div>
+      
+      <div id="sub-loading" style="display:none;">Loading...</div>
+      <div id="sub-success" style="display:none; color: green;">Subscribed!</div>
+      <div id="sub-error" style="display:none; color: red;">Error!</div>
+    </form>
   </div>
 </section>
-
     <!-- Recent Blog Postst Section -->
     <section id="recent-blog-postst" class="recent-blog-postst section light-background">
 
@@ -1379,60 +1360,39 @@ Stop fighting legacy limitations. Whether you need a Cisco CCNP veteran to stabi
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
-  <script>
-  const contactForm = document.getElementById('contact-form');
-  
-  contactForm.addEventListener('submit', async (e) => {
-    e.preventDefault(); 
-    
-    const submitBtn = document.getElementById('submit-button');
-    const originalBtnText = submitBtn.innerText;
-    
-    // UI Feedback
-    submitBtn.innerText = "Sending...";
-    submitBtn.disabled = true;
+  <section id="contact" class="contact section">
+  <div class="container" data-aos="fade-up" data-aos-delay="100">
+    <div class="row gy-4">
+      <div class="col-lg-12">
+        <form id="contact-form" action="/api/contact" method="post" class="cta-form">
+          <div class="row gy-4">
 
-    // Matches your HTML IDs exactly
-    const formData = {
-      name: document.getElementById('name-field').value,
-      email: document.getElementById('email-field').value,
-      subject: document.getElementById('subject-field').value,
-      message: document.getElementById('message-field').value,
-    };
+            <div class="col-md-6">
+              <input type="text" name="name" id="name-field" class="form-control" placeholder="Your Name" required="">
+            </div>
 
-    // --- LOGS FOR DEBUGGING ---
-    console.log("1. Form submission started");
-    console.log("2. Data being sent to Python:", formData);
-    // --------------------------
+            <div class="col-md-6">
+              <input type="email" class="form-control" name="email" id="email-field" placeholder="Your Email" required="">
+            </div>
 
-    try {
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
-      });
+            <div class="col-md-12">
+              <input type="text" class="form-control" name="subject" id="subject-field" placeholder="Subject" required="">
+            </div>
 
-      // --- LOG THE STATUS ---
-      console.log("3. Server Response Status:", response.status);
+            <div class="col-md-12">
+              <textarea class="form-control" name="message" id="message-field" rows="6" placeholder="Message" required=""></textarea>
+            </div>
 
-      if (response.ok) {
-        console.log("4. Success!");
-        alert("Message sent successfully!");
-        contactForm.reset();
-      } else {
-        const errorData = await response.text();
-        console.error("4. Server Error Detail:", errorData);
-        alert("Server error. Please try again later.");
-      }
-    } catch (error) {
-      console.error("4. Connection/Network Error:", error);
-      alert("Could not connect to the server.");
-    } finally {
-      submitBtn.innerText = originalBtnText;
-      submitBtn.disabled = false;
-    }
-  });
-</script>
+            <div class="col-md-12 text-center">
+              <button type="submit" id="submit-button" class="btn btn-primary">Send Message</button>
+            </div>
+
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
 <script>
   const subForm = document.getElementById('subscribe-form');
   const subEmail = document.getElementById('subscribe-email');
