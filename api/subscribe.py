@@ -21,7 +21,7 @@ class handler(BaseHTTPRequestHandler):
             self.end_headers()
             return
 
-        # --- 1. SEND WELCOME EMAIL TO SUBSCRIBER ---
+        # --- 1. SEND WELCOME EMAIL TO SUBSCRIBER FROM YOUR DOMAIN ---
         requests.post(
             "https://api.resend.com/emails",
             headers={
@@ -29,15 +29,23 @@ class handler(BaseHTTPRequestHandler):
                 "Content-Type": "application/json"
             },
             json={
-                "from": "Newsletter <onboarding@resend.dev>",
+                "from": "Sypheit Newsletter <newsletter@sypheit.cloud>",
                 "to": [subscriber_email],
-                "subject": "Welcome to our Newsletter! 🚀",
+                "subject": "Welcome to the Family! 🚀",
                 "html": f"""
-                    <h1>Thanks for joining!</h1>
-                    <p>Hi there,</p>
-                    <p>We're thrilled to have you on board. You'll be the first to hear about our latest updates and news.</p>
-                    <br>
-                    <p>Cheers,<br>The Team</p>
+                    <div style="font-family: Arial, sans-serif; max-width: 600px; margin: auto; border: 1px solid #eee; padding: 20px;">
+                        <h2 style="color: #007bff;">Thanks for joining!</h2>
+                        <p>Hi there,</p>
+                        <p>We're thrilled to have you on board. You'll be the first to hear about our latest updates, tech insights, and news directly from <strong>sypheit.cloud</strong>.</p>
+                        <div style="background: #f4f4f4; padding: 15px; border-radius: 5px; text-align: center; margin: 20px 0;">
+                            <p style="margin: 0;">Stay tuned for our next update!</p>
+                        </div>
+                        <p>Cheers,<br>The Sypheit Team</p>
+                        <hr style="border: 0; border-top: 1px solid #eee; margin-top: 20px;">
+                        <p style="font-size: 12px; color: #999; text-align: center;">
+                            © 2026 sypheit.cloud. All rights reserved.
+                        </p>
+                    </div>
                 """
             }
         )
@@ -50,10 +58,15 @@ class handler(BaseHTTPRequestHandler):
                 "Content-Type": "application/json"
             },
             json={
-                "from": "System <onboarding@resend.dev>",
+                "from": "System <admin@sypheit.cloud>",
                 "to": ["sypheit@gmail.com"],
-                "subject": "New Subscriber Alert!",
-                "html": f"<p>A new person just subscribed: <strong>{subscriber_email}</strong></p>"
+                "subject": "🔥 New Subscriber Alert!",
+                "html": f"""
+                    <div style="font-family: sans-serif;">
+                        <p>Good news! You have a new subscriber:</p>
+                        <p style="font-size: 18px; font-weight: bold; color: #28a745;">{subscriber_email}</p>
+                    </div>
+                """
             }
         )
 

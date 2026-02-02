@@ -17,7 +17,6 @@ class handler(BaseHTTPRequestHandler):
             if 'application/json' in content_type:
                 data = json.loads(post_data)
             else:
-                # Fallback for standard form submissions
                 parsed_data = parse_qs(post_data)
                 data = {k: v[0] for k, v in parsed_data.items()}
         except Exception as e:
@@ -34,6 +33,7 @@ class handler(BaseHTTPRequestHandler):
         api_key = os.environ.get("RESEND_API_KEY")
         
         # 5. Send the email via Resend
+        # UPDATED: Using your custom domain sypheit.cloud
         res = requests.post(
             "https://api.resend.com/emails",
             headers={
@@ -41,33 +41,32 @@ class handler(BaseHTTPRequestHandler):
                 "Content-Type": "application/json"
             },
             json={
-                "from": "Website <onboarding@resend.dev>",
+                "from": f"{name} <hello@sypheit.cloud>",
                 "to": ["sypheit@gmail.com"],
                 "subject": f"Contact Form: {subject}",
+                "reply_to": email, # This lets you click "Reply" in your email to talk to them
                 "html": f"""
-                    <h3>New Message from Website</h3>
-                    <p><strong>Name:</strong> {name}</p>
-                    <p><strong>Email:</strong> {email}</p>
-                    <p><strong>Subject:</strong> {subject}</p>
-                    <hr>
-                    <p><strong>Message:</strong></p>
-                    <p>{message}</p>
+                    <div style="font-family: sans-serif; line-height: 1.5; color: #333;">
+                        <h2 style="color: #007bff;">New Message from Sypheit.cloud</h2>
+                        <p><strong>From:</strong> {name} ({email})</p>
+                        <p><strong>Subject:</strong> {subject}</p>
+                        <hr style="border: 0; border-top: 1px solid #eee;">
+                        <p><strong>Message:</strong></p>
+                        <p style="background: #f9f9f9; padding: 15px; border-left: 4px solid #007bff;">{message}</p>
+                    </div>
                 """
             }
         )
 
         # 6. Send response back to your website browser
-        # We send 200 (Success) so your JavaScript 'alert' works
         self.send_response(200)
         self.send_header('Content-type', 'application/json')
         self.end_headers()
         
-        # This JSON is what shows up in your browser console
         response_data = {
             "status": "success" if res.status_code < 300 else "error",
             "resend_code": res.status_code
         }
         self.wfile.write(json.dumps(response_data).encode('utf-8'))
 
-        # Log status to Vercel console for you to see
         print(f"Email sent! Resend Status: {res.status_code}, Response: {res.text}")
