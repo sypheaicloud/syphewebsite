@@ -1056,31 +1056,31 @@ Stop fighting legacy limitations. Whether you need a Cisco CCNP veteran to stabi
 
     <!-- Subscribe Section -->
     <section id="subscribe" class="subscribe section">
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-        <div class="row gy-4 justify-content-between align-items-center">
-          <div class="col-lg-6">
-            <div class="cta-content" data-aos="fade-up" data-aos-delay="200">
-              <h2>Subscribe to our newsletter</h2>
-              <p>Please Subscribe</p>
-              <form action="forms/newsletter.php" method="post" class="php-email-form cta-form" data-aos="fade-up" data-aos-delay="300">
-                <div class="input-group mb-3">
-                  <input type="email" class="form-control" placeholder="Email address..." aria-label="Email address" aria-describedby="button-subscribe">
-                  <button class="btn btn-primary" type="submit" id="button-subscribe">Subscribe</button>
-                </div>
-                <div class="loading">Loading</div>
-                <div class="error-message"></div>
-                <div class="sent-message">Your subscription request has been sent. Thank you!</div>
-              </form>
+  <div class="container" data-aos="fade-up" data-aos-delay="100">
+    <div class="row gy-4 justify-content-between align-items-center">
+      <div class="col-lg-6">
+        <div class="cta-content" data-aos="fade-up" data-aos-delay="200">
+          <h2>Subscribe to our newsletter</h2>
+          <p>Please Subscribe</p>
+          <form id="subscribe-form" action="/api/subscribe" method="post" class="cta-form" data-aos="fade-up" data-aos-delay="300">
+            <div class="input-group mb-3">
+              <input type="email" id="subscribe-email" name="email" class="form-control" placeholder="Email address..." aria-label="Email address" aria-describedby="button-subscribe" required>
+              <button class="btn btn-primary" type="submit" id="button-subscribe">Subscribe</button>
             </div>
-          </div>
-          <div class="col-lg-4">
-            <div class="cta-image" data-aos="zoom-out" data-aos-delay="200">
-              <img src="assets/img/cta/cta-1.webp" alt="" class="img-fluid">
-            </div>
-          </div>
+            <div id="sub-loading" style="display:none; color: var(--accent-color);">Loading...</div>
+            <div id="sub-success" style="display:none; color: green;">Your subscription request has been sent. Thank you!</div>
+            <div id="sub-error" style="display:none; color: red;">Something went wrong.</div>
+          </form>
         </div>
       </div>
-    </section><!-- /Subscribe Section -->
+      <div class="col-lg-4">
+        <div class="cta-image" data-aos="zoom-out" data-aos-delay="200">
+          <img src="assets/img/cta/cta-1.webp" alt="" class="img-fluid">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
     <!-- Recent Blog Postst Section -->
     <section id="recent-blog-postst" class="recent-blog-postst section light-background">
@@ -1424,6 +1424,45 @@ Stop fighting legacy limitations. Whether you need a Cisco CCNP veteran to stabi
     } finally {
       submitBtn.innerText = originalBtnText;
       submitBtn.disabled = false;
+    }
+  });
+</script>
+<script>
+  const subForm = document.getElementById('subscribe-form');
+  const subEmail = document.getElementById('subscribe-email');
+  const subBtn = document.getElementById('button-subscribe');
+  const subLoading = document.getElementById('sub-loading');
+  const subSuccess = document.getElementById('sub-success');
+  const subError = document.getElementById('sub-error');
+
+  subForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    
+    // UI Setup
+    subBtn.disabled = true;
+    subLoading.style.display = 'block';
+    subSuccess.style.display = 'none';
+    subError.style.display = 'none';
+
+    try {
+      const response = await fetch('/api/subscribe', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email: subEmail.value }),
+      });
+
+      if (response.ok) {
+        subSuccess.style.display = 'block';
+        subForm.reset();
+      } else {
+        subError.style.display = 'block';
+      }
+    } catch (error) {
+      subError.style.display = 'block';
+      console.error("Subscription error:", error);
+    } finally {
+      subBtn.disabled = false;
+      subLoading.style.display = 'none';
     }
   });
 </script>
