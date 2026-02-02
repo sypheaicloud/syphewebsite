@@ -1202,7 +1202,8 @@ Stop fighting legacy limitations. Whether you need a Cisco CCNP veteran to stabi
           </div>
 
           <div class="col-lg-7">
-            <form id="contact-form" action="https://formspree.io/f/xkozgzjl" method="POST" data-aos="fade-up" data-aos-delay="200">
+            <form id="contact-form" action="/api/contact" method="POST" data-aos="fade-up" data-aos-delay="200">
+  
   <div class="row gy-4">
     <div class="col-md-6">
       <label for="name-field" class="pb-2">Your Name</label>
@@ -1228,6 +1229,7 @@ Stop fighting legacy limitations. Whether you need a Cisco CCNP veteran to stabi
       <button type="submit" id="submit-button" class="btn btn-primary" style="background: var(--accent-color); border: 0; padding: 10px 30px; color: #fff; transition: 0.4s; border-radius: 4px;">Send Message</button>
     </div>
   </div>
+
 </form>
 
 <div id="form-status" style="display:none; text-align:center; margin-top: 20px; padding: 20px; background: #e7f5ff; border-radius: 4px; color: #004085;">
@@ -1371,6 +1373,48 @@ Stop fighting legacy limitations. Whether you need a Cisco CCNP veteran to stabi
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
+  <script>
+  const contactForm = document.getElementById('contact-form');
+  
+  contactForm.addEventListener('submit', async (e) => {
+    e.preventDefault(); 
+    
+    const submitBtn = document.getElementById('submit-button');
+    const originalBtnText = submitBtn.innerText;
+    
+    // UI Feedback
+    submitBtn.innerText = "Sending...";
+    submitBtn.disabled = true;
+
+    // Matches your HTML IDs exactly
+    const formData = {
+      name: document.getElementById('name-field').value,
+      email: document.getElementById('email-field').value,
+      subject: document.getElementById('subject-field').value,
+      message: document.getElementById('message-field').value,
+    };
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        alert("Message sent successfully!");
+        contactForm.reset();
+      } else {
+        alert("Server error. Please try again later.");
+      }
+    } catch (error) {
+      alert("Could not connect to the server.");
+    } finally {
+      submitBtn.innerText = originalBtnText;
+      submitBtn.disabled = false;
+    }
+  });
+</script>
 
 </body>
 
