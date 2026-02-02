@@ -1360,77 +1360,110 @@ Stop fighting legacy limitations. Whether you need a Cisco CCNP veteran to stabi
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
-  <section id="contact" class="contact section">
+
+<section id="contact" class="contact section">
   <div class="container" data-aos="fade-up" data-aos-delay="100">
     <div class="row gy-4">
       <div class="col-lg-12">
         <form id="contact-form" action="/api/contact" method="post" class="cta-form">
           <div class="row gy-4">
-
             <div class="col-md-6">
               <input type="text" name="name" id="name-field" class="form-control" placeholder="Your Name" required="">
             </div>
-
             <div class="col-md-6">
               <input type="email" class="form-control" name="email" id="email-field" placeholder="Your Email" required="">
             </div>
-
             <div class="col-md-12">
               <input type="text" class="form-control" name="subject" id="subject-field" placeholder="Subject" required="">
             </div>
-
             <div class="col-md-12">
               <textarea class="form-control" name="message" id="message-field" rows="6" placeholder="Message" required=""></textarea>
             </div>
-
             <div class="col-md-12 text-center">
               <button type="submit" id="submit-button" class="btn btn-primary">Send Message</button>
             </div>
-
           </div>
         </form>
+        <div id="contact-status" style="display:none; margin-top: 15px; text-align: center; color: green; font-weight: bold;">Message sent successfully!</div>
       </div>
     </div>
   </div>
 </section>
+
 <script>
+  // --- CONTACT FORM LOGIC ---
+  const contactForm = document.getElementById('contact-form');
+  const contactBtn = document.getElementById('submit-button');
+  const contactStatus = document.getElementById('contact-status');
+
+  if (contactForm) {
+    contactForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      contactBtn.disabled = true;
+      contactBtn.innerText = "Sending...";
+
+      try {
+        const response = await fetch(contactForm.action, {
+          method: 'POST',
+          body: new FormData(contactForm),
+          headers: { 'Accept': 'application/json' }
+        });
+
+        if (response.ok) {
+          contactStatus.style.display = 'block';
+          contactForm.reset();
+        } else {
+          alert("Error sending message.");
+        }
+      } catch (err) {
+        alert("Network error.");
+      } finally {
+        contactBtn.disabled = false;
+        contactBtn.innerText = "Send Message";
+      }
+    });
+  }
+
+  // --- SUBSCRIBE FORM LOGIC ---
   const subForm = document.getElementById('subscribe-form');
   const subEmail = document.getElementById('subscribe-email');
   const subBtn = document.getElementById('button-subscribe');
-  const subLoading = document.getElementById('sub-loading');
-  const subSuccess = document.getElementById('sub-success');
-  const subError = document.getElementById('sub-error');
 
-  subForm.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    
-    // UI Setup
-    subBtn.disabled = true;
-    subLoading.style.display = 'block';
-    subSuccess.style.display = 'none';
-    subError.style.display = 'none';
+  // Check if elements exist before adding listener to avoid console errors
+  if (subForm && subEmail) {
+    subForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      
+      const subLoading = document.getElementById('sub-loading');
+      const subSuccess = document.getElementById('sub-success');
+      const subError = document.getElementById('sub-error');
 
-    try {
-      const response = await fetch('/api/subscribe', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email: subEmail.value }),
-      });
+      subBtn.disabled = true;
+      if(subLoading) subLoading.style.display = 'block';
+      if(subSuccess) subSuccess.style.display = 'none';
+      if(subError) subError.style.display = 'none';
 
-      if (response.ok) {
-        subSuccess.style.display = 'block';
-        subForm.reset();
-      } else {
-        subError.style.display = 'block';
+      try {
+        const response = await fetch('/api/subscribe', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email: subEmail.value }),
+        });
+
+        if (response.ok) {
+          if(subSuccess) subSuccess.style.display = 'block';
+          subForm.reset();
+        } else {
+          if(subError) subError.style.display = 'block';
+        }
+      } catch (error) {
+        if(subError) subError.style.display = 'block';
+      } finally {
+        subBtn.disabled = false;
+        if(subLoading) subLoading.style.display = 'none';
       }
-    } catch (error) {
-      subError.style.display = 'block';
-      console.error("Subscription error:", error);
-    } finally {
-      subBtn.disabled = false;
-      subLoading.style.display = 'none';
-    }
-  });
+    });
+  }
 </script>
 </body>
 
