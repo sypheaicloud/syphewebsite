@@ -1394,6 +1394,11 @@ Stop fighting legacy limitations. Whether you need a Cisco CCNP veteran to stabi
       message: document.getElementById('message-field').value,
     };
 
+    // --- LOGS FOR DEBUGGING ---
+    console.log("1. Form submission started");
+    console.log("2. Data being sent to Python:", formData);
+    // --------------------------
+
     try {
       const response = await fetch('/api/contact', {
         method: 'POST',
@@ -1401,13 +1406,20 @@ Stop fighting legacy limitations. Whether you need a Cisco CCNP veteran to stabi
         body: JSON.stringify(formData),
       });
 
+      // --- LOG THE STATUS ---
+      console.log("3. Server Response Status:", response.status);
+
       if (response.ok) {
+        console.log("4. Success!");
         alert("Message sent successfully!");
         contactForm.reset();
       } else {
+        const errorData = await response.text();
+        console.error("4. Server Error Detail:", errorData);
         alert("Server error. Please try again later.");
       }
     } catch (error) {
+      console.error("4. Connection/Network Error:", error);
       alert("Could not connect to the server.");
     } finally {
       submitBtn.innerText = originalBtnText;
@@ -1415,7 +1427,6 @@ Stop fighting legacy limitations. Whether you need a Cisco CCNP veteran to stabi
     }
   });
 </script>
-
 </body>
 
 </html>
