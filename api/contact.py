@@ -26,7 +26,7 @@ class handler(BaseHTTPRequestHandler):
             },
             json={
                 "from": "Website <onboarding@resend.dev>",
-                "to": ["YOUR_REAL_EMAIL@GMAIL.COM"], # Replace with your email!
+                "to": ["sypheit@gmail.com"], # Replace with your email!
                 "subject": f"New Contact: {subject}",
                 "html": f"<p><strong>From:</strong> {name} ({email})</p><p><strong>Message:</strong> {message}</p>"
             }
