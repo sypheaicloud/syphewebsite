@@ -1307,54 +1307,89 @@ Stop fighting legacy limitations. Whether you need a Cisco CCNP veteran to stabi
   <script src="assets/js/main.js"></script>
 
   <script>
-    async function initSubscribe(formId, emailId, btnId, loadingId, successId, errorId) {
-      const form = document.getElementById(formId);
-      if (!form) return;
-      form.addEventListener('submit', async (e) => {
-        e.preventDefault();
-        const email = document.getElementById(emailId).value;
-        const btn = document.getElementById(btnId);
-        const loading = document.getElementById(loadingId);
-        const success = document.getElementById(successId);
-        const error = document.getElementById(errorId);
-        btn.disabled = true;
-        if(loading) loading.style.display = 'block';
-        if(success) success.style.display = 'none';
-        if(error) error.style.display = 'none';
-        try {
-          const res = await fetch('/api/subscribe', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ email: email })
-          });
-          if (res.ok) {
-            if(success) success.style.display = 'block';
-            form.reset();
-          } else { if(error) error.style.display = 'block'; }
-        } catch (err) { if(error) error.style.display = 'block'; }
-        finally { btn.disabled = false; if(loading) loading.style.display = 'none'; }
-      });
-    }
+  // --- UNIFIED CONTACT FORM LOGIC ---
+  const contactForm = document.getElementById('contact-form');
+  const contactBtn = document.getElementById('submit-button');
+  const contactStatus = document.getElementById('contact-status');
 
-    initSubscribe('subscribe-form', 'subscribe-email', 'button-subscribe', 'sub-loading', 'sub-success', 'sub-error');
-    initSubscribe('footer-subscribe-form', 'footer-email', 'footer-btn', 'footer-loading', 'footer-success', 'footer-error');
+  if (contactForm) {
+    contactForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      
+      // Disable button and show progress
+      contactBtn.disabled = true;
+      contactBtn.innerText = "Sending...";
 
-    const contactForm = document.getElementById('contact-form');
-    if (contactForm) {
-      contactForm.addEventListener('submit', async (e) => {
-        e.preventDefault();
-        const btn = document.getElementById('submit-button');
-        const status = document.getElementById('contact-status') || document.getElementById('form-status');
-        btn.disabled = true;
-        btn.innerText = "Sending...";
-        try {
-          const res = await fetch(contactForm.action, { method: 'POST', body: new FormData(contactForm) });
-          if (res.ok) { if(status) status.style.display = 'block'; contactForm.reset(); }
-          else { alert("Error sending message."); }
-        } catch (err) { alert("Network error."); }
-        finally { btn.disabled = false; btn.innerText = "Send Message"; }
-      });
-    }
-  </script>
+      // Prepare data from form fields
+      const formData = new FormData(contactForm);
+      const data = Object.from_ HarrisEntries(formData.entries());
+
+      try {
+        // THIS IS THE MISSING FETCH CALL
+        const response = await fetch('/api/contact', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data)
+        });
+
+        if (response.ok) {
+          contactStatus.style.display = 'block';
+          contactStatus.innerText = "Message sent successfully!";
+          contactStatus.style.color = "green";
+          contactForm.reset();
+        } else {
+          const errData = await response.json();
+          alert("Error: " + (errData.error || "Could not send message."));
+        }
+      } catch (err) {
+        console.error("Connection Error:", err);
+        alert("Network error. Please try again later.");
+      } finally {
+        contactBtn.disabled = false;
+        contactBtn.innerText = "Send Message";
+      }
+    });
+  }
+
+  // --- UNIFIED SUBSCRIBE FORM LOGIC ---
+  const subForm = document.getElementById('subscribe-form');
+  const subEmail = document.getElementById('subscribe-email');
+  const subBtn = document.getElementById('button-subscribe');
+
+  if (subForm && subEmail) {
+    subForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      
+      const subLoading = document.getElementById('sub-loading');
+      const subSuccess = document.getElementById('sub-success');
+      const subError = document.getElementById('sub-error');
+
+      subBtn.disabled = true;
+      if(subLoading) subLoading.style.display = 'block';
+      if(subSuccess) subSuccess.style.display = 'none';
+      if(subError) subError.style.display = 'none';
+
+      try {
+        const response = await fetch('/api/subscribe', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email: subEmail.value }),
+        });
+
+        if (response.ok) {
+          if(subSuccess) subSuccess.style.display = 'block';
+          subForm.reset();
+        } else {
+          if(subError) subError.style.display = 'block';
+        }
+      } catch (error) {
+        if(subError) subError.style.display = 'block';
+      } finally {
+        subBtn.disabled = false;
+        if(subLoading) subLoading.style.display = 'none';
+      }
+    });
+  }
+</script>
 </body>
 </html>
