@@ -61,7 +61,7 @@ class handler(BaseHTTPRequestHandler):
                 },
                 json={
                     "from": "System <admin@sypheit.cloud>",
-                    "to": ["sypheit@gmail.com"],
+                    "to": ["djboziah@gmail.com"],
                     "subject": "🔥 New Subscriber Alert!",
                     "html": f"<p>New subscriber: <b>{subscriber_email}</b></p>"
                 }
