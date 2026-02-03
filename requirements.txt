@@ -1,1 +1,5 @@
 requests
+resend
+flask
+flask-cors
+python-dotenv
