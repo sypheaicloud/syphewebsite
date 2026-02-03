@@ -84,56 +84,50 @@
   </header>
 
   <main class="main">
+<section id="hero" class="hero section dark-background" style="padding: 80px 0; min-height: 80vh; position: relative; overflow: hidden; display: flex; align-items: center;">
 
-    <section id="hero" class="hero section dark-background" style="padding: 80px 0; min-height: auto; overflow: hidden;">
+  <video autoplay muted loop playsinline style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1;">
+    <source src="assets/img/motion2.mp4" type="video/mp4">
+  </video>
 
-  <div class="container">
+  <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); z-index: 2;"></div>
+
+  <div class="container" style="position: relative; z-index: 3;">
     <div class="row align-items-center gy-5">
       
       <div class="col-lg-7 order-2 order-lg-1" data-aos="zoom-out">
+        <p class="hero-keywords mb-4" aria-label="Key technologies">
+          <span class="hero-chip"><i class="bi bi-cpu"></i>ML</span>
+          <span class="hero-chip"><i class="bi bi-robot"></i>AI</span>
+          <span class="hero-chip"><i class="bi bi-file-earmark-text"></i>LLM</span>
+          <span class="hero-chip"><i class="bi bi-people-fill"></i>AI Agents</span>
+          <span class="hero-chip">
+            <a href="sypheitdevopsmanual.html" style="text-decoration: none; color: inherit;">
+              <i class="bi bi-tools"></i> DevOps
+            </a>
+          </span>
+          <span class="hero-chip"><i class="bi bi-cloud"></i>MCP</span>
+          <a href="https://n8n.sypheit.cloud/signin?redirect=%252F" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;">
+            <span class="hero-chip"><i class="bi bi-gear"></i> n8n</span>
+          </a>
+          <a class="hero-chip hero-link" href="k8s.html"><i class="bi bi-box-seam"></i>Kubernetes Setup</a>
+          <a href="k8s.html" class="hero-link">
+            <span class="hero-chip"><i class="bi bi-cloud"></i> Hybrid Cloud(Oracle)</span>
+          </a>
+          <span class="hero-chip"><i class="bi bi-diagram-3"></i>Enterprise Networking</span>
+          <span class="hero-chip"><i class="bi bi-hdd-stack"></i>VMware</span>
+          <a class="hero-chip hero-link" href="fortigate.html"><i class="bi bi-shield-lock"></i>Fortinet Setup</a>
+          <a href="azure.html" class="hero-link">
+            <span class="hero-chip"><i class="bi bi-arrow-repeat"></i> Azure Cloud</span>
+          </a>
+          <a href="docker.html" style="text-decoration: none; color: inherit;">
+            <span class="hero-chip"><i class="bi bi-box-seam"></i> Docker</span>
+          </a>
+          <a class="hero-chip hero-link" href="website-design.html"><i class="bi bi-brush"></i>Website Design</a>
+          <a class="hero-chip hero-cta" href="aiproject.html"><i class="bi bi-gear"></i>Automated pipeline that monitors FortiGate firewall logs</a>
+        </p>
 
-    <p class="hero-keywords mb-4" aria-label="Key technologies">
-      <span class="hero-chip"><i class="bi bi-cpu"></i>ML</span>
-      <span class="hero-chip"><i class="bi bi-robot"></i>AI</span>
-      <span class="hero-chip"><i class="bi bi-file-earmark-text"></i>LLM</span>
-      <span class="hero-chip"><i class="bi bi-people-fill"></i>AI Agents</span>
-      <span class="hero-chip">
-  <a href="sypheitdevopsmanual.html" style="text-decoration: none; color: inherit;">
-    <i class="bi bi-tools"></i> DevOps
-  </a>
-</span>
-      <span class="hero-chip"><i class="bi bi-cloud"></i>MCP</span>
-      <a href="https://n8n.sypheit.cloud/signin?redirect=%252F" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;">
-  <span class="hero-chip">
-    <i class="bi bi-gear"></i> n8n
-  </span>
-</a>
-      <a class="hero-chip hero-link" href="k8s.html"><i class="bi bi-box-seam"></i>Kubernetes Setup</a>
-<a href="k8s.html" class="hero-link">
-  <span class="hero-chip">
-    <i class="bi bi-cloud"></i> Hybrid Cloud(Oracle)
-  </span>
-</a>
-      <span class="hero-chip"><i class="bi bi-diagram-3"></i>Enterprise Networking</span>
-      <span class="hero-chip"><i class="bi bi-hdd-stack"></i>VMware</span>
-      <a class="hero-chip hero-link" href="fortigate.html"><i class="bi bi-shield-lock"></i>Fortinet Setup</a>
-      <a href="mynotes.html" style="text-decoration: none; color: inherit;">
-    <a href="azure.html" class="hero-link">
-  <span class="hero-chip">
-    <i class="bi bi-arrow-repeat"></i> Azure Cloud
-  </span>
-</a>
-</a>
-      <a href="docker.html" style="text-decoration: none; color: inherit;">
-  <span class="hero-chip">
-    <i class="bi bi-box-seam"></i> Docker
-  </span>
-</a>
-      <a class="hero-chip hero-link" href="website-design.html"><i class="bi bi-brush"></i>Website Design</a>
-      <a class="hero-chip hero-cta" href="aiproject.html"><i class="bi bi-gear"></i>Automated pipeline that monitors FortiGate firewall logs</a>
-    </p>
-
-    <div class="d-flex flex-wrap align-items-center gap-3">    
+        <div class="d-flex flex-wrap align-items-center gap-3">    
           <div class="d-flex align-items-center px-4 py-2" style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255,255,255,0.2); border-radius: 8px; min-width: 130px; justify-content: center;">
             <div class="text-center">
               <span class="d-block fw-bold text-white" style="font-size: 1.1rem; letter-spacing: 1px;">CCNA</span>
@@ -159,23 +153,19 @@
             <div class="text-center">
               <span class="d-block fw-bold text-white" style="font-size: 1.1rem; letter-spacing: 1px;">AI-900</span>
               <span class="d-block text-uppercase fw-bold" style="font-size: 0.6rem; color: rgba(255,255,255,0.6);">Microsoft AI</span>
-              
             </div>
-            
           </div>
-
         </div>
-       
       </div>
 
       <div class="col-lg-5 order-1 order-lg-2 hero-img text-center text-lg-end" data-aos="zoom-out" data-aos-delay="200">
-        <img src="assets/img/hero-img.png" class="img-fluid animated" alt="Syphe IT Infrastructure" style="max-height: 320px; width: auto; filter: drop-shadow(0px 20px 30px rgba(0,0,0,0.25));">
+        <img src="assets/img/heropink.png" class="img-fluid animated" alt="Syphe IT Infrastructure" style="max-height: 1110px; width: auto; filter: drop-shadow(0px 45px 50px rgba(0,0,0,0.25));">
       </div>
 
     </div>
   </div>
-
 </section>
+    
     <section id="clients" class="clients section light-background" style="padding: 20px 0;">
 
   <div class="container" data-aos="zoom-in">
@@ -1225,39 +1215,7 @@ Stop fighting legacy limitations. Whether you need a Cisco CCNP veteran to stabi
   <strong>Thank you!</strong> We will respond within 24 hours.
 </div>
 
-<script>
-  const form = document.getElementById("contact-form");
-  const status = document.getElementById("form-status");
 
-  form.addEventListener("submit", async (event) => {
-    event.preventDefault(); // Stop the page from redirecting
-    const data = new FormData(event.target);
-    
-    // Disable button while sending
-    const button = document.getElementById("submit-button");
-    button.disabled = true;
-    button.innerText = "Sending...";
-
-    fetch(event.target.action, {
-      method: 'POST',
-      body: data,
-      headers: { 'Accept': 'application/json' }
-    }).then(response => {
-      if (response.ok) {
-        form.style.display = "none"; // Hide the form
-        status.style.display = "block"; // Show your thank you message
-      } else {
-        alert("Oops! There was a problem submitting your form");
-        button.disabled = false;
-        button.innerText = "Send Message";
-      }
-    }).catch(error => {
-      alert("Oops! Network error. Please try again later.");
-      button.disabled = false;
-      button.innerText = "Send Message";
-    });
-  });
-</script>
           </div><!-- End Contact Form -->
 
         </div>
@@ -1307,6 +1265,13 @@ Stop fighting legacy limitations. Whether you need a Cisco CCNP veteran to stabi
   <script src="assets/js/main.js"></script>
 
   <script>
+  // Remove any existing form event listeners
+  const oldContactForm = document.getElementById('contact-form');
+  if (oldContactForm) {
+    const newContactForm = oldContactForm.cloneNode(true);
+    oldContactForm.parentNode.replaceChild(newContactForm, oldContactForm);
+  }
+
   // --- UNIFIED CONTACT FORM LOGIC ---
   const contactForm = document.getElementById('contact-form');
   const contactBtn = document.getElementById('submit-button');
@@ -1315,6 +1280,7 @@ Stop fighting legacy limitations. Whether you need a Cisco CCNP veteran to stabi
   if (contactForm) {
     contactForm.addEventListener('submit', async (e) => {
       e.preventDefault();
+      e.stopPropagation();
       
       // Disable button and show progress
       contactBtn.disabled = true;
@@ -1322,33 +1288,47 @@ Stop fighting legacy limitations. Whether you need a Cisco CCNP veteran to stabi
 
       // Prepare data from form fields
       const formData = new FormData(contactForm);
-      const data = Object.from_ HarrisEntries(formData.entries());
+      const data = Object.fromEntries(formData.entries());
 
       try {
-        // THIS IS THE MISSING FETCH CALL
-        const response = await fetch('/api/contact', {
+        const response = await fetch('http://localhost:5000/api/contact', {
           method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
+          headers: { 
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
           body: JSON.stringify(data)
         });
 
-        if (response.ok) {
+        const result = await response.json();
+
+        if (response.ok && result.status === 'success') {
           contactStatus.style.display = 'block';
           contactStatus.innerText = "Message sent successfully!";
           contactStatus.style.color = "green";
           contactForm.reset();
         } else {
-          const errData = await response.json();
-          alert("Error: " + (errData.error || "Could not send message."));
+          contactStatus.style.display = 'block';
+          contactStatus.innerText = "Error: " + (result.message || "Could not send message.");
+          contactStatus.style.color = "red";
         }
       } catch (err) {
         console.error("Connection Error:", err);
-        alert("Network error. Please try again later.");
+        contactStatus.style.display = 'block';
+        contactStatus.innerText = "Network error. Please try again later.";
+        contactStatus.style.color = "red";
       } finally {
         contactBtn.disabled = false;
         contactBtn.innerText = "Send Message";
       }
     });
+  }
+
+  // Remove any existing subscribe event listeners
+  const oldSubForm = document.getElementById('subscribe-form');
+  if (oldSubForm) {
+    const newSubForm = oldSubForm.cloneNode(true);
+    oldSubForm.parentNode.replaceChild(newSubForm, oldSubForm);
   }
 
   // --- UNIFIED SUBSCRIBE FORM LOGIC ---
@@ -1359,6 +1339,7 @@ Stop fighting legacy limitations. Whether you need a Cisco CCNP veteran to stabi
   if (subForm && subEmail) {
     subForm.addEventListener('submit', async (e) => {
       e.preventDefault();
+      e.stopPropagation();
       
       const subLoading = document.getElementById('sub-loading');
       const subSuccess = document.getElementById('sub-success');
@@ -1370,19 +1351,25 @@ Stop fighting legacy limitations. Whether you need a Cisco CCNP veteran to stabi
       if(subError) subError.style.display = 'none';
 
       try {
-        const response = await fetch('/api/subscribe', {
+        const response = await fetch('http://localhost:5000/api/subscribe', {
           method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
+          headers: { 
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
           body: JSON.stringify({ email: subEmail.value }),
         });
 
-        if (response.ok) {
+        const result = await response.json();
+
+        if (response.ok && result.status === 'ok') {
           if(subSuccess) subSuccess.style.display = 'block';
           subForm.reset();
         } else {
           if(subError) subError.style.display = 'block';
         }
       } catch (error) {
+        console.error("Subscribe error:", error);
         if(subError) subError.style.display = 'block';
       } finally {
         subBtn.disabled = false;
