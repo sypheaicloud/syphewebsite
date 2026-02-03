@@ -52,7 +52,7 @@ def contact():
                 "Content-Type": "application/json"
             },
             json={
-                "from": "Contact Form <hello@sypheit.cloud>",  # UPDATED
+                "from": "Contact Form <hello@sypheit.cloud>",
                 "to": ["sypheit@gmail.com"],
                 "subject": f"Contact Form: {subject}",
                 "reply_to": email,
@@ -120,7 +120,7 @@ def subscribe():
                 "Content-Type": "application/json"
             },
             json={
-                "from": "Sypheit Newsletter <newsletter@sypheit.cloud>",  # UPDATED
+                "from": "Sypheit Newsletter <newsletter@sypheit.cloud>",
                 "to": [subscriber_email],
                 "subject": "Welcome to the Family! 🚀",
                 "html": """
@@ -145,7 +145,7 @@ def subscribe():
                 "Content-Type": "application/json"
             },
             json={
-                "from": "System <admin@sypheit.cloud>",  # UPDATED
+                "from": "System <admin@sypheit.cloud>",
                 "to": ["sypheit@gmail.com"],
                 "subject": "🔥 New Subscriber Alert!",
                 "html": f"<p>New subscriber: <b>{subscriber_email}</b></p>"
@@ -153,6 +153,22 @@ def subscribe():
         )
         
         print(f"Admin notification response: {admin_res.status_code}")
+
+        # --- ADD SUBSCRIBER TO AUDIENCE ---
+        audience_id = "71e1df0e-b4a0-4640-9742-f01f9c373b6e"
+        
+        add_to_audience = requests.post(
+            f"https://api.resend.com/audiences/{audience_id}/contacts",
+            headers={
+                "Authorization": f"Bearer {api_key}",
+                "Content-Type": "application/json"
+            },
+            json={
+                "email": subscriber_email
+            }
+        )
+        
+        print(f"Added to audience: {add_to_audience.status_code}")
         
         if welcome_res.status_code < 300:
             return jsonify({"status": "ok"})

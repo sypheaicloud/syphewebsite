@@ -52,7 +52,6 @@ class handler(BaseHTTPRequestHandler):
             )
 
             # --- 2. SEND NOTIFICATION TO ADMIN (sypheit@gmail.com) ---
-            # Added validation check for this request
             admin_res = requests.post(
                 "https://api.resend.com/emails",
                 headers={
@@ -67,7 +66,23 @@ class handler(BaseHTTPRequestHandler):
                 }
             )
 
-            # 3. RESPOND TO BROWSER ONLY IF AT LEAST ONE SUCCEEDED
+            # --- 3. ADD SUBSCRIBER TO AUDIENCE ---
+            audience_id = "71e1df0e-b4a0-4640-9742-f01f9c373b6e"
+
+            add_to_audience = requests.post(
+                f"https://api.resend.com/audiences/{audience_id}/contacts",
+                headers={
+                    "Authorization": f"Bearer {api_key}",
+                    "Content-Type": "application/json"
+                },
+                json={
+                    "email": subscriber_email
+                }
+            )
+
+            print(f"Added to audience: {add_to_audience.status_code}")
+
+            # --- 4. RESPOND TO BROWSER ONLY IF AT LEAST ONE SUCCEEDED ---
             if welcome_res.status_code < 300:
                 response_data = json.dumps({"status": "ok"})
                 self.send_header('Content-Type', 'application/json')
