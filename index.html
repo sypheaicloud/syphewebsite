@@ -1181,7 +1181,8 @@ Stop fighting legacy limitations. Whether you need a Cisco CCNP veteran to stabi
           </div>
 
           <div class="col-lg-7">
-            <form id="contact-form" action="/api/contact" method="POST" data-aos="fade-up" data-aos-delay="200">
+            <div id="contact-status" style="display:none; padding: 15px; margin-bottom: 20px; text-align: center; font-weight: 600; border-radius: 5px;"></div>
+            <form id="contact-form" data-aos="fade-up" data-aos-delay="200">
   
   <div class="row gy-4">
     <div class="col-md-6">
@@ -1210,7 +1211,6 @@ Stop fighting legacy limitations. Whether you need a Cisco CCNP veteran to stabi
   </div>
 
 </form>
-
 <div id="form-status" style="display:none; text-align:center; margin-top: 20px; padding: 20px; background: #e7f5ff; border-radius: 4px; color: #004085;">
   <strong>Thank you!</strong> We will respond within 24 hours.
 </div>
@@ -1332,20 +1332,21 @@ Stop fighting legacy limitations. Whether you need a Cisco CCNP veteran to stabi
   }
 
   // --- UNIFIED SUBSCRIBE FORM LOGIC ---
-  const subForm = document.getElementById('subscribe-form');
-  const subEmail = document.getElementById('subscribe-email');
-  const subBtn = document.getElementById('button-subscribe');
+  const subForm = document.getElementById('footer-subscribe-form');
+  const subEmail = document.getElementById('footer-email');
+  const subBtn = document.getElementById('footer-btn');
 
   if (subForm && subEmail) {
     subForm.addEventListener('submit', async (e) => {
       e.preventDefault();
       e.stopPropagation();
       
-      const subLoading = document.getElementById('sub-loading');
-      const subSuccess = document.getElementById('sub-success');
-      const subError = document.getElementById('sub-error');
+      const subLoading = document.getElementById('footer-loading');
+      const subSuccess = document.getElementById('footer-success');
+      const subError = document.getElementById('footer-error');
 
       subBtn.disabled = true;
+      subBtn.value = "Sending...";
       if(subLoading) subLoading.style.display = 'block';
       if(subSuccess) subSuccess.style.display = 'none';
       if(subError) subError.style.display = 'none';
@@ -1373,6 +1374,7 @@ Stop fighting legacy limitations. Whether you need a Cisco CCNP veteran to stabi
         if(subError) subError.style.display = 'block';
       } finally {
         subBtn.disabled = false;
+        subBtn.value = "Subscribe";
         if(subLoading) subLoading.style.display = 'none';
       }
     });
