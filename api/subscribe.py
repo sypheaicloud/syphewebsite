@@ -37,21 +37,25 @@ class handler(BaseHTTPRequestHandler):
                     "Content-Type": "application/json"
                 },
                 json={
-                    "from": "Sypheit Newsletter <newsletter@sypheit.cloud>",
+                    # UPDATED: Using support@ for branding
+                    "from": "Sypheit Newsletter <support@sypheit.cloud>",
                     "to": [subscriber_email],
                     "subject": "Welcome to the Family! 🚀",
+                    "reply_to": "support@sypheit.cloud",
                     "html": f"""
                         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: auto; border: 1px solid #eee; padding: 20px;">
                             <h2 style="color: #007bff;">Thanks for joining!</h2>
                             <p>Hi there,</p>
                             <p>We're thrilled to have you on board. You'll be the first to hear about our latest updates directly from <strong>sypheit.cloud</strong>.</p>
+                            <hr style="border:none; border-top:1px solid #eee; margin: 20px 0;">
                             <p>Cheers,<br>The Sypheit Team</p>
+                            <p style="font-size: 11px; color: #999;">You received this because you subscribed at sypheit.cloud</p>
                         </div>
                     """
                 }
             )
 
-            # --- 2. SEND NOTIFICATION TO ADMIN (sypheit@gmail.com) ---
+            # --- 2. SEND NOTIFICATION TO ADMIN ---
             admin_res = requests.post(
                 "https://api.resend.com/emails",
                 headers={
@@ -59,10 +63,20 @@ class handler(BaseHTTPRequestHandler):
                     "Content-Type": "application/json"
                 },
                 json={
-                    "from": "System <admin@sypheit.cloud>",
-                    "to": ["sypheit@gmail.com"],
+                    # UPDATED: Using your internal admin identity
+                    "from": "Sypheit System <support@sypheit.cloud>",
+                    # UPDATED: Sending to support@ so it hits your professional flow
+                    "to": ["support@sypheit.cloud"],
                     "subject": "🔥 New Subscriber Alert!",
-                    "html": f"<p>New subscriber: <b>{subscriber_email}</b></p>"
+                    "html": f"""
+                        <div style="font-family: sans-serif; padding: 20px; background: #f4f4f4;">
+                            <div style="background: white; padding: 20px; border-radius: 8px;">
+                                <h3 style="margin-top: 0;">New Newsletter Subscriber</h3>
+                                <p><strong>Email:</strong> {subscriber_email}</p>
+                                <p style="font-size: 12px; color: #666;">View this contact in your Resend Audience dashboard.</p>
+                            </div>
+                        </div>
+                    """
                 }
             )
 
@@ -80,9 +94,7 @@ class handler(BaseHTTPRequestHandler):
                 }
             )
 
-            print(f"Added to audience: {add_to_audience.status_code}")
-
-            # --- 4. RESPOND TO BROWSER ONLY IF AT LEAST ONE SUCCEEDED ---
+            # --- 4. RESPOND TO BROWSER ---
             if welcome_res.status_code < 300:
                 response_data = json.dumps({"status": "ok"})
                 self.send_header('Content-Type', 'application/json')
@@ -94,7 +106,6 @@ class handler(BaseHTTPRequestHandler):
 
         except Exception as e:
             print(f"Error: {e}")
-            # Do not send 200 if there was an actual failure
             self.send_response(500)
             self.send_header('Content-Type', 'application/json')
             self.end_headers()

@@ -38,7 +38,7 @@ class handler(BaseHTTPRequestHandler):
 
         # 3. Extract form fields
         name = data.get('name', 'Unknown')
-        email = data.get('email', 'No Email')
+        user_email = data.get('email', 'No Email')
         subject = data.get('subject', 'No Subject')
         message = data.get('message', 'No Message')
 
@@ -53,27 +53,33 @@ class handler(BaseHTTPRequestHandler):
                 "Content-Type": "application/json"
             },
             json={
-                "from": f"Contact Form <hello@sypheit.cloud>", # Use a fixed verified sender name
-                "to": ["sypheit@gmail.com"],
-                "subject": f"Contact Form: {subject}",
-                "reply_to": email, # IMPORTANT: This lets you reply directly to the sender
+                # CHANGED: Sent FROM your new professional support email
+                "from": f"Sypheit Support <support@sypheit.cloud>", 
+                # CHANGED: Sent TO your support email (which Cloudflare forwards to your Gmail)
+                "to": ["support@sypheit.cloud"], 
+                "subject": f"New Contact Form Message: {subject}",
+                # IMPORTANT: This lets you reply directly to the person who filled the form
+                "reply_to": user_email, 
                 "html": f"""
                     <div style="font-family: sans-serif; line-height: 1.5; color: #333; border: 1px solid #ddd; padding: 20px;">
                         <h2 style="color: #007bff;">New Message from {name}</h2>
-                        <p><strong>Email:</strong> {email}</p>
+                        <p><strong>Visitor Email:</strong> {user_email}</p>
                         <p><strong>Subject:</strong> {subject}</p>
-                        <hr>
+                        <hr style="border: none; border-top: 1px solid #eee;">
                         <p><strong>Message:</strong></p>
-                        <p style="background: #f9f9f9; padding: 15px;">{message}</p>
+                        <p style="background: #f9f9f9; padding: 15px; border-radius: 5px;">{message}</p>
+                        <br>
+                        <p style="font-size: 12px; color: #777;">This message was sent via the sypheit.cloud contact form.</p>
                     </div>
                 """
             }
         )
 
         # 6. Respond back to the browser
+        status = "success" if res.status_code < 300 else "error"
         response_data = json.dumps({
-            "status": "success" if res.status_code < 300 else "error",
-            "message": "Thank you for your message!"
+            "status": status,
+            "message": "Thank you for your message! We'll get back to you soon."
         })
         
         self.send_header('Content-Length', str(len(response_data)))
