@@ -40,50 +40,56 @@
   });
 
   /**
-   * Consolidated Dropdown Toggle Logic
-   * Handles clicks on both the chevron icon and the parent link
+   * FIXED: Dropdown Toggle Logic - Works on ALL screen sizes
+   * Handles clicks on dropdown links
    */
-  document.querySelectorAll('.navmenu .dropdown > a').forEach(navmenu => {
-    navmenu.addEventListener('click', function(e) {
-      // Toggle dropdowns on mobile or for links that are placeholders (#)
-      if (window.innerWidth < 1200 || this.href.includes('#')) {
-        if (this.nextElementSibling && this.nextElementSibling.tagName === 'UL') {
+  document.querySelectorAll('.navmenu .dropdown > a').forEach(dropdownLink => {
+    dropdownLink.addEventListener('click', function(e) {
+      // Check if this link has a dropdown menu
+      if (this.nextElementSibling && this.nextElementSibling.tagName === 'UL') {
+        // Only prevent default if the href is just "#" (placeholder)
+        if (this.getAttribute('href') === '#') {
           e.preventDefault();
-          
-          // Toggle the 'active' class on the link and 'dropdown-active' on the menu
-          this.classList.toggle('active');
-          this.nextElementSibling.classList.toggle('dropdown-active');
-          
-          // Toggle parent li class for structural styling
-          if (this.parentNode) {
-            this.parentNode.classList.toggle('active');
-          }
-
-          e.stopImmediatePropagation();
         }
+        
+        // Toggle the dropdown
+        toggleDropdown(this);
+        e.stopImmediatePropagation();
       }
     });
   });
 
   /**
-   * Chevron-specific toggle
+   * FIXED: Chevron Icon Click Handler
+   * Makes the chevron icon clickable
    */
-  document.querySelectorAll('.navmenu .toggle-dropdown').forEach(navmenu => {
-    navmenu.addEventListener('click', function(e) {
+  document.querySelectorAll('.navmenu .toggle-dropdown').forEach(chevron => {
+    chevron.addEventListener('click', function(e) {
       e.preventDefault();
-      // Ensure we find the sibling UL and toggle it
-      let parentLink = this.closest('a');
-      if (parentLink && parentLink.nextElementSibling && parentLink.nextElementSibling.tagName === 'UL') {
-        parentLink.classList.toggle('active');
-        parentLink.nextElementSibling.classList.toggle('dropdown-active');
-        
-        if (parentLink.parentNode) {
-          parentLink.parentNode.classList.toggle('active');
-        }
+      e.stopPropagation(); // Stop the event from bubbling to parent link
+      
+      // Find the parent link
+      const parentLink = this.closest('a');
+      if (parentLink) {
+        toggleDropdown(parentLink);
       }
-      e.stopImmediatePropagation();
     });
   });
+
+  /**
+   * Helper function to toggle dropdown state
+   */
+  function toggleDropdown(linkElement) {
+    const parentLi = linkElement.closest('li');
+    const dropdownMenu = linkElement.nextElementSibling;
+    
+    if (parentLi && dropdownMenu) {
+      // Toggle classes
+      parentLi.classList.toggle('active');
+      linkElement.classList.toggle('active');
+      dropdownMenu.classList.toggle('dropdown-active');
+    }
+  }
 
   /**
    * Preloader

@@ -325,20 +325,20 @@ h6 {
   }
 
   .navmenu .dropdown ul {
-    margin: 0;
-    padding: 10px 0;
-    background: var(--nav-dropdown-background-color);
-    display: block;
-    position: absolute;
-    visibility: hidden;
-    left: 14px;
-    top: 130%;
-    opacity: 0;
-    transition: 0.3s;
-    border-radius: 4px;
-    z-index: 99;
-    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
-  }
+  margin: 0;
+  padding: 10px 0;
+  background: var(--nav-dropdown-background-color);
+  display: none !important;
+  position: absolute !important;
+  visibility: hidden;
+  left: 14px;
+  top: 130%;
+  opacity: 0;
+  transition: 0.3s;
+  border-radius: 4px;
+  z-index: 99;
+  box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
+}
 
   .navmenu .dropdown ul li {
     min-width: 200px;
@@ -4020,3 +4020,85 @@ section,
 #azure-note-bg h2 {
     margin-bottom: 10px !important; /* Pulls the text up closer to the title */
 }
+/*--------------------------------------------------------------
+# DROPDOWN FIX - STRONGER VERSION
+--------------------------------------------------------------*/
+
+/* DESKTOP DROPDOWN FIXES (min-width: 1200px) */
+@media (min-width: 1200px) {
+  
+  /* IMPORTANT: Hide dropdowns by default with !important */
+  .navmenu .dropdown ul {
+    display: none !important;
+  }
+
+  /* Show dropdown on hover (keeps original functionality) */
+  .navmenu .dropdown:hover > ul {
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    top: 100% !important;
+  }
+
+  /* Show dropdown when clicked (active class added by JavaScript) */
+  .navmenu .dropdown.active > ul,
+  .navmenu .dropdown > ul.dropdown-active,
+  .navmenu li.active > ul {
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    top: 100% !important;
+  }
+
+  /* Rotate chevron icon when dropdown is active */
+  .navmenu .active > a .toggle-dropdown,
+  .navmenu a.active .toggle-dropdown {
+    transform: rotate(180deg) !important;
+  }
+
+  /* Smooth transition for chevron rotation */
+  .navmenu .toggle-dropdown {
+    transition: transform 0.3s ease;
+    display: inline-block;
+  }
+
+  /* Support for nested dropdowns on click */
+  .navmenu .dropdown .dropdown ul {
+    display: none !important;
+  }
+
+  .navmenu .dropdown .dropdown:hover > ul {
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    left: -100% !important;
+    top: 0 !important;
+  }
+
+  .navmenu .dropdown .dropdown.active > ul {
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    left: -100% !important;
+    top: 0 !important;
+  }
+}
+
+/* MOBILE DROPDOWN FIXES */
+@media (max-width: 1199px) {
+  .navmenu .dropdown ul {
+    display: none !important;
+  }
+
+  .navmenu .dropdown > .dropdown-active,
+  .navmenu li.active > ul {
+    display: block !important;
+  }
+}
+
+/* Make sure parent li can receive active class */
+.navmenu li.active > a {
+  color: var(--nav-hover-color) !important;
+}
+
+/* END OF DROPDOWN FIX */
