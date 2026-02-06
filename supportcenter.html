@@ -1,0 +1,389 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>My Notes - Syphe IT Services</title>
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+
+    <!-- Favicons -->
+    <link href="assets/img/favicon.png" rel="icon" />
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Jost:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Vendor CSS Files -->
+    <link
+      href="assets/vendor/bootstrap/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="assets/vendor/bootstrap-icons/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet" />
+    <link
+      href="assets/vendor/glightbox/css/glightbox.min.css"
+      rel="stylesheet"
+    />
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
+
+    <!-- Main CSS File -->
+    <link href="assets/css/main.css" rel="stylesheet" />
+
+    <style>
+      /* 1. Makes the header taller */
+      .header {
+        --header-height: 100px;
+        height: var(--header-height);
+      }
+
+      /* 2. Adjusts the spacing of the menu items */
+      .navmenu a,
+      .navmenu a:focus {
+        padding: 35px 15px !important;
+        font-size: 16px;
+      }
+
+      /* 3. NEW FLASHY LOGO STYLING */
+      .header .logo h1 {
+        font-family: "Jost", sans-serif;
+        font-size: 32px !important;
+        font-weight: 800 !important;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        margin: 0;
+
+        /* Metallic / Cyan Gradient Effect */
+        background: linear-gradient(135deg, #ffffff 30%, #00d4ff 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+
+        /* Neon Glow */
+        filter: drop-shadow(0 0 8px rgba(0, 212, 255, 0.4));
+        transition: all 0.3s ease;
+      }
+
+      /* Hover effect for extra "Flash" */
+      .header .logo:hover h1 {
+        filter: drop-shadow(0 0 15px rgba(0, 212, 255, 0.8));
+        transform: scale(1.03);
+      }
+    </style>
+  </head>
+
+  <body class="starter-page-page">
+    <header
+      id="header"
+      class="header d-flex align-items-center fixed-top"
+      style="background-color: #061a3a"
+    >
+      <div
+        class="container-fluid container-xl position-relative d-flex align-items-center"
+      >
+        <a
+          href="index.html"
+          class="logo d-flex align-items-center me-auto"
+          style="text-decoration: none"
+        >
+          <h1 class="sitename" style="color: #ffffff; margin: 0">
+            Syphe IT <br />
+            Services
+          </h1>
+        </a>
+
+        <nav id="navmenu" class="navmenu">
+          <ul>
+            <li><a href="index.html" style="color: #ffffff">Home</a></li>
+            <li><a href="#about" style="color: #ffffff">About</a></li>
+            <li><a href="#services" style="color: #ffffff">Services</a></li>
+            <li>
+              <a href="deepdive.html" style="color: #ffffff"
+                >Technical Deep Dive</a
+              >
+            </li>
+            <li><a href="#team" style="color: #ffffff">Projects</a></li>
+            <li class="active">
+              <a href="mynotes.html" style="color: #ffffff">My Notes</a>
+            </li>
+            <li><a href="blog.html" style="color: #ffffff">Clients</a></li>
+
+            <li class="dropdown">
+              <a href="#" style="color: #ffffff"
+                ><span>Dropdown</span>
+                <i class="bi bi-chevron-down toggle-dropdown"></i
+              ></a>
+              <ul>
+                <li><a href="#">Dropdown 1</a></li>
+                <li class="dropdown">
+                  <a href="#"
+                    ><span>Deep Dropdown</span>
+                    <i class="bi bi-chevron-down toggle-dropdown"></i
+                  ></a>
+                  <ul>
+                    <li><a href="#">Deep Dropdown 1</a></li>
+                    <li><a href="#">Deep Dropdown 2</a></li>
+                    <li><a href="#">Deep Dropdown 3</a></li>
+                    <li><a href="#">Deep Dropdown 4</a></li>
+                    <li><a href="#">Deep Dropdown 5</a></li>
+                  </ul>
+                </li>
+                <li><a href="#">Dropdown 2</a></li>
+                <li><a href="#">Dropdown 3</a></li>
+                <li><a href="#">Dropdown 4</a></li>
+              </ul>
+            </li>
+            <li><a href="#contact" style="color: #ffffff">Contact</a></li>
+          </ul>
+          <i
+            class="mobile-nav-toggle d-xl-none bi bi-list"
+            style="color: #ffffff"
+          ></i>
+        </nav>
+
+        <a class="btn-getstarted" href="#about"></a>
+      </div>
+    </header>
+
+    <main class="main">
+      <!-- Page Title -->
+      <div class="page-title" data-aos="fade">
+        <div class="container">
+          <nav class="breadcrumbs"></nav>
+          <h1>My Notes</h1>
+        </div>
+      </div>
+      <!-- End Page Title -->
+
+      <div class="mynotes-content container">
+        <h2>Welcome to the Syphe IT Service Support Center</h2>
+
+        <p>
+          Please use the following contact information for technical support
+          requests only. For all other inquiries please use the information and
+          form on the Schedule Appointment page.
+        </p>
+
+        <h2>Business Hours Support</h2>
+
+        <ul>
+          <li>
+            <strong>The help desk is actively staffed from 8am-6pm.</strong> 
+          </li>
+          <li>Except major holidays.</li>
+            <strong>The fastest way to receive support is by phone</strong>
+            <ul>
+              <li>
+                Where someone will be available to assist within 90 seconds.
+              </li>
+              <li>
+                <strong>Other methods will receive a response in less than 2 hours.</strong>
+              </li>
+            </ul>
+          </li>
+           </li>
+        </ul>
+        <div class="container py-3"> <div class="row g-3 justify-content-center">
+    
+    <div class="col-xl-3 col-md-6">
+      <div class="support-card text-center p-3 shadow-sm" style="border-radius: 12px; border: 1px solid #f0f0f0; background: #ffffff; height: 100%;">
+        <div class="icon-box mb-2" style="width: 50px; height: 50px; background: rgba(255, 140, 0, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto;">
+          <i class="bi bi-envelope-fill" style="font-size: 1.2rem; color: #ff8c00;"></i>
+        </div>
+        <h5 style="font-weight: 700; color: #061a3a; margin-bottom: 5px;">Email Support</h5>
+        <a href="mailto:help@rymarkIT.com" style="color: #ff8c00; font-weight: 700; text-decoration: none; font-size: 0.9rem;">help@rymarkIT.com</a>
+      </div>
+    </div>
+
+    <div class="col-xl-3 col-md-6">
+      <div class="support-card text-center p-3 shadow" style="border-radius: 12px; background: #061a3a; color: #ffffff; height: 100%; border: 1px solid #ff8c00;">
+        <div class="icon-box mb-2" style="width: 50px; height: 50px; background: #ff8c00; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto;">
+          <i class="bi bi-telephone-fill" style="font-size: 1.2rem; color: #ffffff;"></i>
+        </div>
+        <h5 style="font-weight: 700; color: #ffffff; margin-bottom: 5px;">Phone Support</h5>
+        <a href="tel:+16123218706" style="color: #ff8c00; font-weight: 800; text-decoration: none; font-size: 1rem;">(612) 321-8706</a>
+      </div>
+    </div>
+
+    <div class="col-xl-3 col-md-6">
+      <div class="support-card text-center p-3 shadow-sm" style="border-radius: 12px; border: 1px solid #f0f0f0; background: #ffffff; height: 100%;">
+        <div class="icon-box mb-2" style="width: 50px; height: 50px; background: rgba(255, 140, 0, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto;">
+          <i class="bi bi-person-fill" style="font-size: 1.2rem; color: #ff8c00;"></i>
+        </div>
+        <h5 style="font-weight: 700; color: #061a3a; margin-bottom: 5px;">Client Portal</h5>
+        <a href="#" class="btn btn-sm" style="background: #ff8c00; color: white; font-weight: 700; padding: 4px 15px; border-radius: 20px; font-size: 0.8rem;">ACCESS PORTAL</a>
+      </div>
+    </div>
+
+    <div class="col-xl-3 col-md-6">
+      <div class="support-card text-center p-3 shadow-sm" style="border-radius: 12px; border: 1px solid #f0f0f0; background: #ffffff; height: 100%;">
+        <div class="icon-box mb-2" style="width: 50px; height: 50px; background: rgba(0, 74, 173, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto;">
+          <i class="bi bi-cart-fill" style="font-size: 1.2rem; color: #004aad;"></i>
+        </div>
+        <h5 style="font-weight: 700; color: #061a3a; margin-bottom: 5px;">Sales Inquiries</h5>
+        <a href="mailto:support@sypheit.cloud" style="color: #004aad; font-weight: 700; text-decoration: none; font-size: 0.9rem;">support@sypheit.cloud</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+      </div>
+      <div class="col-lg-12 text-center">
+        <h4>Join Our Newsletter</h4>
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-newsletter">
+        <div class="container">
+          <div class="row justify-content-center text-center">
+            <div class="col-lg-6">
+              <p>
+                Subscribe to our newsletter and receive the latest news about
+                our products and services!
+              </p>
+              <form
+                action="forms/newsletter.php"
+                method="post"
+                class="php-email-form"
+              >
+                <div class="newsletter-form">
+                  <input type="email" name="email" /><input
+                    type="submit"
+                    value="Subscribe"
+                  />
+                </div>
+                <div class="loading">Loading</div>
+                <div class="error-message"></div>
+                <div class="sent-message">
+                  Your subscription request has been sent. Thank you!
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container footer-top">
+        <div class="row gy-4">
+          <div class="col-lg-4 col-md-6 footer-about">
+            <a href="index.html" class="d-flex align-items-center">
+              <span class="sitename">Syphe IT</span>
+            </a>
+          </div>
+
+          <div class="col-lg-2 col-md-3 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li>
+                <i class="bi bi-chevron-right"></i>
+                <a href="index.html">Home</a>
+              </li>
+              <li>
+                <i class="bi bi-chevron-right"></i> <a href="#">About us</a>
+              </li>
+              <li>
+                <i class="bi bi-chevron-right"></i> <a href="#">Services</a>
+              </li>
+              <li>
+                <i class="bi bi-chevron-right"></i>
+                <a href="#">Terms of service</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-lg-2 col-md-3 footer-links">
+            <h4>Our Services</h4>
+            <ul>
+              <li>
+                <i class="bi bi-chevron-right"></i> <a href="#">Web Design</a>
+              </li>
+              <li>
+                <i class="bi bi-chevron-right"></i>
+                <a href="#">Web Development</a>
+              </li>
+              <li>
+                <i class="bi bi-chevron-right"></i>
+                <a href="#">Product Management</a>
+              </li>
+              <li>
+                <i class="bi bi-chevron-right"></i> <a href="#">Marketing</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-lg-4 col-md-12">
+            <h4>Follow Us</h4>
+            <p>Syphe IT Services</p>
+            <div class="social-links d-flex">
+              <a href=""><i class="bi bi-twitter-x"></i></a>
+              <a href=""><i class="bi bi-facebook"></i></a>
+              <a href=""><i class="bi bi-instagram"></i></a>
+              <a href=""><i class="bi bi-linkedin"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container copyright text-center mt-4">
+        <p>
+          © <span>Copyright</span>
+          <strong class="px-1 sitename">Syphe IT</strong>
+          <span>All Rights Reserved</span>
+        </p>
+        <div class="credits">
+          <!-- All the links in the footer should remain intact. -->
+          <!-- You can delete the links only if you've purchased the pro version. -->
+          <!-- Licensing information: https://bootstrapmade.com/license/ -->
+          <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
+          Designed by Syphe IT
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scroll Top -->
+    <a
+      href="#"
+      id="scroll-top"
+      class="scroll-top d-flex align-items-center justify-content-center"
+      ><i class="bi bi-arrow-up-short"></i
+    ></a>
+
+    <!-- Preloader -->
+    <div id="preloader"></div>
+
+    <!-- Vendor JS Files -->
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/php-email-form/validate.js"></script>
+    <script src="assets/vendor/aos/aos.js"></script>
+    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+    <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+
+    <!-- Main JS File -->
+    <script src="assets/js/main.js"></script>
+
+    <a
+      href="./index.html"
+      target="_self"
+      class="btn btn-primary back-home btn-sm position-fixed bottom-0 start-0 m-3"
+      aria-label="Return to home"
+      style="z-index: 9999"
+      onmousedown="window.location.href = './index.html'"
+      onclick="
+        window.location.href = './index.html';
+        return false;
+      "
+      >Home</a
+    >
+  </body>
+</html>

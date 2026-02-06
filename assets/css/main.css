@@ -367,6 +367,18 @@ h6 {
     visibility: visible;
   }
 
+  .navmenu .dropdown>ul.dropdown-active {
+    opacity: 1 !important;
+    top: 100% !important;
+    visibility: visible !important;
+  }
+
+  .navmenu .dropdown > .dropdown-active {
+    opacity: 1 !important;
+    visibility: visible !important;
+    top: 100% !important;
+  }
+
   .navmenu .dropdown .dropdown ul {
     top: 0;
     left: -90%;

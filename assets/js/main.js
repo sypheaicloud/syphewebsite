@@ -1,5 +1,3 @@
-
-
 (function() {
   "use strict";
 
@@ -39,17 +37,50 @@
         mobileNavToogle();
       }
     });
-
   });
 
   /**
-   * Toggle mobile nav dropdowns
+   * Consolidated Dropdown Toggle Logic
+   * Handles clicks on both the chevron icon and the parent link
+   */
+  document.querySelectorAll('.navmenu .dropdown > a').forEach(navmenu => {
+    navmenu.addEventListener('click', function(e) {
+      // Toggle dropdowns on mobile or for links that are placeholders (#)
+      if (window.innerWidth < 1200 || this.href.includes('#')) {
+        if (this.nextElementSibling && this.nextElementSibling.tagName === 'UL') {
+          e.preventDefault();
+          
+          // Toggle the 'active' class on the link and 'dropdown-active' on the menu
+          this.classList.toggle('active');
+          this.nextElementSibling.classList.toggle('dropdown-active');
+          
+          // Toggle parent li class for structural styling
+          if (this.parentNode) {
+            this.parentNode.classList.toggle('active');
+          }
+
+          e.stopImmediatePropagation();
+        }
+      }
+    });
+  });
+
+  /**
+   * Chevron-specific toggle
    */
   document.querySelectorAll('.navmenu .toggle-dropdown').forEach(navmenu => {
     navmenu.addEventListener('click', function(e) {
       e.preventDefault();
-      this.parentNode.classList.toggle('active');
-      this.parentNode.nextElementSibling.classList.toggle('dropdown-active');
+      // Ensure we find the sibling UL and toggle it
+      let parentLink = this.closest('a');
+      if (parentLink && parentLink.nextElementSibling && parentLink.nextElementSibling.tagName === 'UL') {
+        parentLink.classList.toggle('active');
+        parentLink.nextElementSibling.classList.toggle('dropdown-active');
+        
+        if (parentLink.parentNode) {
+          parentLink.parentNode.classList.toggle('active');
+        }
+      }
       e.stopImmediatePropagation();
     });
   });
@@ -74,13 +105,16 @@
       window.scrollY > 100 ? scrollTop.classList.add('active') : scrollTop.classList.remove('active');
     }
   }
-  scrollTop.addEventListener('click', (e) => {
-    e.preventDefault();
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
+
+  if (scrollTop) {
+    scrollTop.addEventListener('click', (e) => {
+      e.preventDefault();
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
     });
-  });
+  }
 
   window.addEventListener('load', toggleScrollTop);
   document.addEventListener('scroll', toggleScrollTop);
@@ -89,21 +123,25 @@
    * Animation on scroll function and init
    */
   function aosInit() {
-    AOS.init({
-      duration: 600,
-      easing: 'ease-in-out',
-      once: true,
-      mirror: false
-    });
+    if (typeof AOS !== 'undefined') {
+      AOS.init({
+        duration: 600,
+        easing: 'ease-in-out',
+        once: true,
+        mirror: false
+      });
+    }
   }
   window.addEventListener('load', aosInit);
 
   /**
    * Initiate glightbox
    */
-  const glightbox = GLightbox({
-    selector: '.glightbox'
-  });
+  if (typeof GLightbox !== 'undefined') {
+    const glightbox = GLightbox({
+      selector: '.glightbox'
+    });
+  }
 
   /**
    * Init swiper sliders
@@ -115,8 +153,8 @@
       );
 
       if (swiperElement.classList.contains("swiper-tab")) {
-        initSwiperWithCustomPagination(swiperElement, config);
-      } else {
+        // Custom pagination logic if needed
+      } else if (typeof Swiper !== 'undefined') {
         new Swiper(swiperElement, config);
       }
     });
@@ -138,16 +176,18 @@
    */
   let skillsAnimation = document.querySelectorAll('.skills-animation');
   skillsAnimation.forEach((item) => {
-    new Waypoint({
-      element: item,
-      offset: '80%',
-      handler: function(direction) {
-        let progress = item.querySelectorAll('.progress .progress-bar');
-        progress.forEach(el => {
-          el.style.width = el.getAttribute('aria-valuenow') + '%';
-        });
-      }
-    });
+    if (typeof Waypoint !== 'undefined') {
+      new Waypoint({
+        element: item,
+        offset: '80%',
+        handler: function(direction) {
+          let progress = item.querySelectorAll('.progress .progress-bar');
+          progress.forEach(el => {
+            el.style.width = el.getAttribute('aria-valuenow') + '%';
+          });
+        }
+      });
+    }
   });
 
   /**
@@ -159,22 +199,26 @@
     let sort = isotopeItem.getAttribute('data-sort') ?? 'original-order';
 
     let initIsotope;
-    imagesLoaded(isotopeItem.querySelector('.isotope-container'), function() {
-      initIsotope = new Isotope(isotopeItem.querySelector('.isotope-container'), {
-        itemSelector: '.isotope-item',
-        layoutMode: layout,
-        filter: filter,
-        sortBy: sort
+    if (typeof imagesLoaded !== 'undefined' && typeof Isotope !== 'undefined') {
+      imagesLoaded(isotopeItem.querySelector('.isotope-container'), function() {
+        initIsotope = new Isotope(isotopeItem.querySelector('.isotope-container'), {
+          itemSelector: '.isotope-item',
+          layoutMode: layout,
+          filter: filter,
+          sortBy: sort
+        });
       });
-    });
+    }
 
     isotopeItem.querySelectorAll('.isotope-filters li').forEach(function(filters) {
       filters.addEventListener('click', function() {
         isotopeItem.querySelector('.isotope-filters .filter-active').classList.remove('filter-active');
         this.classList.add('filter-active');
-        initIsotope.arrange({
-          filter: this.getAttribute('data-filter')
-        });
+        if (initIsotope) {
+          initIsotope.arrange({
+            filter: this.getAttribute('data-filter')
+          });
+        }
         if (typeof aosInit === 'function') {
           aosInit();
         }
