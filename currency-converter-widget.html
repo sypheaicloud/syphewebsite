@@ -1,0 +1,369 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>USD → KES Converter</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      :root {
+        --bg: #0a0a0a;
+        --card: #111111;
+        --border: #222;
+        --green: #00e676;
+        --green-dim: rgba(0, 230, 118, 0.12);
+        --text: #f0f0f0;
+        --muted: #666;
+      }
+
+      body {
+        background: var(--bg);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        font-family: "Syne", sans-serif;
+        padding: 2rem;
+      }
+
+      .card {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 20px;
+        padding: 2.5rem;
+        width: 100%;
+        max-width: 420px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .card::before {
+        content: "";
+        position: absolute;
+        top: -80px;
+        right: -80px;
+        width: 200px;
+        height: 200px;
+        background: radial-gradient(
+          circle,
+          rgba(0, 230, 118, 0.15) 0%,
+          transparent 70%
+        );
+        pointer-events: none;
+      }
+
+      .flag-row {
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+        margin-bottom: 1.8rem;
+      }
+
+      .flag {
+        font-size: 1.6rem;
+        line-height: 1;
+      }
+      .arrow {
+        color: var(--green);
+        font-size: 1.1rem;
+      }
+
+      .title {
+        font-size: 1.6rem;
+        font-weight: 800;
+        color: var(--text);
+        letter-spacing: -0.03em;
+        line-height: 1.2;
+        margin-bottom: 0.4rem;
+      }
+
+      .subtitle {
+        font-size: 0.78rem;
+        color: var(--muted);
+        font-family: "DM Mono", monospace;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        margin-bottom: 2rem;
+      }
+
+      .input-group {
+        position: relative;
+        margin-bottom: 1.2rem;
+      }
+
+      .input-label {
+        font-size: 0.7rem;
+        font-family: "DM Mono", monospace;
+        color: var(--muted);
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        margin-bottom: 0.5rem;
+        display: block;
+      }
+
+      .input-wrap {
+        display: flex;
+        align-items: center;
+        background: #1a1a1a;
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        overflow: hidden;
+        transition: border-color 0.2s;
+      }
+
+      .input-wrap:focus-within {
+        border-color: var(--green);
+      }
+
+      .currency-tag {
+        padding: 0 1rem;
+        font-family: "DM Mono", monospace;
+        font-size: 0.85rem;
+        font-weight: 500;
+        color: var(--green);
+        background: var(--green-dim);
+        height: 100%;
+        display: flex;
+        align-items: center;
+        border-right: 1px solid var(--border);
+        min-height: 52px;
+        letter-spacing: 0.05em;
+      }
+
+      input[type="number"] {
+        flex: 1;
+        background: transparent;
+        border: none;
+        outline: none;
+        padding: 0 1rem;
+        font-size: 1.2rem;
+        font-family: "DM Mono", monospace;
+        color: var(--text);
+        height: 52px;
+        width: 100%;
+        -moz-appearance: textfield;
+      }
+
+      input[type="number"]::-webkit-outer-spin-button,
+      input[type="number"]::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+      }
+
+      button {
+        width: 100%;
+        padding: 1rem;
+        background: var(--green);
+        color: #000;
+        font-family: "Syne", sans-serif;
+        font-size: 1rem;
+        font-weight: 700;
+        border: none;
+        border-radius: 12px;
+        cursor: pointer;
+        letter-spacing: 0.02em;
+        margin-top: 0.4rem;
+        transition:
+          transform 0.15s,
+          background 0.15s,
+          opacity 0.15s;
+      }
+
+      button:hover {
+        background: #33eb8e;
+        transform: translateY(-1px);
+      }
+      button:active {
+        transform: translateY(0);
+      }
+      button:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+        transform: none;
+      }
+
+      .result-box {
+        margin-top: 1.5rem;
+        background: var(--green-dim);
+        border: 1px solid rgba(0, 230, 118, 0.25);
+        border-radius: 14px;
+        padding: 1.4rem 1.6rem;
+        display: none;
+        animation: fadeUp 0.3s ease;
+      }
+
+      .result-box.visible {
+        display: block;
+      }
+
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(8px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .result-label {
+        font-size: 0.7rem;
+        font-family: "DM Mono", monospace;
+        color: var(--green);
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        margin-bottom: 0.5rem;
+      }
+
+      .result-amount {
+        font-size: 2rem;
+        font-weight: 800;
+        color: var(--text);
+        letter-spacing: -0.03em;
+        line-height: 1;
+      }
+
+      .result-amount span {
+        font-size: 1rem;
+        font-weight: 400;
+        color: var(--muted);
+        margin-left: 0.3rem;
+      }
+
+      .rate-note {
+        margin-top: 0.6rem;
+        font-size: 0.72rem;
+        font-family: "DM Mono", monospace;
+        color: var(--muted);
+      }
+
+      .error-msg {
+        margin-top: 1rem;
+        font-size: 0.82rem;
+        font-family: "DM Mono", monospace;
+        color: #ff5252;
+        display: none;
+      }
+
+      .error-msg.visible {
+        display: block;
+      }
+
+      .loader {
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+        border: 2px solid #000;
+        border-top-color: transparent;
+        border-radius: 50%;
+        animation: spin 0.6s linear infinite;
+        vertical-align: middle;
+        margin-right: 6px;
+      }
+
+      @keyframes spin {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <div class="flag-row">
+        <span class="flag">🇺🇸</span>
+        <span class="arrow">→</span>
+        <span class="flag">🇰🇪</span>
+      </div>
+      <h1 class="title">USD to KES<br />Converter</h1>
+      <p class="subtitle">Live exchange rate</p>
+
+      <div class="input-group">
+        <label class="input-label" for="amount">Amount</label>
+        <div class="input-wrap">
+          <div class="currency-tag">USD</div>
+          <input
+            type="number"
+            id="amount"
+            placeholder="0.00"
+            min="0"
+            step="any"
+          />
+        </div>
+      </div>
+
+      <button id="convertBtn" onclick="convert()">Convert</button>
+
+      <div class="result-box" id="resultBox">
+        <div class="result-label">Converted Amount</div>
+        <div class="result-amount" id="resultAmount">—<span>KES</span></div>
+        <div class="rate-note" id="rateNote"></div>
+      </div>
+
+      <div class="error-msg" id="errorMsg"></div>
+    </div>
+
+    <script>
+      async function convert() {
+        const amountInput = document.getElementById("amount");
+        const btn = document.getElementById("convertBtn");
+        const resultBox = document.getElementById("resultBox");
+        const resultAmount = document.getElementById("resultAmount");
+        const rateNote = document.getElementById("rateNote");
+        const errorMsg = document.getElementById("errorMsg");
+
+        const amount = parseFloat(amountInput.value);
+
+        resultBox.classList.remove("visible");
+        errorMsg.classList.remove("visible");
+
+        if (isNaN(amount) || amount <= 0) {
+          errorMsg.textContent = "Please enter a valid amount.";
+          errorMsg.classList.add("visible");
+          return;
+        }
+
+        btn.disabled = true;
+        btn.innerHTML = '<span class="loader"></span>Fetching rate...';
+
+        try {
+          const res = await fetch(
+            "https://api.exchangerate-api.com/v4/latest/USD",
+          );
+          if (!res.ok) throw new Error("API error");
+          const data = await res.json();
+          const rate = data.rates["KES"];
+
+          if (!rate) throw new Error("KES rate not found");
+
+          const converted = (amount * rate).toFixed(2);
+          resultAmount.innerHTML = `${Number(converted).toLocaleString()}<span>KES</span>`;
+          rateNote.textContent = `1 USD = ${rate.toFixed(2)} KES`;
+          resultBox.classList.add("visible");
+        } catch (e) {
+          errorMsg.textContent =
+            "Could not fetch exchange rate. Try again later.";
+          errorMsg.classList.add("visible");
+        } finally {
+          btn.disabled = false;
+          btn.innerHTML = "Convert";
+        }
+      }
+
+      document.getElementById("amount").addEventListener("keydown", (e) => {
+        if (e.key === "Enter") convert();
+      });
+    </script>
+  </body>
+</html>
