@@ -1,0 +1,927 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>My Notes - Syphe IT Services</title>
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+
+    <!-- Favicons -->
+    <link href="assets/img/favicon.png" rel="icon" />
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Jost:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Vendor CSS Files -->
+    <link
+      href="assets/vendor/bootstrap/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="assets/vendor/bootstrap-icons/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet" />
+    <link
+      href="assets/vendor/glightbox/css/glightbox.min.css"
+      rel="stylesheet"
+    />
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
+
+    <!-- Main CSS File -->
+    <link href="assets/css/main.css" rel="stylesheet" />
+
+    <style>
+      /* 1. Makes the header taller */
+      .header {
+        --header-height: 100px;
+        height: var(--header-height);
+      }
+
+      /* 2. Adjusts the spacing of the menu items */
+      .navmenu a,
+      .navmenu a:focus {
+        padding: 35px 15px !important;
+        font-size: 16px;
+      }
+
+      /* 3. NEW FLASHY LOGO STYLING */
+      .header .logo h1 {
+        font-family: "Jost", sans-serif;
+        font-size: 32px !important;
+        font-weight: 800 !important;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        margin: 0;
+
+        /* Metallic / Cyan Gradient Effect */
+        background: linear-gradient(135deg, #ffffff 30%, #00d4ff 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+
+        /* Neon Glow */
+        filter: drop-shadow(0 0 8px rgba(0, 212, 255, 0.4));
+        transition: all 0.3s ease;
+      }
+
+      /* Hover effect for extra "Flash" */
+      .header .logo:hover h1 {
+        filter: drop-shadow(0 0 15px rgba(0, 212, 255, 0.8));
+        transform: scale(1.03);
+      }
+    </style>
+    <style>
+      /* ============================================================
+       EMBED INSTRUCTIONS:
+       Option A — Full page: drop this entire file on your server.
+       Option B — iFrame embed: <iframe src="checklist.html"
+         style="width:100%;height:800px;border:none;"></iframe>
+       Option C — Inline: copy everything inside <body> and the
+         <style> block into your existing page's HTML.
+    ============================================================ */
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      :root {
+        --bg: #0b0c10;
+        --surface: #13151f;
+        --surface2: #1a1d2e;
+        --border: #1e2130;
+        --text: #e2e8f0;
+        --muted: #94a3b8;
+        --dim: #64748b;
+        --radius: 12px;
+      }
+
+      body {
+        font-family:
+          "Poppins",
+          "Open Sans",
+          system-ui,
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        min-height: 100vh;
+        padding: 36px 16px 60px;
+        font-weight: 400;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        line-height: 1.6;
+      }
+
+      .cl-wrap {
+        max-width: 860px;
+        margin: 0 auto;
+      }
+
+      /* ── Header ── */
+      .cl-header {
+        text-align: center;
+        margin-bottom: 40px;
+      }
+      .cl-title {
+        font-size: clamp(28px, 5vw, 48px);
+        font-weight: 900;
+        letter-spacing: -0.8px;
+        line-height: 1.05;
+        background: linear-gradient(135deg, #818cf8, #38bdf8, #34d399);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        margin-bottom: 10px;
+      }
+      .cl-subtitle {
+        color: var(--muted);
+        font-size: 15px;
+        margin-bottom: 24px;
+        font-weight: 600;
+        letter-spacing: 0.1px;
+      }
+
+      /* ── Progress ── */
+      .cl-progress-wrap {
+        max-width: 480px;
+        margin: 0 auto;
+      }
+      .cl-progress-track {
+        background: var(--surface2);
+        border: 1px solid var(--border);
+        border-radius: 99px;
+        height: 10px;
+        overflow: hidden;
+        margin-bottom: 6px;
+      }
+      .cl-progress-bar {
+        height: 100%;
+        background: linear-gradient(90deg, #818cf8, #38bdf8, #34d399);
+        border-radius: 99px;
+        width: 0%;
+        transition: width 0.4s ease;
+      }
+      .cl-progress-label {
+        color: var(--dim);
+        font-size: 13px;
+        text-align: center;
+      }
+
+      /* ── Section Cards ── */
+      .cl-sections {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+        margin-top: 32px;
+      }
+
+      .cl-section {
+        background: var(--surface);
+        border-radius: var(--radius);
+        overflow: hidden;
+        border: 1px solid transparent;
+        transition: border-color 0.2s;
+      }
+      .cl-section:hover {
+        border-color: rgba(255, 255, 255, 0.06);
+      }
+
+      .cl-section-head {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 14px 18px;
+        cursor: pointer;
+        user-select: none;
+        position: relative;
+      }
+      .cl-section-head::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          90deg,
+          var(--accent-color, #818cf8) 18,
+          transparent 70%
+        );
+        opacity: 0.13;
+        pointer-events: none;
+      }
+
+      .cl-section-icon {
+        font-size: 20px;
+        flex-shrink: 0;
+      }
+      .cl-section-info {
+        flex: 1;
+        min-width: 0;
+      }
+      .cl-section-title {
+        font-weight: 800;
+        font-size: 15px;
+        color: #f1f5f9;
+      }
+      .cl-section-count {
+        font-size: 12px;
+        color: var(--dim);
+        margin-top: 2px;
+        font-weight: 600;
+      }
+
+      .cl-mini-track {
+        width: 72px;
+        height: 4px;
+        background: var(--surface2);
+        border-radius: 99px;
+        overflow: hidden;
+        flex-shrink: 0;
+      }
+      .cl-mini-bar {
+        height: 100%;
+        background: var(--accent-color, #818cf8);
+        border-radius: 99px;
+        width: 0%;
+        transition: width 0.3s;
+      }
+
+      .cl-chevron {
+        color: var(--dim);
+        font-size: 16px;
+        transition: transform 0.2s;
+        flex-shrink: 0;
+        margin-left: 8px;
+      }
+      .cl-section.open .cl-chevron {
+        transform: rotate(180deg);
+      }
+
+      /* ── Items ── */
+      .cl-items {
+        display: none;
+        padding: 4px 0 10px;
+      }
+      .cl-section.open .cl-items {
+        display: block;
+      }
+
+      .cl-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 11px;
+        padding: 8px 18px 8px 18px;
+        cursor: pointer;
+        border-radius: 8px;
+        margin: 0 6px;
+        transition: background 0.12s;
+      }
+      .cl-item:hover {
+        background: rgba(255, 255, 255, 0.04);
+      }
+
+      .cl-box {
+        width: 17px;
+        height: 17px;
+        border-radius: 5px;
+        border: 2px solid #334155;
+        flex-shrink: 0;
+        margin-top: 2px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.15s;
+      }
+      .cl-box svg {
+        display: none;
+      }
+      .cl-item.done .cl-box {
+        background: var(--accent-color, #818cf8);
+        border-color: var(--accent-color, #818cf8);
+      }
+      .cl-item.done .cl-box svg {
+        display: block;
+      }
+
+      .cl-item-text {
+        font-size: 15px;
+        line-height: 1.6;
+        color: #cbd5e1;
+        transition: color 0.15s;
+        font-weight: 600;
+      }
+      .cl-item.done .cl-item-text {
+        color: #475569;
+        text-decoration: line-through;
+        font-weight: 500;
+      }
+
+      /* ── Footer ── */
+      .cl-footer {
+        text-align: center;
+        color: #334155;
+        font-size: 12px;
+        margin-top: 40px;
+      }
+    </style>
+  </head>
+
+  <body class="starter-page-page">
+    <header
+      id="header"
+      class="header d-flex align-items-center fixed-top"
+      style="background-color: #061a3a"
+    >
+      <div
+        class="container-fluid container-xl position-relative d-flex align-items-center"
+      >
+        <a
+          href="index.html"
+          class="logo d-flex align-items-center me-auto"
+          style="text-decoration: none"
+        >
+          <h1 class="sitename" style="color: #ffffff; margin: 0">
+            Syphe IT <br />
+            Services
+          </h1>
+        </a>
+
+        <nav id="navmenu" class="navmenu">
+          <ul>
+            <li><a href="index.html" style="color: #ffffff">Home</a></li>
+            <li><a href="#about" style="color: #ffffff">About</a></li>
+            <li><a href="#services" style="color: #ffffff">Services</a></li>
+            <li>
+              <a href="deepdive.html" style="color: #ffffff"
+                >Technical Deep Dive</a
+              >
+            </li>
+            <li><a href="#team" style="color: #ffffff">Projects</a></li>
+            <li class="active">
+              <a href="mynotes.html" style="color: #ffffff">My Notes</a>
+            </li>
+            <li><a href="blog.html" style="color: #ffffff">Clients</a></li>
+
+            <li class="dropdown">
+              <a href="#" style="color: #ffffff"
+                ><span>Dropdown</span>
+                <i class="bi bi-chevron-down toggle-dropdown"></i
+              ></a>
+              <ul>
+                <li><a href="#">Dropdown 1</a></li>
+                <li class="dropdown">
+                  <a href="#"
+                    ><span>Deep Dropdown</span>
+                    <i class="bi bi-chevron-down toggle-dropdown"></i
+                  ></a>
+                  <ul>
+                    <li><a href="#">Deep Dropdown 1</a></li>
+                    <li><a href="#">Deep Dropdown 2</a></li>
+                    <li><a href="#">Deep Dropdown 3</a></li>
+                    <li><a href="#">Deep Dropdown 4</a></li>
+                    <li><a href="#">Deep Dropdown 5</a></li>
+                  </ul>
+                </li>
+                <li><a href="#">Dropdown 2</a></li>
+                <li><a href="#">Dropdown 3</a></li>
+                <li><a href="#">Dropdown 4</a></li>
+              </ul>
+            </li>
+            <li><a href="#contact" style="color: #ffffff">Contact</a></li>
+          </ul>
+          <i
+            class="mobile-nav-toggle d-xl-none bi bi-list"
+            style="color: #ffffff"
+          ></i>
+        </nav>
+
+        <a class="btn-getstarted" href="#about"></a>
+      </div>
+    </header>
+
+    <main class="main">
+      <div style="height: var(--header-height)"></div>
+
+      <div class="cl-wrap">
+        <div class="cl-header">
+          <div class="cl-title">Website Launch<br />Master Checklist</div>
+          <p class="cl-subtitle">
+            15 phases · 180+ tasks · from zero to live to growth
+          </p>
+          <div class="cl-progress-wrap">
+            <div class="cl-progress-track">
+              <div class="cl-progress-bar" id="globalBar"></div>
+            </div>
+            <div class="cl-progress-label" id="globalLabel">
+              0 of 0 completed (0%)
+            </div>
+          </div>
+        </div>
+
+        <div class="cl-sections" id="sections"></div>
+
+        <div class="cl-footer" id="footer">
+          Keep going — you've got this! 💪
+        </div>
+      </div>
+
+      <script>
+        const SECTIONS = [
+          {
+            num: "01",
+            icon: "🗺️",
+            title: "Planning & Strategy",
+            color: "#6366f1",
+            items: [
+              "Define your website's purpose, goals, and target audience",
+              "Research competitors and analyze their websites",
+              "Decide website type: static, CMS (WordPress, Webflow), or custom-built",
+              "Create a sitemap — list all pages before building",
+              "Write a content plan for every page",
+              "Choose your tech stack (HTML/CSS/JS, React, Next.js, etc.)",
+              "Plan mobile-first design — majority of traffic is mobile",
+              "Set a realistic timeline and budget",
+              "Decide if you need a developer, designer, or both",
+            ],
+          },
+          {
+            num: "02",
+            icon: "🌐",
+            title: "Domain Name",
+            color: "#0ea5e9",
+            items: [
+              "Brainstorm a short, memorable, brandable domain name",
+              "Check domain availability (Namecheap, GoDaddy, Google Domains)",
+              "Prefer .com TLD; use .io, .co, or .net as alternatives",
+              "Avoid hyphens, numbers, or hard-to-spell words",
+              "Check trademarks and social media handle availability",
+              "Purchase domain and lock it for 2+ years for SEO trust signals",
+              "Enable auto-renewal so you never lose your domain",
+              "Enable domain privacy / WHOIS protection",
+              "Consider buying common misspellings and redirecting them",
+              "Point domain nameservers to your hosting provider",
+            ],
+          },
+          {
+            num: "03",
+            icon: "🖥️",
+            title: "Hosting",
+            color: "#10b981",
+            items: [
+              "Choose: Vercel/Netlify (static) or SiteGround/Kinsta (dynamic)",
+              "Pick a hosting plan based on expected traffic",
+              "Ensure host offers 99.9%+ uptime guarantee",
+              "Confirm data center location is near your target audience",
+              "Enable automatic daily backups",
+              "Set up a staging environment separate from production",
+              "Configure environment variables and secrets securely",
+              "Enable HTTP/2 or HTTP/3 on the server",
+              "Test server response time (aim for under 200ms TTFB)",
+              "Set up server-side caching if using a CMS",
+            ],
+          },
+          {
+            num: "04",
+            icon: "💻",
+            title: "Design & Development",
+            color: "#f59e0b",
+            items: [
+              "Design wireframes or mockups before coding (Figma recommended)",
+              "Build mobile-first, then scale up to desktop",
+              "Use semantic HTML5 elements (header, nav, main, footer, article)",
+              "Ensure all images have descriptive alt attributes",
+              "Implement a consistent design system (colors, fonts, spacing)",
+              "Use web-safe or Google Fonts — limit to 2 font families",
+              "Ensure proper heading hierarchy (only one H1 per page)",
+              "Build accessible UI: keyboard nav, ARIA labels, WCAG AA contrast",
+              "Add a custom 404 error page",
+              "Implement lazy loading for images and heavy assets",
+              "Minify HTML, CSS, and JavaScript files",
+              "Use version control with Git (GitHub or GitLab)",
+              "Test on Chrome, Firefox, Safari, and Edge",
+              "Test on iOS and Android devices",
+            ],
+          },
+          {
+            num: "05",
+            icon: "🔒",
+            title: "Security",
+            color: "#ef4444",
+            items: [
+              "Install SSL/TLS certificate (HTTPS) — Let's Encrypt is free",
+              "Force HTTP → HTTPS redirect on all pages",
+              "Set up HSTS (HTTP Strict Transport Security) header",
+              "Add security headers: CSP, X-Frame-Options, X-Content-Type-Options",
+              "Enable a Web Application Firewall (WAF) — Cloudflare is popular",
+              "Protect admin panels with 2FA and strong passwords",
+              "Keep all CMS plugins, themes, and dependencies updated",
+              "Sanitize all user inputs to prevent SQL injection and XSS",
+              "Use CAPTCHA on forms to prevent spam and bots",
+              "Limit login attempts to prevent brute force attacks",
+              "Run regular security scans (Sucuri, Wordfence, or similar)",
+            ],
+          },
+          {
+            num: "06",
+            icon: "⚡",
+            title: "Performance",
+            color: "#8b5cf6",
+            items: [
+              "Target Core Web Vitals: LCP < 2.5s, FID < 100ms, CLS < 0.1",
+              "Compress all images — use WebP or AVIF format",
+              "Use a CDN (Cloudflare, Fastly, or AWS CloudFront)",
+              "Enable GZIP or Brotli compression on your server",
+              "Implement browser caching with proper cache-control headers",
+              "Defer or async non-critical JavaScript",
+              "Remove render-blocking resources",
+              "Use resource hints: preload, prefetch, preconnect",
+              "Reduce total page size (aim for under 2MB)",
+              "Test with Google PageSpeed Insights, Lighthouse, and GTmetrix",
+            ],
+          },
+          {
+            num: "07",
+            icon: "📈",
+            title: "SEO — On-Page",
+            color: "#06b6d4",
+            items: [
+              "Research keywords for every page (Ahrefs, SEMrush, Ubersuggest)",
+              "Write a unique keyword-rich title tag per page (50–60 chars)",
+              "Write a compelling meta description per page (150–160 chars)",
+              "Use one H1 per page that includes the primary keyword",
+              "Structure content with H2s and H3s logically",
+              "Include keywords naturally — avoid keyword stuffing",
+              "Optimize image file names and alt text with keywords",
+              "Use clean, readable URLs (/blog/seo-tips not /p?id=123)",
+              "Add internal links between related pages",
+              "Set canonical URLs to avoid duplicate content",
+              "Implement Open Graph (OG) tags for social media sharing",
+              "Add Twitter Card meta tags",
+              "Add structured data / Schema markup (JSON-LD)",
+            ],
+          },
+          {
+            num: "08",
+            icon: "🔧",
+            title: "Technical SEO",
+            color: "#14b8a6",
+            items: [
+              "Create and submit an XML sitemap to Google Search Console",
+              "Create a robots.txt and verify it's not blocking key pages",
+              "Verify your site is crawlable via Screaming Frog or GSC",
+              "Ensure your site passes Google's Mobile-Friendly Test",
+              "Fix all broken links (404s) and set up proper 301 redirects",
+              "Remove duplicate content or apply canonical tags",
+              "Set up hreflang tags if serving multiple languages/regions",
+              "Ensure pages are not accidentally set to noindex",
+              "Implement breadcrumb navigation for deep page hierarchies",
+              "Important pages should be reachable within 3 clicks",
+              "Minimize redirect chains — avoid A → B → C",
+              "Submit your domain to Bing Webmaster Tools as well",
+            ],
+          },
+          {
+            num: "09",
+            icon: "📊",
+            title: "Analytics & Tracking",
+            color: "#f97316",
+            items: [
+              "Set up Google Analytics 4 (GA4) and verify data is flowing",
+              "Set up Google Search Console and verify site ownership",
+              "Connect GA4 and Search Console together",
+              "Set up Bing Webmaster Tools",
+              "Define and configure conversion goals/events in GA4",
+              "Set up Google Tag Manager for easy tag management",
+              "Implement event tracking (clicks, forms, scroll depth)",
+              "Set up heatmaps with Hotjar or Microsoft Clarity (free)",
+              "Set up monthly reports or alerts for traffic drops",
+              "Monitor Core Web Vitals in Google Search Console",
+            ],
+          },
+          {
+            num: "10",
+            icon: "🔍",
+            title: "Indexing & Search Visibility",
+            color: "#a855f7",
+            items: [
+              "Submit your site to Google Search Console",
+              "Request indexing of your homepage via the URL Inspection tool",
+              "Submit your XML sitemap in Google Search Console",
+              "Submit to Bing via Bing Webmaster Tools",
+              "Use the IndexNow protocol for faster indexing",
+              "Build initial backlinks to accelerate crawling",
+              "Ensure Google can render JavaScript on your site",
+              "Check for crawl errors in Search Console weekly",
+              "Monitor indexed vs. non-indexed pages in GSC Coverage report",
+              "Submit to Google Business Profile, Apple Maps, and Yelp",
+            ],
+          },
+          {
+            num: "11",
+            icon: "📣",
+            title: "Marketing",
+            color: "#ec4899",
+            items: [
+              "Create and optimize a Google Business Profile (if local business)",
+              "Set up social media profiles and link back to your site",
+              "Create a content/blog strategy targeting long-tail keywords",
+              "Plan a link-building strategy (guest posts, HARO, digital PR)",
+              "Set up email marketing (Mailchimp, ConvertKit, or Klaviyo)",
+              "Add a newsletter signup form and lead magnet to your site",
+              "Create a paid ads strategy: Google Ads, Meta Ads, or both",
+              "Set up retargeting pixels (Meta Pixel, Google Ads remarketing)",
+              "Plan a social media content calendar",
+              "Monitor brand mentions with Google Alerts or Mention.com",
+              "List on Product Hunt, Indie Hackers, or relevant platforms",
+            ],
+          },
+          {
+            num: "12",
+            icon: "🎨",
+            title: "UX & Conversion Optimization",
+            color: "#84cc16",
+            items: [
+              "Write clear, action-oriented CTAs on every key page",
+              "Ensure your value proposition is visible above the fold",
+              "Add trust signals: testimonials, reviews, logos, certifications",
+              "Optimize your contact form — fewer fields = higher conversion",
+              "Add live chat or chatbot for instant visitor support",
+              "Add an FAQ section to address common objections",
+              "A/B test key landing pages (Google Optimize or VWO)",
+              "Make phone numbers and emails clickable on mobile",
+              "Ensure all forms have proper validation and success messages",
+              "Test your website with real users before launch",
+            ],
+          },
+          {
+            num: "13",
+            icon: "⚖️",
+            title: "Legal & Compliance",
+            color: "#94a3b8",
+            items: [
+              "Write and publish a Privacy Policy (required by law)",
+              "Write and publish Terms of Service / Terms & Conditions",
+              "Add a Cookie Consent banner (required for GDPR in EU)",
+              "Ensure GDPR compliance if serving EU users",
+              "Ensure CCPA compliance if serving California users",
+              "Include an Accessibility Statement (WCAG compliance)",
+              "Add a Disclaimer if providing advice (legal, medical, financial)",
+              "Clearly label sponsored and affiliate content",
+              "Ensure all images, fonts, and assets are properly licensed",
+            ],
+          },
+          {
+            num: "14",
+            icon: "🚀",
+            title: "Pre-Launch Checklist",
+            color: "#f43f5e",
+            items: [
+              "Proofread ALL content on every page",
+              "Test every internal and external link",
+              "Test all forms end-to-end (submission + confirmation emails)",
+              "Test on mobile, tablet, and desktop",
+              "Run Lighthouse and aim for 90+ on all metrics",
+              "Verify all analytics tracking is firing correctly",
+              "Confirm SSL certificate is active and valid",
+              "Ensure robots.txt is NOT blocking search engines",
+              "Remove any test or placeholder content",
+              "Take a full site backup before going live",
+            ],
+          },
+          {
+            num: "15",
+            icon: "🛰️",
+            title: "Post-Launch & Ongoing Maintenance",
+            color: "#0284c7",
+            items: [
+              "Monitor Search Console for crawl errors and indexing issues",
+              "Monitor GA4 for traffic and conversion data",
+              "Check uptime with UptimeRobot or Better Uptime (free)",
+              "Renew SSL certificate before expiry or enable auto-renew",
+              "Update CMS, plugins, and dependencies monthly",
+              "Run monthly security scans",
+              "Take weekly or daily automated backups",
+              "Review and refresh old content every 6–12 months",
+              "Track keyword rankings with a rank tracking tool",
+              "Run quarterly Lighthouse and Core Web Vitals audits",
+              "A/B test new landing pages and CTAs regularly",
+              "Collect user feedback and act on it",
+              "Review and optimize ad campaigns monthly",
+              "Send regular email newsletters to your audience",
+            ],
+          },
+        ];
+
+        const state = {};
+        let total = 0;
+
+        function updateGlobal() {
+          const done = Object.values(state).filter(Boolean).length;
+          const pct = Math.round((done / total) * 100);
+          document.getElementById("globalBar").style.width = pct + "%";
+          document.getElementById("globalLabel").textContent =
+            `${done} of ${total} completed (${pct}%)`;
+          document.getElementById("footer").textContent =
+            done === total
+              ? "🎉 Everything done — you're ready to conquer the internet!"
+              : `${total - done} tasks remaining. Keep going! 💪`;
+        }
+
+        function updateSection(secEl, color, items, id) {
+          const done = items.filter((_, i) => state[`${id}-${i}`]).length;
+          const pct = Math.round((done / items.length) * 100);
+          secEl.querySelector(".cl-mini-bar").style.width = pct + "%";
+          secEl.querySelector(".cl-section-count").textContent =
+            `${done}/${items.length} done${pct === 100 ? " ✅" : ""}`;
+        }
+
+        SECTIONS.forEach((sec, si) => {
+          total += sec.items.length;
+          const id = `s${si}`;
+
+          const card = document.createElement("div");
+          card.className = "cl-section open";
+          card.style.setProperty("--accent-color", sec.color);
+
+          // Head
+          const head = document.createElement("div");
+          head.className = "cl-section-head";
+          head.innerHTML = `
+    <span class="cl-section-icon">${sec.icon}</span>
+    <div class="cl-section-info">
+      <div class="cl-section-title">Phase ${sec.num} — ${sec.title}</div>
+      <div class="cl-section-count">0/${sec.items.length} done</div>
+    </div>
+    <div class="cl-mini-track"><div class="cl-mini-bar" style="background:${sec.color}"></div></div>
+    <div class="cl-chevron">▾</div>
+  `;
+          head.addEventListener("click", () => card.classList.toggle("open"));
+
+          // Items
+          const itemsWrap = document.createElement("div");
+          itemsWrap.className = "cl-items";
+
+          sec.items.forEach((text, ii) => {
+            const key = `${id}-${ii}`;
+            state[key] = false;
+
+            const row = document.createElement("div");
+            row.className = "cl-item";
+            row.innerHTML = `
+      <div class="cl-box" style="--accent-color:${sec.color}">
+        <svg width="9" height="7" viewBox="0 0 9 7" fill="none">
+          <path d="M1 3.5L3 5.5L8 1" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <span class="cl-item-text">${text}</span>
+    `;
+            row
+              .querySelector(".cl-box")
+              .style.setProperty("--checked-color", sec.color);
+            row.addEventListener("click", () => {
+              state[key] = !state[key];
+              row.classList.toggle("done", state[key]);
+              row.querySelector(".cl-box").style.background = state[key]
+                ? sec.color
+                : "";
+              row.querySelector(".cl-box").style.borderColor = state[key]
+                ? sec.color
+                : "#334155";
+              updateSection(card, sec.color, sec.items, id);
+              updateGlobal();
+            });
+            itemsWrap.appendChild(row);
+          });
+
+          card.appendChild(head);
+          card.appendChild(itemsWrap);
+          document.getElementById("sections").appendChild(card);
+          updateSection(card, sec.color, sec.items, id);
+        });
+
+        updateGlobal();
+      </script>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="container footer-top">
+        <div class="row gy-4">
+          <div class="col-lg-4 col-md-6 footer-about">
+            <a href="index.html" class="d-flex align-items-center">
+              <span class="sitename">Syphe IT</span>
+            </a>
+          </div>
+
+          <div class="col-lg-2 col-md-3 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li>
+                <i class="bi bi-chevron-right"></i>
+                <a href="index.html">Home</a>
+              </li>
+              <li>
+                <i class="bi bi-chevron-right"></i> <a href="#">About us</a>
+              </li>
+              <li>
+                <i class="bi bi-chevron-right"></i> <a href="#">Services</a>
+              </li>
+              <li>
+                <i class="bi bi-chevron-right"></i>
+                <a href="#">Terms of service</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-lg-2 col-md-3 footer-links">
+            <h4>Our Services</h4>
+            <ul>
+              <li>
+                <i class="bi bi-chevron-right"></i> <a href="#">Web Design</a>
+              </li>
+              <li>
+                <i class="bi bi-chevron-right"></i>
+                <a href="#">Web Development</a>
+              </li>
+              <li>
+                <i class="bi bi-chevron-right"></i>
+                <a href="#">Product Management</a>
+              </li>
+              <li>
+                <i class="bi bi-chevron-right"></i> <a href="#">Marketing</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-lg-4 col-md-12">
+            <h4>Follow Us</h4>
+            <p>Syphe IT Services</p>
+            <div class="social-links d-flex">
+              <a href=""><i class="bi bi-twitter-x"></i></a>
+              <a href=""><i class="bi bi-facebook"></i></a>
+              <a href=""><i class="bi bi-instagram"></i></a>
+              <a href=""><i class="bi bi-linkedin"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container copyright text-center mt-4">
+        <p>
+          © <span>Copyright</span>
+          <strong class="px-1 sitename">Syphe IT</strong>
+          <span>All Rights Reserved</span>
+        </p>
+        <div class="credits">Designed by Syphe IT</div>
+      </div>
+    </footer>
+
+    <!-- Scroll Top -->
+    <a
+      href="#"
+      id="scroll-top"
+      class="scroll-top d-flex align-items-center justify-content-center"
+      ><i class="bi bi-arrow-up-short"></i
+    ></a>
+
+    <!-- Preloader -->
+    <div id="preloader"></div>
+
+    <!-- Vendor JS Files -->
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/php-email-form/validate.js"></script>
+    <script src="assets/vendor/aos/aos.js"></script>
+    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+    <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+
+    <!-- Main JS File -->
+    <script src="assets/js/main.js"></script>
+
+    <a
+      href="./index.html"
+      target="_self"
+      class="btn btn-primary back-home btn-sm position-fixed bottom-0 start-0 m-3"
+      aria-label="Return to home"
+      style="z-index: 9999"
+      onmousedown="window.location.href = './index.html'"
+      onclick="
+        window.location.href = './index.html';
+        return false;
+      "
+      >Home</a
+    >
+  </body>
+</html>
